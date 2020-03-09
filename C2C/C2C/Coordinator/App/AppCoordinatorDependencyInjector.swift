@@ -19,7 +19,19 @@ class AppCoordinatorDependencyInjector {
     
     lazy var productsViewController: ProductsViewController = {
         let controller: ProductsViewController = ProductsViewController.instantiate()
+        controller.viewModel = productsViewModel
+        productsViewModel.delegate = controller
         return controller
+    }()
+    
+    lazy var productsViewModel: ProductsViewModel = {
+        let viewModel = ProductsViewModel()
+        viewModel.interactor = productsInteractor
+        return viewModel
+    }()
+    
+    lazy var productsInteractor: ProductsInteractor = {
+        return ProductsInteractor()
     }()
     
 }

@@ -16,6 +16,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productTitle: UILabel?
     @IBOutlet weak var productImage: UIImageView?
     @IBOutlet weak var productDescription: UILabel?
+    @IBOutlet weak var productPrice: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,11 +25,13 @@ class ProductCell: UITableViewCell {
         cardView?.clipsToBounds = true
         cardView?.backgroundColor = .quaternarySystemFill
         productImage?.contentMode = .scaleAspectFit
+        productPrice?.textColor = .systemYellow
     }
     
-    func setCellWith(title: String, withDescription description: String, andWith image: String) {
+    func setCellWith(title: String, withDescription description: String, withImage image: String, andWithPrice price: String) {
         productTitle?.text = title
         productDescription?.text = description
+        productPrice?.text = price
         guard let url = URL(string: image) else { return }
         productImage?.kf.setImage(with: url)
     }

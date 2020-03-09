@@ -47,15 +47,23 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$30,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfO-i6-SJ5">
+                                                            <rect key="frame" x="249" y="138" width="66" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="tDf-AB-Rqb" firstAttribute="top" secondItem="rrs-FJ-vAM" secondAttribute="top" id="Dye-we-wfs"/>
                                                         <constraint firstItem="tDf-AB-Rqb" firstAttribute="leading" secondItem="rrs-FJ-vAM" secondAttribute="trailing" constant="10" id="NOn-gf-aQY"/>
                                                         <constraint firstAttribute="trailing" secondItem="YOK-4D-4Qw" secondAttribute="trailing" id="Nfo-FB-46C"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GfO-i6-SJ5" secondAttribute="trailing" constant="10" id="OsL-0k-dvg"/>
                                                         <constraint firstItem="rrs-FJ-vAM" firstAttribute="leading" secondItem="6IT-Cg-JJs" secondAttribute="leading" constant="10" id="XCP-dR-0RN"/>
                                                         <constraint firstItem="YOK-4D-4Qw" firstAttribute="leading" secondItem="rrs-FJ-vAM" secondAttribute="trailing" constant="15" id="dm4-dZ-FpW"/>
                                                         <constraint firstAttribute="trailing" secondItem="tDf-AB-Rqb" secondAttribute="trailing" id="edL-AM-DGS"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GfO-i6-SJ5" secondAttribute="bottom" constant="5" id="gna-FB-sI5"/>
                                                         <constraint firstItem="YOK-4D-4Qw" firstAttribute="top" secondItem="tDf-AB-Rqb" secondAttribute="bottom" constant="10" id="ja0-V8-Qfc"/>
                                                         <constraint firstItem="rrs-FJ-vAM" firstAttribute="height" secondItem="6IT-Cg-JJs" secondAttribute="height" multiplier="0.7" id="ngS-Us-Urc"/>
                                                         <constraint firstItem="rrs-FJ-vAM" firstAttribute="centerY" secondItem="6IT-Cg-JJs" secondAttribute="centerY" id="ojd-ID-jwH"/>
@@ -73,6 +81,7 @@
                                             <outlet property="cardView" destination="6IT-Cg-JJs" id="lPZ-7b-09t"/>
                                             <outlet property="productDescription" destination="YOK-4D-4Qw" id="Ws0-3b-wot"/>
                                             <outlet property="productImage" destination="rrs-FJ-vAM" id="wQ5-aD-pIQ"/>
+                                            <outlet property="productPrice" destination="GfO-i6-SJ5" id="Na2-1K-Ouk"/>
                                             <outlet property="productTitle" destination="tDf-AB-Rqb" id="lcT-7r-96S"/>
                                         </connections>
                                     </tableViewCell>

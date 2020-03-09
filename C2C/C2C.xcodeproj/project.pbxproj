@@ -10,6 +10,16 @@
 		5628F4B4159B29BEC86F9AD8 /* Pods_C2CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */; };
 		A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2AD24156BEC002FC41B /* AppCoordinator.swift */; };
 		A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */; };
+		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
+		A313C2B82416F5F7002FC41B /* ProductsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */; };
+		A313C2BA2416F652002FC41B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B92416F652002FC41B /* APIClient.swift */; };
+		A313C2BE2416F673002FC41B /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2BD2416F673002FC41B /* ProductList.swift */; };
+		A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C02416F685002FC41B /* APIResponseError.swift */; };
+		A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C224170149002FC41B /* ProductsRepository.swift */; };
+		A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C5241701AD002FC41B /* ProductsInteractor.swift */; };
+		A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C8241702AF002FC41B /* ProductsViewController+Presentable.swift */; };
+		A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2CA241702DB002FC41B /* ProductsViewController+TableView.swift */; };
+		A313C2CE24170445002FC41B /* PromiseKit+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */; };
 		A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33254E124154EAC002CADF6 /* AppDelegate.swift */; };
 		A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33254E324154EAC002CADF6 /* SceneDelegate.swift */; };
 		A33254E924154EAC002CADF6 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33254E724154EAC002CADF6 /* Products.storyboard */; };
@@ -53,6 +63,16 @@
 		987C27777FAC227337B309A0 /* Pods-C2C-C2CUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C2C-C2CUITests.debug.xcconfig"; path = "Target Support Files/Pods-C2C-C2CUITests/Pods-C2C-C2CUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A313C2AD24156BEC002FC41B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorDependencyInjector.swift; sourceTree = "<group>"; };
+		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEndpoint.swift; sourceTree = "<group>"; };
+		A313C2B92416F652002FC41B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		A313C2BD2416F673002FC41B /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		A313C2C02416F685002FC41B /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
+		A313C2C224170149002FC41B /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
+		A313C2C5241701AD002FC41B /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
+		A313C2C8241702AF002FC41B /* ProductsViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsViewController+Presentable.swift"; sourceTree = "<group>"; };
+		A313C2CA241702DB002FC41B /* ProductsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsViewController+TableView.swift"; sourceTree = "<group>"; };
+		A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PromiseKit+Utils.swift"; sourceTree = "<group>"; };
 		A33254DE24154EAC002CADF6 /* C2C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C2C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33254E124154EAC002CADF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33254E324154EAC002CADF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +150,76 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		A313C2B32416F5AB002FC41B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2BC2416F668002FC41B /* Models */,
+				A313C2B62416F5B9002FC41B /* Endpoint */,
+				A313C2BB2416F659002FC41B /* Networking */,
+				A313C2C42417019C002FC41B /* Repository */,
+				A313C2C7241701B0002FC41B /* Interactor */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A313C2B62416F5B9002FC41B /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2B42416F5B5002FC41B /* Endpoint.swift */,
+				A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		A313C2BB2416F659002FC41B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2B92416F652002FC41B /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A313C2BC2416F668002FC41B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2BD2416F673002FC41B /* ProductList.swift */,
+				A313C2C02416F685002FC41B /* APIResponseError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A313C2C42417019C002FC41B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2C224170149002FC41B /* ProductsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A313C2C7241701B0002FC41B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2C5241701AD002FC41B /* ProductsInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		A313C2CC241702E1002FC41B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A332551724155F6A002CADF6 /* ProductCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A313C2CF24170447002FC41B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A33254D524154EAC002CADF6 = {
 			isa = PBXGroup;
 			children = (
@@ -155,10 +245,12 @@
 		A33254E024154EAC002CADF6 /* C2C */ = {
 			isa = PBXGroup;
 			children = (
+				A313C2B32416F5AB002FC41B /* Data */,
 				A313C2AF24156C0A002FC41B /* Coordinator */,
 				A39C54B5241569F6009FCF8B /* Products */,
 				A39C54B624156A06009FCF8B /* Resources */,
 				A3C496C424156AD10019E0E1 /* Extensions */,
+				A313C2CF24170447002FC41B /* Utils */,
 			);
 			path = C2C;
 			sourceTree = "<group>";
@@ -216,7 +308,9 @@
 			children = (
 				A33254E724154EAC002CADF6 /* Products.storyboard */,
 				A332551124155927002CADF6 /* ProductsViewController.swift */,
-				A332551724155F6A002CADF6 /* ProductCell.swift */,
+				A313C2CA241702DB002FC41B /* ProductsViewController+TableView.swift */,
+				A313C2C8241702AF002FC41B /* ProductsViewController+Presentable.swift */,
+				A313C2CC241702E1002FC41B /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,9 +577,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */,
+				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
+				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
+				A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */,
+				A313C2CE24170445002FC41B /* PromiseKit+Utils.swift in Sources */,
+				A313C2B82416F5F7002FC41B /* ProductsEndpoint.swift in Sources */,
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
+				A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */,
+				A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */,
+				A313C2BE2416F673002FC41B /* ProductList.swift in Sources */,
 				A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */,
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,
+				A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */,
+				A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */,
 				A332551824155F6A002CADF6 /* ProductCell.swift in Sources */,
 				A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */,
 				A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */,
