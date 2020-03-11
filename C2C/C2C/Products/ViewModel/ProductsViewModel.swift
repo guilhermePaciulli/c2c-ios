@@ -16,20 +16,26 @@ protocol ProductsViewModelDelegate {
 
 class ProductsViewModel: ProductsViewModelDelegate {
     
+    // MARK:- Properties
     weak var interactor: ProductsInteractorProtocol?
     weak var delegate: ProductsViewControllerPresentable?
     var productsList: [ProductsListData] = []
+    var isLoading = false
     
+    // MARK:- Delegate methods
     func getObject() {
-        delegate?.showLoadingInTable()
+        guard !isLoading else { return }
+        isLoading = true
         interactor?.getAll().done(on: .main, { [weak self] (productsList) in
-            self?.delegate?.stopLoadingInTable()
             self?.productsList = productsList.data
             self?.delegate?.reloadData()
+            self?.delegate?.stopLoadingInTable()
+            self?.isLoading = false
         }).catch({ [weak self] (error) in
             self?.delegate?.stopLoadingInTable()
             self?.delegate?.reloadData()
             self?.delegate?.showAlert(withTitle: error.localizedTitle, andMessage: error.localizedDescription)
+            self?.isLoading = false
         })
     }
     

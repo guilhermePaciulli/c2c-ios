@@ -9,7 +9,6 @@
 import UIKit
 
 protocol ProductsViewControllerPresentable: class {
-    func showLoadingInTable()
     func stopLoadingInTable()
     func showAlert(withTitle title: String, andMessage message: String)
     func reloadData()
@@ -17,12 +16,8 @@ protocol ProductsViewControllerPresentable: class {
 
 extension ProductsViewController: ProductsViewControllerPresentable {
     
-    func showLoadingInTable() {
-        // TODO
-    }
-    
     func stopLoadingInTable() {
-        // TODO
+        refreshControl?.endRefreshing()
     }
     
     func showAlert(withTitle title: String, andMessage message: String) {
