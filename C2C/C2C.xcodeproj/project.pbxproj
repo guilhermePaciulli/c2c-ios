@@ -29,6 +29,7 @@
 		A332550424154EAE002CADF6 /* C2CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332550324154EAE002CADF6 /* C2CUITests.swift */; };
 		A332551224155927002CADF6 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332551124155927002CADF6 /* ProductsViewController.swift */; };
 		A332551824155F6A002CADF6 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332551724155F6A002CADF6 /* ProductCell.swift */; };
+		A3C01240241E61C600A50422 /* ProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C0123F241E61C600A50422 /* ProductDetailViewController.storyboard */; };
 		A3C496C124156A7B0019E0E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C496C024156A7B0019E0E1 /* Main.storyboard */; };
 		A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C496C224156ABE0019E0E1 /* Identifiable.swift */; };
 		A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C496C624156AF40019E0E1 /* ProductsViewModel.swift */; };
@@ -88,6 +89,7 @@
 		A332550524154EAE002CADF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A332551124155927002CADF6 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		A332551724155F6A002CADF6 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A3C0123F241E61C600A50422 /* ProductDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetailViewController.storyboard; sourceTree = "<group>"; };
 		A3C496C024156A7B0019E0E1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A3C496C224156ABE0019E0E1 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		A3C496C624156AF40019E0E1 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
@@ -276,8 +278,8 @@
 		A39C54B5241569F6009FCF8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A3C496C524156AE20019E0E1 /* View */,
-				A3C496C824156AF80019E0E1 /* ViewModel */,
+				A3C0123E241E61AE00A50422 /* Detail */,
+				A3C0123D241E61A400A50422 /* Collection */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -293,6 +295,23 @@
 				A33254EF24154EAE002CADF6 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3C0123D241E61A400A50422 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				A3C496C524156AE20019E0E1 /* View */,
+				A3C496C824156AF80019E0E1 /* ViewModel */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		A3C0123E241E61AE00A50422 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A3C0123F241E61C600A50422 /* ProductDetailViewController.storyboard */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		A3C496C424156AD10019E0E1 /* Extensions */ = {
@@ -449,6 +468,7 @@
 				A33254EB24154EAE002CADF6 /* Assets.xcassets in Resources */,
 				A33254E924154EAC002CADF6 /* Products.storyboard in Resources */,
 				A3C496C124156A7B0019E0E1 /* Main.storyboard in Resources */,
+				A3C01240241E61C600A50422 /* ProductDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
