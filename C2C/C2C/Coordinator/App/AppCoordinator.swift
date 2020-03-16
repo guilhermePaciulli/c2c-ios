@@ -8,21 +8,35 @@
 
 import UIKit
 
+protocol BasicCoordinationProtocol: class {
+    func presentNextStep()
+    func presentPreviousStep()
+}
+
 class AppCoordinator {
     
     // MARK:- Properties
+    lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
     var injector: AppCoordinatorDependencyInjector
     var window: UIWindow
     
     init(withWindow window: UIWindow) {
-        injector = AppCoordinatorDependencyInjector()
+        injector = .init()
         self.window = window
     }
     
     func start() {
-        injector.navigationController.setViewControllers([injector.productsViewController], animated: false)
-        window.rootViewController = injector.navigationController
+        setUpTabBar()
+        window.rootViewController = injector.tabBarController
         window.makeKeyAndVisible()
     }
     
+    private func setUpTabBar() {
+        injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController]
+    }
+    
+}
+
+enum CoordinatorType {
+    case Products
 }

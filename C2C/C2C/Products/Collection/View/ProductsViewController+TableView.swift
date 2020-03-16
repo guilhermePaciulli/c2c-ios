@@ -18,5 +18,8 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         return viewModel?.tableView(tableView, cellForRowAt: indexPath) ?? .init()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didSelectAt(indexPath: indexPath)
+    }
     
 }

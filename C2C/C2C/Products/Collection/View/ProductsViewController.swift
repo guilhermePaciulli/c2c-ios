@@ -22,6 +22,7 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.dataSource = self
+        tableView?.delegate = self
         setupView()
     }
     
@@ -37,6 +38,8 @@ class ProductsViewController: UIViewController {
     
     // MARK:- Private methods
     func setupView() {
+        title = "Products"
+        tabBarController?.navigationController?.title = title
         let refresh: UIRefreshControl = .init()
         refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         tableView?.addSubview(refresh)

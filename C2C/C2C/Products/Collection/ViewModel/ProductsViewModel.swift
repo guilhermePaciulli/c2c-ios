@@ -11,7 +11,8 @@ import UIKit
 protocol ProductsViewModelDelegate {
     func getObject()
     func numberOfRowsInSection(section: Int) -> Int
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func didSelectAt(indexPath: IndexPath)
 }
 
 class ProductsViewModel: ProductsViewModelDelegate {
@@ -19,6 +20,8 @@ class ProductsViewModel: ProductsViewModelDelegate {
     // MARK:- Properties
     weak var interactor: ProductsInteractorProtocol?
     weak var delegate: ProductsViewControllerPresentable?
+    weak var coordinator: BasicCoordinationProtocol?
+    var selectedProduct: ProductAttributes?
     var productsList: [ProductsListData] = []
     var isLoading = false
     
@@ -52,6 +55,11 @@ class ProductsViewModel: ProductsViewModelDelegate {
                          withImage: product.productImageURL,
                          andWithPrice: productPrice)
         return cell
+    }
+    
+    func didSelectAt(indexPath: IndexPath) {
+        selectedProduct = productsList[indexPath.row].attributes
+        coordinator?.presentNextStep()
     }
     
     
