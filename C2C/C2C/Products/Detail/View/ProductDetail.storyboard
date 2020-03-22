@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product Detail View Controller-->
+        <scene sceneID="gEK-C9-PT1">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="78q-TJ-VQ2" customClass="ProductDetailViewController" customModule="C2C" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CJX-5J-XSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stub_jetski" translatesAutoresizingMaskIntoConstraints="NO" id="Ccs-P6-AvR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jetski Maneiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYg-DM-LX3">
+                                <rect key="frame" x="10" y="289" width="384" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-g1-Jmx">
+                                <rect key="frame" x="10" y="328" width="394" height="183"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-No-CPi">
+                                <rect key="frame" x="20" y="798" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="y9w-dc-aw9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Comprar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBuyButton:" destination="78q-TJ-VQ2" eventType="touchUpInside" id="C8P-KG-iWQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXe-tS-cQR">
+                                <rect key="frame" x="15" y="17" width="44" height="39.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TXe-tS-cQR" secondAttribute="height" multiplier="1:1" id="e8O-hB-zdm"/>
+                                    <constraint firstAttribute="height" constant="44" id="fmn-qh-3h2"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapExitButton:" destination="78q-TJ-VQ2" eventType="touchUpInside" id="lMp-9O-KAx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$34000,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-by-M0v">
+                                <rect key="frame" x="20" y="758" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nZD-No-CPi" firstAttribute="leading" secondItem="Rek-Ui-VZa" secondAttribute="leading" constant="20" id="3qE-uh-0qq"/>
+                            <constraint firstItem="TXe-tS-cQR" firstAttribute="leading" secondItem="Rek-Ui-VZa" secondAttribute="leading" constant="15" id="BI6-Vh-4dy"/>
+                            <constraint firstItem="lYg-DM-LX3" firstAttribute="leading" secondItem="Rek-Ui-VZa" secondAttribute="leading" constant="10" id="MzY-0d-WpW"/>
+                            <constraint firstItem="Rek-Ui-VZa" firstAttribute="bottom" secondItem="nZD-No-CPi" secondAttribute="bottom" constant="20" id="NZ2-GH-4Yv"/>
+                            <constraint firstItem="Szu-by-M0v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="R5D-g1-Jmx" secondAttribute="bottom" constant="10" id="P1R-5E-PeD"/>
+                            <constraint firstItem="Ccs-P6-AvR" firstAttribute="top" secondItem="CJX-5J-XSZ" secondAttribute="top" id="PLb-IQ-fXM"/>
+                            <constraint firstItem="Ccs-P6-AvR" firstAttribute="leading" secondItem="Rek-Ui-VZa" secondAttribute="leading" id="Qey-SO-Muz"/>
+                            <constraint firstItem="Rek-Ui-VZa" firstAttribute="trailing" secondItem="R5D-g1-Jmx" secondAttribute="trailing" constant="10" id="Sjz-Qg-Cy4"/>
+                            <constraint firstItem="Rek-Ui-VZa" firstAttribute="trailing" secondItem="nZD-No-CPi" secondAttribute="trailing" constant="20" id="WNP-Op-VmZ"/>
+                            <constraint firstAttribute="top" secondItem="TXe-tS-cQR" secondAttribute="top" constant="-15" id="WtO-cS-3Cj"/>
+                            <constraint firstItem="Rek-Ui-VZa" firstAttribute="trailing" secondItem="Ccs-P6-AvR" secondAttribute="trailing" id="XpI-1C-r80"/>
+                            <constraint firstItem="R5D-g1-Jmx" firstAttribute="top" secondItem="lYg-DM-LX3" secondAttribute="bottom" constant="10" id="hto-ZX-BmW"/>
+                            <constraint firstItem="nZD-No-CPi" firstAttribute="top" secondItem="Szu-by-M0v" secondAttribute="bottom" constant="16" id="lsh-xq-WOU"/>
+                            <constraint firstItem="R5D-g1-Jmx" firstAttribute="leading" secondItem="Rek-Ui-VZa" secondAttribute="leading" constant="10" id="pIO-7h-u7Y"/>
+                            <constraint firstItem="Rek-Ui-VZa" firstAttribute="trailing" secondItem="lYg-DM-LX3" secondAttribute="trailing" constant="20" id="sCm-Pr-NtS"/>
+                            <constraint firstItem="lYg-DM-LX3" firstAttribute="top" secondItem="Ccs-P6-AvR" secondAttribute="bottom" constant="20" id="v0k-6k-rn3"/>
+                            <constraint firstItem="Szu-by-M0v" firstAttribute="leading" secondItem="Rek-Ui-VZa" secondAttribute="leading" constant="20" id="v7e-vo-cGY"/>
+                            <constraint firstItem="Ccs-P6-AvR" firstAttribute="height" secondItem="CJX-5J-XSZ" secondAttribute="height" multiplier="0.3" id="weh-RE-gi4"/>
+                            <constraint firstItem="Rek-Ui-VZa" firstAttribute="trailing" secondItem="Szu-by-M0v" secondAttribute="trailing" constant="20" id="xzp-z8-z4V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rek-Ui-VZa"/>
+                    </view>
+                    <connections>
+                        <outlet property="buyButton" destination="nZD-No-CPi" id="hTp-68-erW"/>
+                        <outlet property="exitButton" destination="TXe-tS-cQR" id="vso-lB-WGb"/>
+                        <outlet property="productDescription" destination="R5D-g1-Jmx" id="mPT-Es-yOg"/>
+                        <outlet property="productImage" destination="Ccs-P6-AvR" id="B74-Vy-FPD"/>
+                        <outlet property="productName" destination="lYg-DM-LX3" id="84w-5W-pDI"/>
+                        <outlet property="productPrice" destination="Szu-by-M0v" id="xwa-64-XGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="auh-0K-NIS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="stub_jetski" width="640" height="480"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

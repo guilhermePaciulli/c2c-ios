@@ -15,17 +15,35 @@ class ProductsViewController: UIViewController {
     
     // MARK:- Properties
     var viewModel: ProductsViewModelDelegate?
-    var productList: [ProductsListData] = []
+    var productList: [Product] = []
+    var refreshControl: UIRefreshControl?
     
     // MARK:- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.dataSource = self
+        tableView?.delegate = self
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.getObject()
+    }
+    
+    // MARK:- Actions
+    @objc func didPullToRefresh() {
+        viewModel?.getObject()
+    }
+    
+    // MARK:- Private methods
+    func setupView() {
+        title = "Products"
+        tabBarController?.navigationController?.title = title
+        let refresh: UIRefreshControl = .init()
+        refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        tableView?.addSubview(refresh)
+        refreshControl = refresh
     }
         
 }

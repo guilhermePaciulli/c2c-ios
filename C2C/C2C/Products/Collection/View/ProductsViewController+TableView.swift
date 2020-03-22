@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ProductsViewController: UITableViewDataSource {
+extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfRowsInSection(section: section) ?? .init()
@@ -18,5 +18,8 @@ extension ProductsViewController: UITableViewDataSource {
         return viewModel?.tableView(tableView, cellForRowAt: indexPath) ?? .init()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didSelectAt(indexPath: indexPath)
+    }
     
 }

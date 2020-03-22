@@ -11,25 +11,34 @@ import UIKit
 protocol ProductsViewModelDelegate {
     func getObject()
     func numberOfRowsInSection(section: Int) -> Int
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func didSelectAt(indexPath: IndexPath)
 }
 
 class ProductsViewModel: ProductsViewModelDelegate {
     
+    // MARK:- Properties
     weak var interactor: ProductsInteractorProtocol?
     weak var delegate: ProductsViewControllerPresentable?
-    var productsList: [ProductsListData] = []
+    weak var coordinator: BasicCoordinationProtocol?
+    var selectedProduct: ProductAttributes?
+    var productsList: [Product] = []
+    var isLoading = false
     
+    // MARK:- Delegate methods
     func getObject() {
-        delegate?.showLoadingInTable()
+        guard !isLoading else { return }
+        isLoading = true
         interactor?.getAll().done(on: .main, { [weak self] (productsList) in
-            self?.delegate?.stopLoadingInTable()
-            self?.productsList = productsList.data
+            self?.productsList = productsList
             self?.delegate?.reloadData()
+            self?.delegate?.stopLoadingInTable()
+            self?.isLoading = false
         }).catch({ [weak self] (error) in
             self?.delegate?.stopLoadingInTable()
             self?.delegate?.reloadData()
             self?.delegate?.showAlert(withTitle: error.localizedTitle, andMessage: error.localizedDescription)
+            self?.isLoading = false
         })
     }
     
@@ -46,6 +55,11 @@ class ProductsViewModel: ProductsViewModelDelegate {
                          withImage: product.productImageURL,
                          andWithPrice: productPrice)
         return cell
+    }
+    
+    func didSelectAt(indexPath: IndexPath) {
+        selectedProduct = productsList[indexPath.row].attributes
+        coordinator?.presentNextStep()
     }
     
     

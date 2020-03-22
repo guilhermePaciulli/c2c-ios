@@ -9,12 +9,15 @@
 import Foundation
 
 enum ProductsEndpoint: Endpoint {    
-    case getProducts
+    case indexProducts
+    case getProduct(id: Int)
     
     var path: String {
         switch self {
-        case .getProducts:
+        case .indexProducts:
             return "/products"
+        case .getProduct(let id):
+            return "/products/\(id)"
         }
     }
     
@@ -31,7 +34,9 @@ enum ProductsEndpoint: Endpoint {
     
     var method: RequestMethod {
         switch self {
-        case .getProducts:
+        case .indexProducts:
+            return .get
+        case .getProduct(_):
             return .get
         }
     }
