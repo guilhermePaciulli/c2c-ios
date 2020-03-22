@@ -8,6 +8,7 @@ target 'C2C' do
   # Pods for C2C
   pod 'Kingfisher'
   pod 'PromiseKit'
+  pod 'SwiftLint'
 
   target 'C2CTests' do
     inherit! :search_paths
