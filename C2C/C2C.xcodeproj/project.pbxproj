@@ -13,7 +13,6 @@
 		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
 		A313C2B82416F5F7002FC41B /* ProductsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */; };
 		A313C2BA2416F652002FC41B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B92416F652002FC41B /* APIClient.swift */; };
-		A313C2BE2416F673002FC41B /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2BD2416F673002FC41B /* ProductList.swift */; };
 		A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C02416F685002FC41B /* APIResponseError.swift */; };
 		A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C224170149002FC41B /* ProductsRepository.swift */; };
 		A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C5241701AD002FC41B /* ProductsInteractor.swift */; };
@@ -29,6 +28,8 @@
 		A332550424154EAE002CADF6 /* C2CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332550324154EAE002CADF6 /* C2CUITests.swift */; };
 		A332551224155927002CADF6 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332551124155927002CADF6 /* ProductsViewController.swift */; };
 		A332551824155F6A002CADF6 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332551724155F6A002CADF6 /* ProductCell.swift */; };
+		A3BCC0FF242579680047CF4B /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2BD2416F673002FC41B /* Products.swift */; };
+		A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */; };
 		A3C01240241E61C600A50422 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C0123F241E61C600A50422 /* ProductDetail.storyboard */; };
 		A3C496C124156A7B0019E0E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C496C024156A7B0019E0E1 /* Main.storyboard */; };
 		A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C496C224156ABE0019E0E1 /* Identifiable.swift */; };
@@ -73,7 +74,7 @@
 		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEndpoint.swift; sourceTree = "<group>"; };
 		A313C2B92416F652002FC41B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		A313C2BD2416F673002FC41B /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		A313C2BD2416F673002FC41B /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		A313C2C02416F685002FC41B /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
 		A313C2C224170149002FC41B /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
 		A313C2C5241701AD002FC41B /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		A332550524154EAE002CADF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A332551124155927002CADF6 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		A332551724155F6A002CADF6 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlurView.swift"; sourceTree = "<group>"; };
 		A3C0123F241E61C600A50422 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		A3C496C024156A7B0019E0E1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A3C496C224156ABE0019E0E1 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -198,7 +200,7 @@
 		A313C2BC2416F668002FC41B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A313C2BD2416F673002FC41B /* ProductList.swift */,
+				A313C2BD2416F673002FC41B /* Products.swift */,
 				A313C2C02416F685002FC41B /* APIResponseError.swift */,
 			);
 			path = Models;
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C496C224156ABE0019E0E1 /* Identifiable.swift */,
+				A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -638,6 +641,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */,
+				A3BCC0FF242579680047CF4B /* Products.swift in Sources */,
 				A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */,
 				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
 				C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */,
@@ -649,7 +654,6 @@
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */,
 				A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */,
-				A313C2BE2416F673002FC41B /* ProductList.swift in Sources */,
 				A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */,
 				C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */,
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,

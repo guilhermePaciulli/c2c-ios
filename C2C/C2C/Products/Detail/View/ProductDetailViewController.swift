@@ -20,6 +20,7 @@ class ProductDetailViewController: UIViewController {
     
     // MARK:- Properties
     var viewModel: ProductDetailViewModelProtocol?
+    var blurView: UIView?
     
     // MARK:- LifeCycle
     override func viewDidLoad() {

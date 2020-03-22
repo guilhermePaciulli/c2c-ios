@@ -9,6 +9,9 @@
 import UIKit
 
 protocol ProductDetailViewControllerPresentable {
+    func startLoading()
+    func stopLoading()
+    func showAlert(withTitle title: String, message: String)
     func setProduct(name: String)
     func setProduct(price: String)
     func setProduct(description: String)
@@ -16,6 +19,22 @@ protocol ProductDetailViewControllerPresentable {
 }
 
 extension ProductDetailViewController: ProductDetailViewControllerPresentable {
+    func startLoading() {
+        showSpinnerView()
+    }
+    
+    func stopLoading() {
+        removeSpinnerView()
+    }
+    
+    func showAlert(withTitle title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (_) in
+            self?.viewModel?.didTapExitButton()
+        }
+        alert.addAction(alertAction)
+        present(alert, animated: true)
+    }
     
     func setProduct(name: String) {
         productName?.text = name

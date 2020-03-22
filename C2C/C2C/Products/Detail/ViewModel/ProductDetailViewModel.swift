@@ -19,18 +19,30 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
     
     // MARK:- Properties
     var view: ProductDetailViewControllerPresentable?
-    var product: ProductAttributes?
+    var productID: Int?
     var coordinator: BasicCoordinationProtocol?
+    var interactor: ProductsInteractor?
+    var blurView: UIView?
     
     // MARK:- Viewmodel delegate
     func fetchObject() {
-        guard let product = product else { NSLog("Error: product not set at ProductDetailViewModel"); return; }
-        view?.setProduct(name: product.name)
-        view?.setProduct(description: product.attributesDescription)
-        let productPrice = "R$"+String(product.price)
-        view?.setProduct(price: productPrice)
-        guard let url = URL(string: product.productImageURL) else { return }
-        view?.setProductImage()?.kf.setImage(with: url)
+        guard let id = productID else { NSLog("Error: product not set at ProductDetailViewModel"); return; }
+        
+        view?.startLoading()
+        interactor?.getProduct(withId: id).done(on: .main, { [weak self] (data) in
+            let product = data.attributes
+            self?.view?.setProduct(name: product.name)
+            self?.view?.setProduct(description: product.attributesDescription)
+            let productPrice = "R$"+String(product.price)
+            self?.view?.setProduct(price: productPrice)
+            guard let url = URL(string: product.productImageURL) else { return }
+            self?.view?.setProductImage()?.kf.setImage(with: url)
+            self?.view?.stopLoading()
+        }).catch({ [weak self] (error) in
+            self?.view?.stopLoading()
+            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+        })
+        
     }
     
     func didTapBuyButton() {

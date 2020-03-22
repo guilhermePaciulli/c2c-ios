@@ -22,7 +22,7 @@ class ProductsViewModel: ProductsViewModelDelegate {
     weak var delegate: ProductsViewControllerPresentable?
     weak var coordinator: BasicCoordinationProtocol?
     var selectedProduct: ProductAttributes?
-    var productsList: [ProductsListData] = []
+    var productsList: [Product] = []
     var isLoading = false
     
     // MARK:- Delegate methods
@@ -30,7 +30,7 @@ class ProductsViewModel: ProductsViewModelDelegate {
         guard !isLoading else { return }
         isLoading = true
         interactor?.getAll().done(on: .main, { [weak self] (productsList) in
-            self?.productsList = productsList.data
+            self?.productsList = productsList
             self?.delegate?.reloadData()
             self?.delegate?.stopLoadingInTable()
             self?.isLoading = false

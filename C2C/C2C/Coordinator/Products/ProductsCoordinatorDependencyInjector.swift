@@ -42,6 +42,7 @@ class ProductsCoordinatorDependencyInjector {
     
     lazy var productDetailViewModel: ProductDetailViewModel = {
         let viewModel = ProductDetailViewModel()
+        viewModel.interactor = productsInteractor
         return viewModel
     }()
     
@@ -52,7 +53,7 @@ class ProductsCoordinatorDependencyInjector {
     
     // MARK:- Auxiliar functions
     func setSelectedProduct() {
-        productDetailViewModel.product = productsViewModel.selectedProduct
+        productDetailViewModel.productID = productsViewModel.selectedProduct?.id
     }
     
 }

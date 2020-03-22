@@ -15,7 +15,7 @@ class ProductsViewController: UIViewController {
     
     // MARK:- Properties
     var viewModel: ProductsViewModelDelegate?
-    var productList: [ProductsListData] = []
+    var productList: [Product] = []
     var refreshControl: UIRefreshControl?
     
     // MARK:- Life cycle
