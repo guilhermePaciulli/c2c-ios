@@ -25,4 +25,4 @@ jobs:
         use_modern_build_system: true
         scheme: C2CTests
         lint: false
-        additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
+        additional_build_params: -destination 'platform=iOS Simulator,id=5632D6F5-BD19-46CB-AB54-BC269C0DFD6A'
