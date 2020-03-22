@@ -24,4 +24,5 @@ jobs:
         workspace: C2C/C2C.xcworkspace
         use_modern_build_system: true
         scheme: C2CTests
-        additional_build_params: -destination 'platform:macOS, arch:x86_64, variant:Mac Catalyst, id:4203018E-580F-C1B5-9525-B745CECA79EB'
+        lint: false
+        additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
