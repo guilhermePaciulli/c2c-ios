@@ -25,4 +25,4 @@ jobs:
         use_modern_build_system: true
         scheme: C2C
         lint: false
-        additional_build_params: -destination 'platform=iOS Simulator,id=5632D6F5-BD19-46CB-AB54-BC269C0DFD6A'
+        additional_build_params: -destination 'id=5632D6F5-BD19-46CB-AB54-BC269C0DFD6A'
