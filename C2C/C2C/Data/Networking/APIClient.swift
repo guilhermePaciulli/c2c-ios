@@ -9,7 +9,7 @@
 import PromiseKit
 import UIKit
 
-internal var session: URLSession = .shared
+private var session: URLSession = .shared
 
 protocol APIClient {
     func dispatchRequest<T: Decodable>(with request: URLRequest, decodingType: T.Type) -> Promise<T>
