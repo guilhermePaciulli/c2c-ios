@@ -23,4 +23,5 @@ jobs:
       with:
         workspace: C2C/C2C.xcworkspace
         use_modern_build_system: true
+        scheme: C2CTests
         additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
