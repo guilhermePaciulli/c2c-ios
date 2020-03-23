@@ -26,9 +26,9 @@ DerivedData/
 *.hmap
 
 ## App packaging
-*.ipa
-*.dSYM.zip
-*.dSYM
+c2c/*.ipa
+c2c/*.dSYM.zip
+c2c/*.dSYM
 
 ## Playgrounds
 timeline.xctimeline
@@ -46,7 +46,7 @@ playground.xcworkspace
 # hence it is not needed unless you have added a package configuration file to your project
 # .swiftpm
 
-.build/
+c2c/.build/
 
 # CocoaPods
 #
@@ -64,11 +64,10 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-Carthage/Build/
 
 # Accio dependency management
 Dependencies/
-.accio/
+c2c/.accio/
 
 # fastlane
 #
@@ -77,10 +76,10 @@ Dependencies/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+c2c/fastlane/report.xml
+c2c/fastlane/Preview.html
+c2c/fastlane/screenshots/**/*.png
+c2c/fastlane/test_output
 
 # Code Injection
 #
