@@ -11,10 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install fastlane
-      run: |
-        brew install fastlane
     - name: Run tests
-      run: |
-        cd C2C/fastlane
-        fastlane tests
+      uses: maierj/fastlane-action@v1.4.0
+      with:
+        lane: 'tests'
+        subdirectory: 'C2C/fastlane'
