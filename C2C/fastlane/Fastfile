@@ -17,8 +17,8 @@ default_platform(:ios)
 
 platform :ios do
   lane :tests do
-    clear_derived_data
     cocoapods
+    clear_derived_data
     run_tests(workspace: "C2C.xcworkspace",
               clean: true,
               devices: ["iPhone 8"],
