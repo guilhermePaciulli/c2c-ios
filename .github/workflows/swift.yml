@@ -16,4 +16,5 @@ jobs:
         brew install fastlane
     - name: Run tests
       run: |
+        cd C2C/fastlane
         fastlane tests
