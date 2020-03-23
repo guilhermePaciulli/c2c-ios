@@ -22,7 +22,7 @@ platform :ios do
     run_tests(workspace: "C2C.xcworkspace",
               clean: true,
               devices: ["iPhone 8"],
-              scheme: "C2CTests")
+              scheme: "C2C")
     clear_derived_data
   end
 end
