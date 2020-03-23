@@ -17,9 +17,9 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher
-  - Nimble (~> 8.0.1)
+  - Nimble
   - PromiseKit
-  - Quick (~> 2.1.0)
+  - Quick
   - SwiftLint
 
 SPEC REPOS:
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 9ab418894c2672ffc17bc6135e656f7f1183b45b
+PODFILE CHECKSUM: 2cd6f097dcb1091889ea402de99de3001af36502
 
 COCOAPODS: 1.9.1

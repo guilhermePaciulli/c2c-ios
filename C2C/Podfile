@@ -12,8 +12,8 @@ target 'C2C' do
 
   target 'C2CTests' do
     inherit! :search_paths
-    pod 'Quick', '~> 2.1.0'
-    pod 'Nimble', '~> 8.0.1'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'C2CUITests' do
