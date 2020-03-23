@@ -11,6 +11,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install Dependencies
+        run: |
+        gem install cocoapods
+        cd C2C
+        pod install --repo-update
     - name: Run tests
       uses: maierj/fastlane-action@v1.4.0
       with:
