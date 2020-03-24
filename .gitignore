@@ -26,9 +26,9 @@ DerivedData/
 *.hmap
 
 ## App packaging
-c2c/*.ipa
-c2c/*.dSYM.zip
-c2c/*.dSYM
+*.ipa
+*.dSYM.zip
+*.dSYM
 
 ## Playgrounds
 timeline.xctimeline
@@ -46,7 +46,7 @@ playground.xcworkspace
 # hence it is not needed unless you have added a package configuration file to your project
 # .swiftpm
 
-c2c/.build/
+C2C/.build/
 
 # CocoaPods
 #
@@ -64,10 +64,11 @@ c2c/.build/
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
+!C2C/Pods/Nimble/Carthage/
 
 # Accio dependency management
 Dependencies/
-c2c/.accio/
+C2C/.accio/
 
 # fastlane
 #
@@ -76,14 +77,16 @@ c2c/.accio/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-c2c/fastlane/report.xml
-c2c/fastlane/Preview.html
-c2c/fastlane/screenshots/**/*.png
-c2c/fastlane/test_output
+C2C/fastlane/report.xml
+C2C/fastlane/Preview.html
+C2C/fastlane/screenshots/**/*.png
+C2C/fastlane/test_output
+C2C/Gemfile.lock
+C2C/Podfile.lock
 
 # Code Injection
 #
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
-iOSInjectionProject/
+C2C/iOSInjectionProject/
