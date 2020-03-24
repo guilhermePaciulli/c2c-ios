@@ -46,16 +46,18 @@ playground.xcworkspace
 # hence it is not needed unless you have added a package configuration file to your project
 # .swiftpm
 
-.build/
+C2C/.build/
 
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
+
+
+C2C/Pods/
+
+
 # Add this line if you want to avoid checking in source code from the Xcode workspace
 # *.xcworkspace
 
@@ -64,11 +66,11 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-Carthage/Build/
+!C2C/Pods/Nimble/Carthage/
 
 # Accio dependency management
 Dependencies/
-.accio/
+C2C/.accio/
 
 # fastlane
 #
@@ -77,14 +79,16 @@ Dependencies/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+C2C/fastlane/report.xml
+C2C/fastlane/Preview.html
+C2C/fastlane/screenshots/**/*.png
+C2C/fastlane/test_output
+C2C/Gemfile.lock
+C2C/Podfile.lock
 
 # Code Injection
 #
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
-iOSInjectionProject/
+C2C/iOSInjectionProject/

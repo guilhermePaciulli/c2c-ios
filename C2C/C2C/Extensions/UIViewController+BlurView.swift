@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal var loadingView: UIView?
+private var loadingView: UIView?
 
 extension UIViewController {
     func showSpinnerView() {

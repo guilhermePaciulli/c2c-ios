@@ -24,10 +24,14 @@
 		A33254E924154EAC002CADF6 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33254E724154EAC002CADF6 /* Products.storyboard */; };
 		A33254EB24154EAE002CADF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33254EA24154EAE002CADF6 /* Assets.xcassets */; };
 		A33254EE24154EAE002CADF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33254EC24154EAE002CADF6 /* LaunchScreen.storyboard */; };
-		A33254F924154EAE002CADF6 /* C2CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33254F824154EAE002CADF6 /* C2CTests.swift */; };
 		A332550424154EAE002CADF6 /* C2CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332550324154EAE002CADF6 /* C2CUITests.swift */; };
 		A332551224155927002CADF6 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332551124155927002CADF6 /* ProductsViewController.swift */; };
 		A332551824155F6A002CADF6 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332551724155F6A002CADF6 /* ProductCell.swift */; };
+		A3341A0C2427DF4700C96A0C /* MocksHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3341A0B2427DF4700C96A0C /* MocksHelper.swift */; };
+		A3341A112427F5F900C96A0C /* ProductsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3341A102427F5F900C96A0C /* ProductsRepositoryMock.swift */; };
+		A3341A142427F9F400C96A0C /* ProductsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3341A132427F9F400C96A0C /* ProductsInteractorTests.swift */; };
+		A3341A192427FB1100C96A0C /* Array<Product>.json in Resources */ = {isa = PBXBuildFile; fileRef = A3341A182427FB1100C96A0C /* Array<Product>.json */; };
+		A3341A1B2427FB3400C96A0C /* Product.json in Resources */ = {isa = PBXBuildFile; fileRef = A3341A1A2427FB3400C96A0C /* Product.json */; };
 		A3BCC0FF242579680047CF4B /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2BD2416F673002FC41B /* Products.swift */; };
 		A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */; };
 		A3C01240241E61C600A50422 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C0123F241E61C600A50422 /* ProductDetail.storyboard */; };
@@ -89,13 +93,17 @@
 		A33254ED24154EAE002CADF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A33254EF24154EAE002CADF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A33254F424154EAE002CADF6 /* C2CTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C2CTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A33254F824154EAE002CADF6 /* C2CTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2CTests.swift; sourceTree = "<group>"; };
 		A33254FA24154EAE002CADF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A33254FF24154EAE002CADF6 /* C2CUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C2CUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A332550324154EAE002CADF6 /* C2CUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C2CUITests.swift; sourceTree = "<group>"; };
 		A332550524154EAE002CADF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A332551124155927002CADF6 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		A332551724155F6A002CADF6 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A3341A0B2427DF4700C96A0C /* MocksHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocksHelper.swift; sourceTree = "<group>"; };
+		A3341A102427F5F900C96A0C /* ProductsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepositoryMock.swift; sourceTree = "<group>"; };
+		A3341A132427F9F400C96A0C /* ProductsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractorTests.swift; sourceTree = "<group>"; };
+		A3341A182427FB1100C96A0C /* Array<Product>.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Array<Product>.json"; sourceTree = "<group>"; };
+		A3341A1A2427FB3400C96A0C /* Product.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Product.json; sourceTree = "<group>"; };
 		A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlurView.swift"; sourceTree = "<group>"; };
 		A3C0123F241E61C600A50422 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		A3C496C024156A7B0019E0E1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -276,7 +284,8 @@
 		A33254F724154EAE002CADF6 /* C2CTests */ = {
 			isa = PBXGroup;
 			children = (
-				A33254F824154EAE002CADF6 /* C2CTests.swift */,
+				A3341A122427F9E300C96A0C /* Mocks */,
+				A3341A0D2427DF4C00C96A0C /* Data */,
 				A33254FA24154EAE002CADF6 /* Info.plist */,
 			);
 			path = C2CTests;
@@ -289,6 +298,33 @@
 				A332550524154EAE002CADF6 /* Info.plist */,
 			);
 			path = C2CUITests;
+			sourceTree = "<group>";
+		};
+		A3341A0D2427DF4C00C96A0C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A3341A132427F9F400C96A0C /* ProductsInteractorTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A3341A122427F9E300C96A0C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A3341A0B2427DF4700C96A0C /* MocksHelper.swift */,
+				A3341A102427F5F900C96A0C /* ProductsRepositoryMock.swift */,
+				A3341A172427FAF600C96A0C /* JSONMocks */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A3341A172427FAF600C96A0C /* JSONMocks */ = {
+			isa = PBXGroup;
+			children = (
+				A3341A182427FB1100C96A0C /* Array<Product>.json */,
+				A3341A1A2427FB3400C96A0C /* Product.json */,
+			);
+			path = JSONMocks;
 			sourceTree = "<group>";
 		};
 		A39C54B5241569F6009FCF8B /* Products */ = {
@@ -430,6 +466,7 @@
 				A33254F024154EAE002CADF6 /* Sources */,
 				A33254F124154EAE002CADF6 /* Frameworks */,
 				A33254F224154EAE002CADF6 /* Resources */,
+				AA900CAB7A4C0B6C87C488FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,6 +558,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3341A192427FB1100C96A0C /* Array<Product>.json in Resources */,
+				A3341A1B2427FB3400C96A0C /* Product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +610,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA900CAB7A4C0B6C87C488FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-C2CTests/Pods-C2CTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-C2CTests/Pods-C2CTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-C2CTests/Pods-C2CTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF748B6A9066B3FF042CE86C /* [CP] Check Pods Manifest.lock */ = {
@@ -673,7 +729,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A33254F924154EAE002CADF6 /* C2CTests.swift in Sources */,
+				A3341A142427F9F400C96A0C /* ProductsInteractorTests.swift in Sources */,
+				A3341A112427F5F900C96A0C /* ProductsRepositoryMock.swift in Sources */,
+				A3341A0C2427DF4700C96A0C /* MocksHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,7 +828,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -824,7 +882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -842,6 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VLLH384AC4;
 				INFOPLIST_FILE = "$(SRCROOT)/C2C/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -861,6 +920,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VLLH384AC4;
 				INFOPLIST_FILE = "$(SRCROOT)/C2C/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -881,7 +941,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VLLH384AC4;
 				INFOPLIST_FILE = C2CTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = "$(inherited)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -904,7 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VLLH384AC4;
 				INFOPLIST_FILE = C2CTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = "$(inherited)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
