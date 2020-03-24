@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<testsuites name='C2CTests.xctest' tests='4' failures='0'>
-  <testsuite name='C2CTests.ImageInteractorTests' tests='4' failures='0'>
-    <testcase classname='C2CTests.ImageInteractorTests' name='Product_interactor_list_request__should_return_the_product_list_successfully' time='0.018'/>
-    <testcase classname='C2CTests.ImageInteractorTests' name='Product_interactor_list_request__should_return_handle_request_error' time='0.011'/>
-    <testcase classname='C2CTests.ImageInteractorTests' name='Product_interactor_get_one_request__should_return_one_product_successfully' time='0.004'/>
-    <testcase classname='C2CTests.ImageInteractorTests' name='Product_interactor_get_one_request__should_return_handle_request_error' time='0.007'/>
-  </testsuite>
-</testsuites>
