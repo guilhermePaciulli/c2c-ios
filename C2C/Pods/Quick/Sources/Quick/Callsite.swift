@@ -1,6 +1,6 @@
 import Foundation
 
-#if canImport(Darwin)
+#if canImport(Darwin) && !SWIFT_PACKAGE
 @objcMembers
 public class _CallsiteBase: NSObject {}
 #else

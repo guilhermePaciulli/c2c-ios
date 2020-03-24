@@ -18,23 +18,36 @@ static QuickSpec *currentSpec = nil;
 #pragma mark - XCTestCase Overrides
 
 /**
- QuickSpec hooks into this event to compile the example groups for this spec subclass.
+ The runtime sends initialize to each class in a program just before the class, or any class
+ that inherits from it, is sent its first message from within the program. QuickSpec hooks into
+ this event to compile the example groups for this spec subclass.
 
  If an exception occurs when compiling the examples, report it to the user. Chances are they
  included an expectation outside of a "it", "describe", or "context" block.
  */
-+ (XCTestSuite *)defaultTestSuite {
-    [self buildExamplesIfNeeded];
++ (void)initialize {
+    [QuickConfiguration initialize];
 
-    // Add instance methods for this class' examples.
-    NSArray *examples = [[World sharedWorld] examplesForSpecClass:[self class]];
-    NSMutableSet<NSString*> *selectorNames = [NSMutableSet set];
+    World *world = [World sharedWorld];
+    [world performWithCurrentExampleGroup:[world rootExampleGroupForSpecClass:self] closure:^{
+        QuickSpec *spec = [self new];
 
-    for (Example *example in examples) {
-        [self addInstanceMethodForExample:example classSelectorNames:selectorNames];
-    }
-
-    return [super defaultTestSuite];
+        @try {
+            [spec spec];
+        }
+        @catch (NSException *exception) {
+            [NSException raise:NSInternalInconsistencyException
+                        format:@"An exception occurred when building Quick's example groups.\n"
+             @"Some possible reasons this might happen include:\n\n"
+             @"- An 'expect(...).to' expectation was evaluated outside of "
+             @"an 'it', 'context', or 'describe' block\n"
+             @"- 'sharedExamples' was called twice with the same name\n"
+             @"- 'itBehavesLike' was called with a name that is not registered as a shared example\n\n"
+             @"Here's the original exception: '%@', reason: '%@', userInfo: '%@'",
+             exception.name, exception.reason, exception.userInfo];
+        }
+        [self testInvocations];
+    }];
 }
 
 /**
@@ -44,8 +57,6 @@ static QuickSpec *currentSpec = nil;
  @return An array of invocations that execute the newly defined example methods.
  */
 + (NSArray *)testInvocations {
-    [self buildExamplesIfNeeded];
-
     NSArray *examples = [[World sharedWorld] examplesForSpecClass:[self class]];
     NSMutableArray *invocations = [NSMutableArray arrayWithCapacity:[examples count]];
     
@@ -73,43 +84,6 @@ static QuickSpec *currentSpec = nil;
 }
 
 #pragma mark - Internal Methods
-
-/**
- Runs the `spec` method and builds the examples for this class.
-
- It's safe to call this method multiple times. If the examples for the class have been built, invocation
- of this method has no effect.
- */
-+ (void)buildExamplesIfNeeded {
-    [QuickConfiguration class];
-    World *world = [World sharedWorld];
-
-    ExampleGroup *rootExampleGroup = [world rootExampleGroupForSpecClass:self];
-
-    if ([rootExampleGroup examples].count > 0) {
-        // The examples fot this subclass have been already built. Skipping.
-        return;
-    }
-
-    [world performWithCurrentExampleGroup:rootExampleGroup closure:^{
-        QuickSpec *spec = [self new];
-
-        @try {
-            [spec spec];
-        }
-        @catch (NSException *exception) {
-            [NSException raise:NSInternalInconsistencyException
-                        format:@"An exception occurred when building Quick's example groups.\n"
-             @"Some possible reasons this might happen include:\n\n"
-             @"- An 'expect(...).to' expectation was evaluated outside of "
-             @"an 'it', 'context', or 'describe' block\n"
-             @"- 'sharedExamples' was called twice with the same name\n"
-             @"- 'itBehavesLike' was called with a name that is not registered as a shared example\n\n"
-             @"Here's the original exception: '%@', reason: '%@', userInfo: '%@'",
-             exception.name, exception.reason, exception.userInfo];
-        }
-    }];
-}
 
 /**
  QuickSpec uses this method to dynamically define a new instance method for the

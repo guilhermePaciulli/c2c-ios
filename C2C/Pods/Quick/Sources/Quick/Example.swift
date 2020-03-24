@@ -1,6 +1,9 @@
 import Foundation
 
-#if canImport(Darwin)
+private var numberOfExamplesRun = 0
+private var numberOfIncludedExamples = 0
+
+#if canImport(Darwin) && !SWIFT_PACKAGE
 @objcMembers
 public class _ExampleBase: NSObject {}
 #else
@@ -62,11 +65,15 @@ final public class Example: _ExampleBase {
     public func run() {
         let world = World.sharedWorld
 
-        if world.numberOfExamplesRun == 0 {
+        if numberOfIncludedExamples == 0 {
+            numberOfIncludedExamples = world.includedExampleCount
+        }
+
+        if numberOfExamplesRun == 0 {
             world.suiteHooks.executeBefores()
         }
 
-        let exampleMetadata = ExampleMetadata(example: self, exampleIndex: world.numberOfExamplesRun)
+        let exampleMetadata = ExampleMetadata(example: self, exampleIndex: numberOfExamplesRun)
         world.currentExampleMetadata = exampleMetadata
         defer {
             world.currentExampleMetadata = nil
@@ -88,9 +95,9 @@ final public class Example: _ExampleBase {
         group!.phase = .aftersFinished
         world.exampleHooks.executeAfters(exampleMetadata)
 
-        world.numberOfExamplesRun += 1
+        numberOfExamplesRun += 1
 
-        if !world.isRunningAdditionalSuites && world.numberOfExamplesRun >= world.cachedIncludedExampleCount {
+        if !world.isRunningAdditionalSuites && numberOfExamplesRun >= numberOfIncludedExamples {
             world.suiteHooks.executeAfters()
         }
     }

@@ -12,7 +12,7 @@ public typealias SharedExampleContext = () -> [String: Any]
 */
 public typealias SharedExampleClosure = (@escaping SharedExampleContext) -> Void
 
-#if canImport(Darwin)
+#if canImport(Darwin) && !SWIFT_PACKAGE
 @objcMembers
 internal class _WorldBase: NSObject {}
 #else
@@ -46,8 +46,6 @@ final internal class World: _WorldBase {
 
     internal var currentExampleMetadata: ExampleMetadata?
 
-    internal var numberOfExamplesRun = 0
-
     /**
         A flag that indicates whether additional test suites are being run
         within this test suite. This is only true within the context of Quick
@@ -74,16 +72,7 @@ final internal class World: _WorldBase {
 
     private override init() {}
 
-    static private(set) var sharedWorld = World()
-
-    static func anotherWorld<T>(block: (World) -> T) -> T {
-        let previous = sharedWorld
-        defer { sharedWorld = previous }
-
-        let newWorld = World()
-        sharedWorld = newWorld
-        return block(newWorld)
-    }
+    static let sharedWorld = World()
 
     // MARK: Public Interface
 
@@ -124,11 +113,11 @@ final internal class World: _WorldBase {
                 it("is at the top level") {}
             }
 
-        - parameter specClass: The QuickSpec class for which to retrieve the root example group.
+        - parameter cls: The QuickSpec class for which to retrieve the root example group.
         - returns: The root example group for the class.
     */
-    internal func rootExampleGroup(forSpecClass specClass: QuickSpec.Type) -> ExampleGroup {
-        let name = String(describing: specClass)
+    internal func rootExampleGroupForSpecClass(_ cls: AnyClass) -> ExampleGroup {
+        let name = String(describing: cls)
 
         if let group = specs[name] {
             return group
@@ -152,16 +141,23 @@ final internal class World: _WorldBase {
         - parameter specClass: The QuickSpec subclass for which examples are to be returned.
         - returns: A list of examples to be run as test invocations.
     */
-    internal func examples(forSpecClass specClass: QuickSpec.Type) -> [Example] {
+    internal func examples(_ specClass: AnyClass) -> [Example] {
         // 1. Grab all included examples.
         let included = includedExamples
         // 2. Grab the intersection of (a) examples for this spec, and (b) included examples.
-        let spec = rootExampleGroup(forSpecClass: specClass).examples.filter { included.contains($0) }
+        let spec = rootExampleGroupForSpecClass(specClass).examples.filter { included.contains($0) }
         // 3. Remove all excluded examples.
         return spec.filter { example in
-            !self.configuration.exclusionFilters.contains { $0(example) }
+            !self.configuration.exclusionFilters.reduce(false) { $0 || $1(example) }
         }
     }
+
+#if canImport(Darwin)
+    @objc(examplesForSpecClass:)
+    internal func objc_examples(_ specClass: AnyClass) -> [Example] {
+        return examples(specClass)
+    }
+#endif
 
     // MARK: Internal
 
@@ -178,8 +174,6 @@ final internal class World: _WorldBase {
     internal var includedExampleCount: Int {
         return includedExamples.count
     }
-
-    internal lazy var cachedIncludedExampleCount: Int = self.includedExampleCount
 
     internal var beforesCurrentlyExecuting: Bool {
         let suiteBeforesExecuting = suiteHooks.phase == .beforesExecuting
@@ -223,7 +217,7 @@ final internal class World: _WorldBase {
     private var includedExamples: [Example] {
         let all = allExamples
         let included = all.filter { example in
-            return self.configuration.inclusionFilters.contains { $0(example) }
+            return self.configuration.inclusionFilters.reduce(false) { $0 || $1(example) }
         }
 
         if included.isEmpty && configuration.runAllWhenEverythingFiltered {

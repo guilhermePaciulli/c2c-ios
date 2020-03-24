@@ -12,14 +12,14 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.12.0):
     - PromiseKit/CorePromise
-  - Quick (2.2.0)
+  - Quick (2.1.0)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Kingfisher
-  - Nimble
+  - Nimble (~> 8.0.1)
   - PromiseKit
-  - Quick
+  - Quick (~> 2.1.0)
   - SwiftLint
 
 SPEC REPOS:
@@ -34,9 +34,9 @@ SPEC CHECKSUMS:
   Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: e091f5056af5974ee406588ecde8fb7af6a0a82d
+PODFILE CHECKSUM: db85e6e5cb0168358192959867a6198f6a7be2e0
 
 COCOAPODS: 1.9.1
