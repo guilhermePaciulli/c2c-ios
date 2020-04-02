@@ -37,7 +37,7 @@ enum ResponseError: Error {
     var localizedDescription: String {
         switch self {
         case .jsonConversionFailure:
-            return "Error fetching images"
+            return "Internal error"
         case .missingInstance:
             return "We all make mistakes..."
         case .timeout:

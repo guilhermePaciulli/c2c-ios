@@ -28,9 +28,14 @@ extension APIClient {
                 }
                 throw ResponseError.server
             }
-            do {
-                return try JSONDecoder().decode(DataDecodable<T>.self, from: data).data
-            } catch {
+            
+            if let dataDecodable = try? JSONDecoder().decode(DataDecodable<T>.self, from: data).data {
+                return dataDecodable
+            } else if let data = try? JSONDecoder().decode(T.self, from: data) {
+                return data
+            } else if let emptyResponse = EmptyResponse() as? T {
+                return emptyResponse
+            } else {
                 throw ResponseError.jsonConversionFailure
             }
         }).recover({  (error) -> Promise<T> in
@@ -43,3 +48,5 @@ extension APIClient {
 struct DataDecodable<T: Decodable>: Decodable {
     let data: T
 }
+
+struct EmptyResponse: Codable { init(){} }

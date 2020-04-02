@@ -1,39 +1,36 @@
 //
-//  ProductsInteractorTests.swift
+//  UserInteractor.swift
 //  C2CTests
 //
-//  Created by Guilherme Paciulli on 22/03/20.
+//  Created by Guilherme Paciulli on 02/04/20.
 //  Copyright © 2020 Guilherme Paciulli. All rights reserved.
 //
 
 @testable import C2C
-import Nimble
 import Quick
+import Nimble
 
-class ProductsInteractorTests: QuickSpec {
+class UserInteractorTests: QuickSpec {
     
-    var subject = ProductsInteractor()
-    var mockedRepository = MockedProductsRespository()
+    var subject = UserInteractor()
+    var mockedRepository = UserRepositoryMock()
+    var mockedKeychain = KeychainRepositoryMock()
     
     override func spec() {
         
         beforeEach {
-            self.mockedRepository = MockedProductsRespository()
-            self.subject = ProductsInteractor(repository: self.mockedRepository)
+            self.mockedRepository = UserRepositoryMock()
+            self.mockedKeychain = KeychainRepositoryMock()
+            self.subject = UserInteractor(user: self.mockedRepository, keychain: self.mockedKeychain)
         }
         
-        describe("Product interactor list request") {
+        describe("User interactor login request") {
             
-            it("should return the product list successfully") {
-                var products: [Product]?
-                
+            it("should return the jwt token successfully") {
                 waitUntil { (done) in
-                    self.subject.getAll().done { products = $0; done()
+                    self.subject.login(withEmail: "", andPassword: "").done { done()
                     }.catch { XCTFail($0.localizedDescription); done() }
                 }
-                
-                expect(products).toNot(beNil())
-                expect(products).toNot(beEmpty())
             }
             
             it("should return handle request error") {
@@ -41,7 +38,7 @@ class ProductsInteractorTests: QuickSpec {
                 self.mockedRepository.responseError = .init(message: message)
                 
                 waitUntil { (done) in
-                    self.subject.getAll()
+                    self.subject.login(withEmail: "", andPassword: "")
                         .done({ _ in XCTFail("the request should have failed"); done() })
                         .catch({ expect($0.localizedDescription).to(equal(message)); done() })
                 }
@@ -49,18 +46,14 @@ class ProductsInteractorTests: QuickSpec {
             }
         }
         
-        describe("Product interactor get one request") {
+        describe("User interactor create account request") {
 
-            it("should return one product successfully") {
-                var product: Product?
-
+            it("should create an account successfully") {
                 waitUntil { (done) in
-                    self.subject.getProduct(withId: 1)
-                        .done({ product = $0; done() })
+                    self.subject.createAccount(.init(email: "", password: "", name: "", surname: "", cpf: ""))
+                        .done({ done() })
                         .catch({ XCTFail($0.localizedDescription); done() })
                 }
-                expect(product).toNot(beNil())
-                expect(product?.attributes.id).to(equal(1))
             }
             
             it("should return handle request error") {
@@ -68,7 +61,7 @@ class ProductsInteractorTests: QuickSpec {
                 self.mockedRepository.responseError = .init(message: message)
                 
                 waitUntil { (done) in
-                    self.subject.getProduct(withId: 99)
+                    self.subject.createAccount(.init(email: "", password: "", name: "", surname: "", cpf: ""))
                         .done({ _ in XCTFail("the request should have failed"); done() })
                         .catch({ expect($0.localizedDescription).to(equal(message)); done() })
                 }
