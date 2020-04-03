@@ -51,6 +51,7 @@
 		A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */; };
 		A3C60E502436AB7E00426F40 /* AccessToken.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C60E4F2436AB7E00426F40 /* AccessToken.json */; };
 		A3E6B18D2436B5EC00B55441 /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */; };
+		A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */; };
 		C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */; };
 		C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */; };
 		C1415EF2242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EF1242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift */; };
@@ -135,6 +136,7 @@
 		A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
 		A3C60E4F2436AB7E00426F40 /* AccessToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AccessToken.json; sourceTree = "<group>"; };
 		A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
+		A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C2CTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
 		C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Presentable.swift"; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */,
+				A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				A3341A142427F9F400C96A0C /* ProductsInteractorTests.swift in Sources */,
 				A3C60E4A2436A9A500426F40 /* UserInteractorTests.swift in Sources */,
 				A3C60E482436A87E00426F40 /* KeychainRepositoryMock.swift in Sources */,
+				A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */,
 				A3341A112427F5F900C96A0C /* ProductsRepositoryMock.swift in Sources */,
 				A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */,
 				A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */,
