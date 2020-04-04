@@ -14,7 +14,7 @@ protocol AccountViewControllerPresentable {
     func showAlert(withTitle title: String, message: String)
 }
 
-extension AuthenticationViewController: AccountViewControllerPresentable {
+extension AccountViewController: AccountViewControllerPresentable {
     
     func startLoading() {
         showSpinnerView()

@@ -27,3 +27,10 @@ struct AccessToken: Codable {
         case token = "jwt"
     }
 }
+
+struct UserData {
+    let email: String
+    let name: String
+    let surname: String
+    let cpf: String
+}

@@ -34,10 +34,11 @@
 		A39A65FE2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */; };
 		A39A66012436B30B00FBBDC2 /* CoordinationMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */; };
 		A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */; };
-		A3A91F412438E0D300CE4353 /* AccountViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F402438E0D300CE4353 /* AccountViewController+Presentable.swift */; };
+		A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F402438E0D300CE4353 /* AuthenticationViewController+Presentable.swift */; };
 		A3A91F432438E4FF00CE4353 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F422438E4FF00CE4353 /* AccountViewModel.swift */; };
 		A3A91F4A2438E52E00CE4353 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F492438E52E00CE4353 /* AccountViewController.swift */; };
 		A3A91F4C2438E53700CE4353 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A91F4B2438E53700CE4353 /* Account.storyboard */; };
+		A3A91F4E2438E82F00CE4353 /* AccountViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F4D2438E82F00CE4353 /* AccountViewController+Presentable.swift */; };
 		A3BCC0FF242579680047CF4B /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2BD2416F673002FC41B /* Products.swift */; };
 		A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */; };
 		A3C01240241E61C600A50422 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C0123F241E61C600A50422 /* ProductDetail.storyboard */; };
@@ -130,10 +131,11 @@
 		A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCoordinatorTests.swift; sourceTree = "<group>"; };
 		A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinationMocks.swift; sourceTree = "<group>"; };
 		A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorMock.swift; sourceTree = "<group>"; };
-		A3A91F402438E0D300CE4353 /* AccountViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountViewController+Presentable.swift"; sourceTree = "<group>"; };
+		A3A91F402438E0D300CE4353 /* AuthenticationViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationViewController+Presentable.swift"; sourceTree = "<group>"; };
 		A3A91F422438E4FF00CE4353 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		A3A91F492438E52E00CE4353 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A3A91F4B2438E53700CE4353 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		A3A91F4D2438E82F00CE4353 /* AccountViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountViewController+Presentable.swift"; sourceTree = "<group>"; };
 		A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlurView.swift"; sourceTree = "<group>"; };
 		A3C0123F241E61C600A50422 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		A3C496C024156A7B0019E0E1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 			children = (
 				A3A91F4B2438E53700CE4353 /* Account.storyboard */,
 				A3A91F492438E52E00CE4353 /* AccountViewController.swift */,
+				A3A91F4D2438E82F00CE4353 /* AccountViewController+Presentable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,7 +546,7 @@
 			children = (
 				A3E6B1952436C1F700B55441 /* Authentication.storyboard */,
 				A3E6B1912436C1E000B55441 /* AuthenticationViewController.swift */,
-				A3A91F402438E0D300CE4353 /* AccountViewController+Presentable.swift */,
+				A3A91F402438E0D300CE4353 /* AuthenticationViewController+Presentable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				A3C60E422436957F00426F40 /* UserRepository.swift in Sources */,
 				A313C2B82416F5F7002FC41B /* ProductsEndpoint.swift in Sources */,
 				A3C60E402436947200426F40 /* UserEndpoints.swift in Sources */,
+				A3A91F4E2438E82F00CE4353 /* AccountViewController+Presentable.swift in Sources */,
 				A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */,
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A3C60E44243697AF00426F40 /* UserInteractor.swift in Sources */,
@@ -912,7 +916,7 @@
 				A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */,
 				C17D87F324202EE200E90BF4 /* ProductDetailViewController.swift in Sources */,
 				A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */,
-				A3A91F412438E0D300CE4353 /* AccountViewController+Presentable.swift in Sources */,
+				A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */,
 				A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

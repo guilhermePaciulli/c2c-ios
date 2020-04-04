@@ -18,6 +18,7 @@ enum ResponseError: Error {
     case jsonConversionFailure
     case server
     case missingInstance
+    case missingUser
     
     var localizedTitle: String {
         switch self {
@@ -31,6 +32,8 @@ enum ResponseError: Error {
             return "Server error"
         case .missingInstance:
             return "Internal error"
+        case .missingUser:
+            return "No user found"
         }
     }
     
@@ -44,6 +47,8 @@ enum ResponseError: Error {
             return "You seem to be offline."
         case .server:
             return "There was an internal error in our servers"
+        case .missingUser:
+            return "You have to login in order to proceed with this action"
         case .api(let error):
             return error.message
         }

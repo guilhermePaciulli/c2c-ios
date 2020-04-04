@@ -11,7 +11,7 @@ import PromiseKit
 protocol UserInteractorProtocol: class {
     func createAccount(_ account: CreateAccount) -> Promise<Void>
     func login(withEmail email: String, andPassword password: String) -> Promise<Void>
-//    func fetchUser() -> Promise<>
+    func fetchUser() -> Promise<UserData>
 }
 
 class UserInteractor: UserInteractorProtocol {
@@ -37,5 +37,14 @@ class UserInteractor: UserInteractorProtocol {
         })
     }
     
+    func fetchUser() -> Promise<UserData> {
+        return Promise<UserData> { seal in
+            guard let jwt = keychainAccess.load(key: "jwt") else {
+                throw ResponseError.missingUser
+            }
+            // TODO:- Fetch user
+        }
+        
+    }
     
 }

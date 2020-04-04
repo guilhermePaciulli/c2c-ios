@@ -28,7 +28,14 @@ class AccountViewModel: AccountViewModelProtocol {
     
     // MARK:- Protocol methods
     func fetchUser() {
-        
+        interactor.fetchUser().done { (userData) in
+            //TODO:- Setup user view
+        }.catch { [weak self] (error) in
+            if case ResponseError.missingUser = error {
+                self?.coordinator.presentNextStep()
+                return
+            }
+        }
     }
     
 }

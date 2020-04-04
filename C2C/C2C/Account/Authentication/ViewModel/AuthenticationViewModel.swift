@@ -18,10 +18,10 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
     // MARK:- Properties
     var interactor: UserInteractor
     var coordinator: AccountCoordinatorProtocol
-    var view: AccountViewControllerPresentable
+    var view: AuthenticationViewControllerPresentable
     
     // MARK:- Initialization
-    init(interactor: UserInteractor, coordinator: AccountCoordinatorProtocol, view: AccountViewControllerPresentable) {
+    init(interactor: UserInteractor, coordinator: AccountCoordinatorProtocol, view: AuthenticationViewControllerPresentable) {
         self.interactor = interactor
         self.coordinator = coordinator
         self.view = view
