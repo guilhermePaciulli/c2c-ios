@@ -11,6 +11,7 @@ import PromiseKit
 protocol UserInteractorProtocol: class {
     func createAccount(_ account: CreateAccount) -> Promise<Void>
     func login(withEmail email: String, andPassword password: String) -> Promise<Void>
+//    func fetchUser() -> Promise<>
 }
 
 class UserInteractor: UserInteractorProtocol {

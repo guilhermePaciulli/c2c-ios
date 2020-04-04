@@ -17,6 +17,7 @@ class AppCoordinator {
     
     // MARK:- Properties
     lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
+    lazy var accountCoordinator: AccountCoordinator = .init(baseCoordinator: self)
     var injector: AppCoordinatorDependencyInjector
     var window: UIWindow
     
@@ -32,7 +33,8 @@ class AppCoordinator {
     }
     
     private func setUpTabBar() {
-        injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController]
+        injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                     accountCoordinator.injector.navigationController]
     }
     
 }
