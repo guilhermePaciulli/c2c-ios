@@ -28,7 +28,9 @@ class UserInteractor: UserInteractorProtocol {
     }
     
     func createAccount(_ account: CreateAccount) -> Promise<Void> {
-        return userRepository.createAccount(account).map({ _ in return })
+        return userRepository.createAccount(account).then { (_) -> Promise<Void> in
+            return self.login(withEmail: account.email, andPassword: account.password)
+        }
     }
     
     func login(withEmail email: String, andPassword password: String) -> Promise<Void> {

@@ -8,23 +8,47 @@
 
 import UIKit
 
-class AuthenticationCoordinator: BasicCoordinationProtocol {
+protocol AuthenticationCoordinationProtocol: BasicCoordinationProtocol {
+    func didLogin()
+}
+
+class AuthenticationCoordinator: AuthenticationCoordinationProtocol {
     
-    var state: AuthenticationRoutingState = .Account
-    var injector: AuthenticationDependencyInjector = .init()
+    var state: AuthenticationRoutingState
+    var injector: AuthenticationDependencyInjector
+    var baseCoordinator: CoordinatorPresentable
+
+    init(baseCoordinator: CoordinatorPresentable) {
+        self.baseCoordinator = baseCoordinator
+        self.state = .Authentication
+        injector = .init()
+        injector.authenticationViewModel.coordinator = self
+    }
     
     func presentNextStep() {
         switch state {
-        case .Account:
-            fatalError()
+        case .Authentication:
+            state = .AccountCreation
+            injector.navigationController.pushViewController(injector.createAccountViewController, animated: true)
+        case .AccountCreation:
+            NSLog("Trying to go further than it can")
         }
     }
     
     func presentPreviousStep() {
-        
+        switch state {
+        case .Authentication:
+            NSLog("Trying to return from base view ctrl")
+        case .AccountCreation:
+            state = .Authentication
+            injector.navigationController.popViewController(animated: true)
+        }
     }
     
+    func didLogin() { }
+    
     enum AuthenticationRoutingState {
-        case Account
+        case Authentication
+        case AccountCreation
     }
 }

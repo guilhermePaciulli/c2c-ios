@@ -20,7 +20,30 @@ class AuthenticationDependencyInjector {
     
     lazy var authenticationViewController: AuthenticationViewController = {
         let controller: AuthenticationViewController = .instantiate()
+        controller.viewModel = authenticationViewModel
+        authenticationViewModel.view = controller
         return controller
+    }()
+    
+    lazy var createAccountViewController: CreateAccountViewController = {
+        let controller: CreateAccountViewController = .instantiate()
+        controller.viewModel = createAccountViewModel
+        createAccountViewModel.view = controller
+        return controller
+    }()
+    
+    // MARK:- ViewModels
+    lazy var authenticationViewModel: AuthenticationViewModel = {
+        return .init(interactor: userInteractor)
+    }()
+    
+    lazy var createAccountViewModel: CreateAccountViewModel = {
+        return .init(interactor: userInteractor)
+    }()
+    
+    // MARK:- Interactors
+    lazy var userInteractor: UserInteractor = {
+        return .init()
     }()
     
 }

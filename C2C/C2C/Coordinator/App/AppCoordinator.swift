@@ -18,7 +18,7 @@ class AppCoordinator {
     // MARK:- Properties
     lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
     lazy var accountCoordinator: AccountCoordinator = .init(baseCoordinator: self)
-    lazy var authenticationCoordinator: AuthenticationCoordinator = .init()
+    lazy var authenticationCoordinator: AuthenticationCoordinator = .init(baseCoordinator: self)
     var injector: AppCoordinatorDependencyInjector
     var window: UIWindow
     

@@ -1,5 +1,5 @@
 //
-//  AccountViewController+Presentable.swift
+//  CreateAccountViewController+Presentable.swift
 //  C2C
 //
 //  Created by Guilherme Paciulli on 04/04/20.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-protocol AuthenticationViewControllerPresentable {
+protocol CreateAccountViewControllerPresentable {
     func startLoading()
     func stopLoading()
     func showAlert(withTitle title: String, message: String)
+    func get(field: AccountFields) -> String
 }
 
-extension AuthenticationViewController: AuthenticationViewControllerPresentable {
+extension CreateAccountViewController: CreateAccountViewControllerPresentable {
     
     func startLoading() {
         showSpinnerView()
@@ -31,6 +32,21 @@ extension AuthenticationViewController: AuthenticationViewControllerPresentable 
         }
         alert.addAction(alertAction)
         present(alert, animated: true)
+    }
+    
+    func get(field: AccountFields) -> String {
+        switch field {
+        case .Email:
+            return emailTextField?.text ?? ""
+        case .Password:
+            return passwordTextField?.text ?? ""
+        case .CPF:
+            return cpfTextField?.text ?? ""
+        case .FirstName:
+            return firstNameTextField?.text ?? ""
+        case .Surname:
+            return lastNameTextField?.text ?? ""
+        }
     }
     
 }

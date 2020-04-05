@@ -37,10 +37,13 @@
 		A39AB18224395CE6001ED77C /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AB18124395CE6001ED77C /* AuthenticationCoordinator.swift */; };
 		A39AB18524395D0E001ED77C /* AuthenticationDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AB18424395D0E001ED77C /* AuthenticationDependencyInjector.swift */; };
 		A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F402438E0D300CE4353 /* AuthenticationViewController+Presentable.swift */; };
-		A3A91F432438E4FF00CE4353 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F422438E4FF00CE4353 /* AccountViewModel.swift */; };
-		A3A91F4A2438E52E00CE4353 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F492438E52E00CE4353 /* AccountViewController.swift */; };
-		A3A91F4C2438E53700CE4353 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A91F4B2438E53700CE4353 /* Account.storyboard */; };
-		A3A91F4E2438E82F00CE4353 /* AccountViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A91F4D2438E82F00CE4353 /* AccountViewController+Presentable.swift */; };
+		A3B47CC7243963130009A6AF /* AccountViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B47CC4243963130009A6AF /* AccountViewController+Presentable.swift */; };
+		A3B47CC8243963130009A6AF /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B47CC5243963130009A6AF /* Account.storyboard */; };
+		A3B47CC9243963130009A6AF /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B47CC6243963130009A6AF /* AccountViewController.swift */; };
+		A3B47CCD243963350009A6AF /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B47CCC243963350009A6AF /* AccountViewModel.swift */; };
+		A3B47CD0243964970009A6AF /* CreateAccountViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B47CCF243964970009A6AF /* CreateAccountViewController+Presentable.swift */; };
+		A3B47CD224396D590009A6AF /* UIViewController+Backbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B47CD124396D590009A6AF /* UIViewController+Backbutton.swift */; };
+		A3B47CD4243973640009A6AF /* AccountFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B47CD3243973640009A6AF /* AccountFields.swift */; };
 		A3BCC0FF242579680047CF4B /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2BD2416F673002FC41B /* Products.swift */; };
 		A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */; };
 		A3C01240241E61C600A50422 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C0123F241E61C600A50422 /* ProductDetail.storyboard */; };
@@ -59,6 +62,9 @@
 		A3C60E502436AB7E00426F40 /* AccessToken.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C60E4F2436AB7E00426F40 /* AccessToken.json */; };
 		A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */; };
 		A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */; };
+		A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */; };
+		A3DC205224395FA20074B87E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC205124395FA20074B87E /* CreateAccountViewController.swift */; };
+		A3DC205424395FAB0074B87E /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DC205324395FAB0074B87E /* CreateAccount.storyboard */; };
 		A3E6B18D2436B5EC00B55441 /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */; };
 		A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */; };
 		A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B1912436C1E000B55441 /* AuthenticationViewController.swift */; };
@@ -136,10 +142,13 @@
 		A39AB18124395CE6001ED77C /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		A39AB18424395D0E001ED77C /* AuthenticationDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDependencyInjector.swift; sourceTree = "<group>"; };
 		A3A91F402438E0D300CE4353 /* AuthenticationViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationViewController+Presentable.swift"; sourceTree = "<group>"; };
-		A3A91F422438E4FF00CE4353 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
-		A3A91F492438E52E00CE4353 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		A3A91F4B2438E53700CE4353 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		A3A91F4D2438E82F00CE4353 /* AccountViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountViewController+Presentable.swift"; sourceTree = "<group>"; };
+		A3B47CC4243963130009A6AF /* AccountViewController+Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountViewController+Presentable.swift"; sourceTree = "<group>"; };
+		A3B47CC5243963130009A6AF /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		A3B47CC6243963130009A6AF /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A3B47CCC243963350009A6AF /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		A3B47CCF243964970009A6AF /* CreateAccountViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateAccountViewController+Presentable.swift"; sourceTree = "<group>"; };
+		A3B47CD124396D590009A6AF /* UIViewController+Backbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Backbutton.swift"; sourceTree = "<group>"; };
+		A3B47CD3243973640009A6AF /* AccountFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFields.swift; sourceTree = "<group>"; };
 		A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlurView.swift"; sourceTree = "<group>"; };
 		A3C0123F241E61C600A50422 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		A3C496C024156A7B0019E0E1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +166,9 @@
 		A3C60E4F2436AB7E00426F40 /* AccessToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AccessToken.json; sourceTree = "<group>"; };
 		A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDependencyInjector.swift; sourceTree = "<group>"; };
+		A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		A3DC205124395FA20074B87E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		A3DC205324395FAB0074B87E /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
 		A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		A3E6B1912436C1E000B55441 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */,
+				A3B47CD3243973640009A6AF /* AccountFields.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -335,7 +348,9 @@
 				A313C2B32416F5AB002FC41B /* Data */,
 				A313C2AF24156C0A002FC41B /* Coordinator */,
 				A39C54B5241569F6009FCF8B /* Products */,
-				A3E6B1932436C1E300B55441 /* Account */,
+				A3E6B1942436C1EB00B55441 /* Authentication */,
+				A3B47CCA243963170009A6AF /* Account */,
+				A3E6B1932436C1E300B55441 /* CreateAccount */,
 				A39C54B624156A06009FCF8B /* Resources */,
 				A3C496C424156AD10019E0E1 /* Extensions */,
 				A313C2CF24170447002FC41B /* Utils */,
@@ -445,31 +460,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		A3A91F442438E50800CE4353 /* Account */ = {
+		A3B47CCA243963170009A6AF /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				A3A91F482438E52000CE4353 /* View */,
-				A3A91F452438E51400CE4353 /* ViewModel */,
+				A3B47CCB2439631C0009A6AF /* View */,
+				A3B47CCE243963380009A6AF /* ViewModel */,
 			);
 			path = Account;
 			sourceTree = "<group>";
 		};
-		A3A91F452438E51400CE4353 /* ViewModel */ = {
+		A3B47CCB2439631C0009A6AF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3A91F422438E4FF00CE4353 /* AccountViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A3A91F482438E52000CE4353 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A3A91F4B2438E53700CE4353 /* Account.storyboard */,
-				A3A91F492438E52E00CE4353 /* AccountViewController.swift */,
-				A3A91F4D2438E82F00CE4353 /* AccountViewController+Presentable.swift */,
+				A3B47CC5243963130009A6AF /* Account.storyboard */,
+				A3B47CC6243963130009A6AF /* AccountViewController.swift */,
+				A3B47CC4243963130009A6AF /* AccountViewController+Presentable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A3B47CCE243963380009A6AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A3B47CCC243963350009A6AF /* AccountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A3C0123D241E61A400A50422 /* Collection */ = {
@@ -495,6 +510,7 @@
 			children = (
 				A3C496C224156ABE0019E0E1 /* Identifiable.swift */,
 				A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */,
+				A3B47CD124396D590009A6AF /* UIViewController+Backbutton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +544,24 @@
 			path = AccountCoordinator;
 			sourceTree = "<group>";
 		};
+		A3DC205524395FAF0074B87E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3DC205324395FAB0074B87E /* CreateAccount.storyboard */,
+				A3DC205124395FA20074B87E /* CreateAccountViewController.swift */,
+				A3B47CCF243964970009A6AF /* CreateAccountViewController+Presentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3DC205624395FB50074B87E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A3E6B18E2436B5EF00B55441 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,13 +571,13 @@
 			path = Products;
 			sourceTree = "<group>";
 		};
-		A3E6B1932436C1E300B55441 /* Account */ = {
+		A3E6B1932436C1E300B55441 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
-				A3E6B1942436C1EB00B55441 /* Authentication */,
-				A3A91F442438E50800CE4353 /* Account */,
+				A3DC205524395FAF0074B87E /* View */,
+				A3DC205624395FB50074B87E /* ViewModel */,
 			);
-			path = Account;
+			path = CreateAccount;
 			sourceTree = "<group>";
 		};
 		A3E6B1942436C1EB00B55441 /* Authentication */ = {
@@ -740,13 +774,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DC205424395FAB0074B87E /* CreateAccount.storyboard in Resources */,
 				A33254EE24154EAE002CADF6 /* LaunchScreen.storyboard in Resources */,
 				A33254EB24154EAE002CADF6 /* Assets.xcassets in Resources */,
 				A3E6B1962436C1F700B55441 /* Authentication.storyboard in Resources */,
 				A33254E924154EAC002CADF6 /* Products.storyboard in Resources */,
 				A3C496C124156A7B0019E0E1 /* Main.storyboard in Resources */,
+				A3B47CC8243963130009A6AF /* Account.storyboard in Resources */,
 				A3C01240241E61C600A50422 /* ProductDetail.storyboard in Resources */,
-				A3A91F4C2438E53700CE4353 /* Account.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,12 +929,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A91F4A2438E52E00CE4353 /* AccountViewController.swift in Sources */,
+				A3DC205224395FA20074B87E /* CreateAccountViewController.swift in Sources */,
 				A3C60E3E243693E900426F40 /* Account.swift in Sources */,
 				A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */,
 				A3BCC0FF242579680047CF4B /* Products.swift in Sources */,
 				A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */,
 				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
+				A3B47CD4243973640009A6AF /* AccountFields.swift in Sources */,
 				C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */,
 				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
 				C17D87F524202F3C00E90BF4 /* ProductDetailViewController+Presentable.swift in Sources */,
@@ -908,14 +944,16 @@
 				A3C60E422436957F00426F40 /* UserRepository.swift in Sources */,
 				A313C2B82416F5F7002FC41B /* ProductsEndpoint.swift in Sources */,
 				A3C60E402436947200426F40 /* UserEndpoints.swift in Sources */,
-				A3A91F4E2438E82F00CE4353 /* AccountViewController+Presentable.swift in Sources */,
 				A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */,
+				A3B47CD224396D590009A6AF /* UIViewController+Backbutton.swift in Sources */,
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A3C60E44243697AF00426F40 /* UserInteractor.swift in Sources */,
 				A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */,
+				A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */,
 				A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */,
 				A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */,
 				C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */,
+				A3B47CCD243963350009A6AF /* AccountViewModel.swift in Sources */,
 				A3E6B1992436C21500B55441 /* AuthenticationViewModel.swift in Sources */,
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,
 				A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */,
@@ -923,16 +961,18 @@
 				A332551824155F6A002CADF6 /* ProductCell.swift in Sources */,
 				A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */,
 				C1415EF2242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift in Sources */,
-				A3A91F432438E4FF00CE4353 /* AccountViewModel.swift in Sources */,
 				A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */,
 				A3C60E46243698AC00426F40 /* KeychainRepository.swift in Sources */,
+				A3B47CD0243964970009A6AF /* CreateAccountViewController+Presentable.swift in Sources */,
 				C17D87F824202F6700E90BF4 /* ProductDetailViewModel.swift in Sources */,
 				A39AB18224395CE6001ED77C /* AuthenticationCoordinator.swift in Sources */,
 				A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */,
 				C17D87F324202EE200E90BF4 /* ProductDetailViewController.swift in Sources */,
 				A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */,
 				A39AB18524395D0E001ED77C /* AuthenticationDependencyInjector.swift in Sources */,
+				A3B47CC9243963130009A6AF /* AccountViewController.swift in Sources */,
 				A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */,
+				A3B47CC7243963130009A6AF /* AccountViewController+Presentable.swift in Sources */,
 				A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -127,6 +127,8 @@
                         <viewLayoutGuide key="safeArea" id="OpO-W1-YKK"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="m53-B0-FwC" id="fyW-Ci-EHd"/>
+                        <outlet property="passwordTextField" destination="5pP-Ho-0qT" id="5tx-2j-zER"/>
                         <outlet property="popUpView" destination="48d-ac-aN4" id="NXL-23-hFg"/>
                     </connections>
                 </viewController>

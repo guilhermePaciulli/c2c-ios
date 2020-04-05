@@ -15,20 +15,21 @@ class AuthenticationViewController: UIViewController {
     
     // MARK:- IBOutlets
     @IBOutlet weak var popUpView: UIView?
+    @IBOutlet weak var emailTextField: UITextField?
+    @IBOutlet weak var passwordTextField: UITextField?
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        popUpView?.layer.cornerRadius = 16
-        popUpView?.clipsToBounds = true
         title = "Login"
     }
     
     // MARK:- Actions
     @IBAction func didTapLoginButton(_ sender: UIButton) {
-//        viewModel?
+        viewModel?.didTapLoginButton()
     }
     
     @IBAction func didTapCreateAccountButton(_ sender: UIButton) {
+        viewModel?.didTapCreateAccountButton()
     }
 }
