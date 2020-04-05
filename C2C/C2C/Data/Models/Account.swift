@@ -6,14 +6,23 @@
 //  Copyright © 2020 Guilherme Paciulli. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct CreateAccount: Codable {
+struct CreateAccount: FormDatable {
     let email: String
     let password: String
     let name: String
     let surname: String
     let cpf: String
+    let profilePicture: UIImage
+    
+    var parameters: [String : Any] {
+        return ["email": email, "password": password, "name": name, "surname": surname, "cpf": cpf]
+    }
+    
+    var images: [String : UIImage] {
+        return ["profilePicture": profilePicture]
+    }
 }
 
 struct LoginAccount: Codable {

@@ -28,9 +28,18 @@ enum UserEndpoints: Endpoint {
         case .login(let body):
             request.httpBody = try? JSONEncoder().encode(body)
         case .createAcount(let body):
-            request.httpBody = try? JSONEncoder().encode(body)
+            request.httpBody = createFormDataFrom(model: body)
         }
         return request
+    }
+    
+    var headers: [String : String]? {
+        switch self {
+        case .createAcount(_):
+            return ["Content-Type": "multipart/form-data; boundary=\(boundary)"]
+        default:
+            return nil
+        }
     }
     
     var queryItems: [URLQueryItem] {

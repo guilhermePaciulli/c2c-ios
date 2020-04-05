@@ -29,15 +29,6 @@ class CreateAccountViewController: UITableViewController {
         setBackButton(#selector(didTapBackButton))
         title = "Create Account"
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        emailTextField?.text = ""
-        passwordTextField?.text = ""
-        cpfTextField?.text = ""
-        firstNameTextField?.text = ""
-        lastNameTextField?.text = ""
-    }
 
     // MARK:- Actions
     @IBAction func didTapToCreateAccount(_ sender: UIButton) {
@@ -49,6 +40,12 @@ class CreateAccountViewController: UITableViewController {
     }
     
     @objc func didTapBackButton() {
+        emailTextField?.text = ""
+        passwordTextField?.text = ""
+        cpfTextField?.text = ""
+        firstNameTextField?.text = ""
+        lastNameTextField?.text = ""
+        profilePicture?.image = nil
         viewModel?.didTapBackButton()
     }
 }

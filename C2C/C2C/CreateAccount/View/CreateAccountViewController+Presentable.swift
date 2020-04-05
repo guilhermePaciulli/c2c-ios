@@ -13,6 +13,7 @@ protocol CreateAccountViewControllerPresentable {
     func stopLoading()
     func showAlert(withTitle title: String, message: String)
     func get(field: AccountFields) -> String
+    func getProfilePicture() -> UIImage?
 }
 
 extension CreateAccountViewController: CreateAccountViewControllerPresentable {
@@ -47,6 +48,10 @@ extension CreateAccountViewController: CreateAccountViewControllerPresentable {
         case .Surname:
             return lastNameTextField?.text ?? ""
         }
+    }
+    
+    func getProfilePicture() -> UIImage? {
+        return profilePicture?.image
     }
     
 }
