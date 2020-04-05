@@ -18,14 +18,13 @@ class AccountCoordinator: AccountCoordinatorProtocol {
     
     // MARK:- Properties
     var state: AccountCoordinatorRoutingState
-    var injector: AccountCoordinatorDependencyInjector
+    var injector: AccountDependencyInjector
     var baseCoordinator: CoordinatorPresentable
     
     init(baseCoordinator: CoordinatorPresentable) {
         state = .Account
         injector = .init()
         self.baseCoordinator = baseCoordinator
-//        injector..coordinator = self
     }
     
     // MARK:- CoordinationDelegates

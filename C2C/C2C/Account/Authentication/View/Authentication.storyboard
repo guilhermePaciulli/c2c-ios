@@ -15,14 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUn-U7-QzU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3fr-g7-eQN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="systemChromeMaterialLight"/>
-                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48d-ac-aN4">
                                 <rect key="frame" x="41.5" y="166.5" width="331" height="573"/>
                                 <subviews>
@@ -125,16 +117,12 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="lUn-U7-QzU" firstAttribute="top" secondItem="UHK-Cj-7KP" secondAttribute="top" id="47v-1j-slM"/>
                             <constraint firstItem="48d-ac-aN4" firstAttribute="centerX" secondItem="OpO-W1-YKK" secondAttribute="centerX" id="6Mx-hM-GVU"/>
                             <constraint firstItem="48d-ac-aN4" firstAttribute="centerY" secondItem="OpO-W1-YKK" secondAttribute="centerY" id="Bf6-cs-jdR"/>
-                            <constraint firstItem="lUn-U7-QzU" firstAttribute="leading" secondItem="OpO-W1-YKK" secondAttribute="leading" id="CnB-iD-GjO"/>
                             <constraint firstItem="48d-ac-aN4" firstAttribute="height" secondItem="OpO-W1-YKK" secondAttribute="height" multiplier="0.7" id="XDx-b2-v0p"/>
-                            <constraint firstItem="OpO-W1-YKK" firstAttribute="trailing" secondItem="lUn-U7-QzU" secondAttribute="trailing" id="cSC-dZ-adq"/>
                             <constraint firstItem="48d-ac-aN4" firstAttribute="width" secondItem="OpO-W1-YKK" secondAttribute="width" multiplier="0.8" id="i7k-tQ-FTI"/>
-                            <constraint firstItem="OpO-W1-YKK" firstAttribute="bottom" secondItem="lUn-U7-QzU" secondAttribute="bottom" id="sTj-zO-fvu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OpO-W1-YKK"/>
                     </view>

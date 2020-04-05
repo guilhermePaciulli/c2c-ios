@@ -18,6 +18,7 @@ class AppCoordinator {
     // MARK:- Properties
     lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
     lazy var accountCoordinator: AccountCoordinator = .init(baseCoordinator: self)
+    lazy var authenticationCoordinator: AuthenticationCoordinator = .init()
     var injector: AppCoordinatorDependencyInjector
     var window: UIWindow
     
@@ -33,8 +34,13 @@ class AppCoordinator {
     }
     
     private func setUpTabBar() {
-        injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
-                                                     accountCoordinator.injector.navigationController]
+        if injector.userInteractor.hasUser() {
+            injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                         accountCoordinator.injector.navigationController]
+        } else {
+            injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                         authenticationCoordinator.injector.navigationController]
+        }
     }
     
 }

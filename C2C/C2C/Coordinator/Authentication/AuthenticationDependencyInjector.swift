@@ -1,5 +1,5 @@
 //
-//  AccountCoordinatorDependencyInjector.swift
+//  AuthenticationCoordinatorDependencyInjector.swift
 //  C2C
 //
 //  Created by Guilherme Paciulli on 04/04/20.
@@ -8,23 +8,18 @@
 
 import UIKit
 
-class AccountCoordinatorDependencyInjector {
+class AuthenticationDependencyInjector {
     
     // MARK:- ViewControllers
     lazy var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.setViewControllers([accountViewController], animated: false)
+        navigationController.setViewControllers([authenticationViewController], animated: false)
         return navigationController
     }()
     
     lazy var authenticationViewController: AuthenticationViewController = {
         let controller: AuthenticationViewController = .instantiate()
-        return controller
-    }()
-    
-    lazy var accountViewController: AccountViewController = {
-        let controller: AccountViewController = .instantiate()
         return controller
     }()
     

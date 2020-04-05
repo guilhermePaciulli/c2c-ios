@@ -12,6 +12,7 @@ protocol UserInteractorProtocol: class {
     func createAccount(_ account: CreateAccount) -> Promise<Void>
     func login(withEmail email: String, andPassword password: String) -> Promise<Void>
     func fetchUser() -> Promise<UserData>
+    func hasUser() -> Bool
 }
 
 class UserInteractor: UserInteractorProtocol {
@@ -45,6 +46,10 @@ class UserInteractor: UserInteractorProtocol {
             // TODO:- Fetch user
         }
         
+    }
+    
+    func hasUser() -> Bool {
+        return keychainAccess.load(key: "jwt") != nil
     }
     
 }

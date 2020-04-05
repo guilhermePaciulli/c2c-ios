@@ -21,6 +21,7 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         popUpView?.layer.cornerRadius = 16
         popUpView?.clipsToBounds = true
+        title = "Login"
     }
     
     // MARK:- Actions

@@ -18,6 +18,7 @@ class AccountViewController: UIViewController {
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Account"
     }
     
     override func viewWillAppear(_ animated: Bool) {
