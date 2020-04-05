@@ -49,7 +49,7 @@ class AuthenticationCoordinator: AuthenticationCoordinationProtocol {
     }
     
     func didLogin() {
-        self.injector.navigationController.popViewController(animated: true)
+        self.injector.navigationController.popToRootViewController(animated: true)
         self.baseCoordinator.didLogin()
     }
     

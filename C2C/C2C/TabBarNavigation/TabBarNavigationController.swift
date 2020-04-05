@@ -22,4 +22,10 @@ class TabBarNavigationController: UINavigationController {
         return super.popViewController(animated: animated)
     }
     
+    @discardableResult
+    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+        tabBarController?.tabBar.isHidden = false
+        return super.popToRootViewController(animated: animated)
+    }
+    
 }
