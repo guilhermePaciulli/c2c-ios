@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             appCoordinator = .init(withWindow: window)
             self.window = window
+            IQKeyboardManager.shared.enable = true
             appCoordinator?.start()
         }
     }
