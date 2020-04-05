@@ -28,7 +28,9 @@ class UserInteractorTests: QuickSpec {
             
             it("should return the jwt token successfully") {
                 waitUntil { (done) in
-                    self.subject.login(withEmail: "", andPassword: "").done { done()
+                    self.subject.login(withEmail: "", andPassword: "").done {
+                        expect(self.mockedKeychain.load(key: "jwt")).toNot(beNil())
+                        done()
                     }.catch { XCTFail($0.localizedDescription); done() }
                 }
             }
@@ -50,8 +52,11 @@ class UserInteractorTests: QuickSpec {
 
             it("should create an account successfully") {
                 waitUntil { (done) in
-                    self.subject.createAccount(.init(email: "", password: "", name: "", surname: "", cpf: ""))
-                        .done({ done() })
+                    self.subject.createAccount(.init(email: "", password: "", name: "", surname: "", cpf: "", profilePicture: .init()))
+                        .done({
+                            expect(self.mockedKeychain.load(key: "jwt")).toNot(beNil())
+                            done()
+                        })
                         .catch({ XCTFail($0.localizedDescription); done() })
                 }
             }
@@ -61,7 +66,7 @@ class UserInteractorTests: QuickSpec {
                 self.mockedRepository.responseError = .init(message: message)
                 
                 waitUntil { (done) in
-                    self.subject.createAccount(.init(email: "", password: "", name: "", surname: "", cpf: ""))
+                    self.subject.createAccount(.init(email: "", password: "", name: "", surname: "", cpf: "", profilePicture: .init()))
                         .done({ _ in XCTFail("the request should have failed"); done() })
                         .catch({ expect($0.localizedDescription).to(equal(message)); done() })
                 }

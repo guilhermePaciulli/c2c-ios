@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5628F4B4159B29BEC86F9AD8 /* Pods_C2CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */; };
+		A3017043243A656800D08CE6 /* AuthenticationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017042243A656800D08CE6 /* AuthenticationCoordinatorTests.swift */; };
+		A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */; };
+		A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */; };
+		A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */; };
 		A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2AD24156BEC002FC41B /* AppCoordinator.swift */; };
 		A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */; };
 		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
@@ -74,7 +78,7 @@
 		A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B1912436C1E000B55441 /* AuthenticationViewController.swift */; };
 		A3E6B1962436C1F700B55441 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E6B1952436C1F700B55441 /* Authentication.storyboard */; };
 		A3E6B1992436C21500B55441 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B1982436C21500B55441 /* AuthenticationViewModel.swift */; };
-		A3E6B19C2436C25800B55441 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B19B2436C25800B55441 /* LoginViewModelTests.swift */; };
+		A3E6B19C2436C25800B55441 /* AuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B19B2436C25800B55441 /* AuthenticationViewModelTests.swift */; };
 		A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */; };
 		C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */; };
 		C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */; };
@@ -111,6 +115,10 @@
 		769D45A6245A268A6F13FE1F /* Pods-C2CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C2CTests.release.xcconfig"; path = "Target Support Files/Pods-C2CTests/Pods-C2CTests.release.xcconfig"; sourceTree = "<group>"; };
 		90372E075A9F1A23F6FE2000 /* Pods_C2C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C2C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		987C27777FAC227337B309A0 /* Pods-C2C-C2CUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C2C-C2CUITests.debug.xcconfig"; path = "Target Support Files/Pods-C2C-C2CUITests/Pods-C2C-C2CUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3017042243A656800D08CE6 /* AuthenticationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinatorTests.swift; sourceTree = "<group>"; };
+		A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinationMock.swift; sourceTree = "<group>"; };
+		A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelTests.swift; sourceTree = "<group>"; };
+		A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFieldsTests.swift; sourceTree = "<group>"; };
 		A313C2AD24156BEC002FC41B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorDependencyInjector.swift; sourceTree = "<group>"; };
 		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -183,7 +191,7 @@
 		A3E6B1912436C1E000B55441 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		A3E6B1952436C1F700B55441 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		A3E6B1982436C21500B55441 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		A3E6B19B2436C25800B55441 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		A3E6B19B2436C25800B55441 /* AuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelTests.swift; sourceTree = "<group>"; };
 		A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Authenticable.swift"; sourceTree = "<group>"; };
 		B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C2CTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
@@ -231,6 +239,14 @@
 				B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A301704A243A6F6D00D08CE6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A313C2AF24156C0A002FC41B /* Coordinator */ = {
@@ -377,7 +393,8 @@
 				A3341A0D2427DF4C00C96A0C /* Data */,
 				A39A65FF2436B2F500FBBDC2 /* Coordinator */,
 				A3E6B18E2436B5EF00B55441 /* Products */,
-				A3E6B19D2436C25F00B55441 /* CreateAccount */,
+				A3E6B19D2436C25F00B55441 /* Authentication */,
+				A301704A243A6F6D00D08CE6 /* Utils */,
 				A33254FA24154EAE002CADF6 /* Info.plist */,
 			);
 			path = C2CTests;
@@ -437,6 +454,7 @@
 			children = (
 				A39A66022436B35800FBBDC2 /* Mocks */,
 				A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */,
+				A3017042243A656800D08CE6 /* AuthenticationCoordinatorTests.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -445,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */,
+				A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */,
 				A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */,
 			);
 			path = Mocks;
@@ -630,20 +649,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A3E6B19D2436C25F00B55441 /* CreateAccount */ = {
+		A3E6B19D2436C25F00B55441 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				A3E6B19E2436C26800B55441 /* Login */,
+				A3E6B19B2436C25800B55441 /* AuthenticationViewModelTests.swift */,
+				A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */,
 			);
-			path = CreateAccount;
-			sourceTree = "<group>";
-		};
-		A3E6B19E2436C26800B55441 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				A3E6B19B2436C25800B55441 /* LoginViewModelTests.swift */,
-			);
-			path = Login;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		C1415EEE2420337E00CAC689 /* Products */ = {
@@ -1009,15 +1021,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3E6B19C2436C25800B55441 /* LoginViewModelTests.swift in Sources */,
+				A3E6B19C2436C25800B55441 /* AuthenticationViewModelTests.swift in Sources */,
 				A39A66012436B30B00FBBDC2 /* CoordinationMocks.swift in Sources */,
 				A39A65FE2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift in Sources */,
 				A3341A142427F9F400C96A0C /* ProductsInteractorTests.swift in Sources */,
 				A3C60E4A2436A9A500426F40 /* UserInteractorTests.swift in Sources */,
 				A3C60E482436A87E00426F40 /* KeychainRepositoryMock.swift in Sources */,
+				A3017043243A656800D08CE6 /* AuthenticationCoordinatorTests.swift in Sources */,
 				A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */,
+				A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */,
 				A3341A112427F5F900C96A0C /* ProductsRepositoryMock.swift in Sources */,
+				A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */,
 				A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */,
+				A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */,
 				A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */,
 				A3E6B18D2436B5EC00B55441 /* ProductsViewModelTests.swift in Sources */,
 				A3341A0C2427DF4700C96A0C /* MocksHelper.swift in Sources */,

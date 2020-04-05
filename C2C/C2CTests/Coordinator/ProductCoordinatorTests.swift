@@ -24,7 +24,7 @@ class ProductCoordinatorTests: QuickSpec {
         
         describe("Product coordinator flow tests") {
             
-            it("should start ate product list") {
+            it("should start at product list") {
                 expect(self.subject.state).to(equal(.ProductsList))
             }
             

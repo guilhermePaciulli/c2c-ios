@@ -9,12 +9,17 @@
 @testable import C2C
 import UIKit
 
-class AppCoordinatorMock: CoordinatorPresentable {
+class AppCoordinatorMock: AppCoordinatable {
     
+    var didLoginCalled = false
     var presentedViewController: UIViewController?
     
     func present(_ controller: UIViewController) {
         presentedViewController = controller
+    }
+    
+    func didLogin() {
+        didLoginCalled = true
     }
     
     

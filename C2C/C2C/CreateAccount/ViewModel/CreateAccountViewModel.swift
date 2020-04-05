@@ -16,12 +16,12 @@ protocol CreateAccountViewModelProtocol {
 class CreateAccountViewModel: CreateAccountViewModelProtocol {
     
     // MARK:- Properties
-    var interactor: UserInteractor
+    var interactor: UserInteractorProtocol
     var coordinator: AuthenticationCoordinationProtocol?
     var view: CreateAccountViewControllerPresentable?
     
     // MARK:- Initialization
-    init(interactor: UserInteractor) {
+    init(interactor: UserInteractorProtocol = UserInteractor()) {
         self.interactor = interactor
     }
     
