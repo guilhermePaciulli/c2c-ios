@@ -12,7 +12,8 @@ extension UIViewController {
     
     func setBackButton(_ backFunction: Selector) {
         navigationItem.hidesBackButton = true
-        let newBackButton = CustomBackButton.createWithText(text: "Back", color: UINavigationBar.appearance().tintColor, target: self, action: backFunction)
+        let newBackButton = CustomBackButton.createWithText(text: "Back", color: .systemYellow, target: self, action: backFunction)
+        newBackButton.forEach({ $0.tintColor = .systemYellow })
         navigationItem.leftBarButtonItems = newBackButton
     }
     
@@ -27,7 +28,7 @@ class CustomBackButton: NSObject {
         let backArrowButton = UIBarButtonItem(image: backArrowImage, style: UIBarButtonItem.Style.plain, target: target, action: action)
         let backTextButton = UIBarButtonItem(title: text, style: UIBarButtonItem.Style.plain , target: target, action: action)
         backTextButton.setTitlePositionAdjustment(UIOffset(horizontal: -12.0, vertical: 0.0), for: UIBarMetrics.default)
-        return [negativeSpacer, backArrowButton, backTextButton]
+        return [backArrowButton, backTextButton]
     }
 
     class func createWithImage(image: UIImage, color: UIColor, target: AnyObject?, action: Selector) -> [UIBarButtonItem] {

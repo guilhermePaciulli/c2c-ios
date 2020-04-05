@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountViewController: UITableViewController {
     
     // MARK:- Properties
     var viewModel: CreateAccountViewModelProtocol?
@@ -24,7 +24,9 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton(#selector(didTapBackButton))
+        title = "Create Account"
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         emailTextField?.text = ""

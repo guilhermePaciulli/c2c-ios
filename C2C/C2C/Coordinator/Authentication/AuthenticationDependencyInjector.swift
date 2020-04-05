@@ -15,6 +15,7 @@ class AuthenticationDependencyInjector {
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setViewControllers([authenticationViewController], animated: false)
+        navigationController.title = "Login"
         return navigationController
     }()
     

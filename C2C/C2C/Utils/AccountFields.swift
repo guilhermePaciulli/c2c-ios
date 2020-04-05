@@ -22,11 +22,11 @@ enum AccountFields: CaseIterable {
             let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             return !emailPred.evaluate(with: string) ? "Email not valid" : nil
         case .Password:
-            return string.count > 8 ? "Password must be greater than 8 character" : nil
+            return string.count < 8 ? "Password must be greater than 8 character" : nil
         case .FirstName:
-            return string.count > 4 ? "First name doesn't seem valid" : nil
+            return string.count < 4 ? "First name doesn't seem valid" : nil
         case .Surname:
-            return string.count > 4 ? "First name doesn't seem valid" : nil
+            return string.count < 4 ? "First name doesn't seem valid" : nil
         case .CPF:
             let numbers = string.compactMap({ $0.wholeNumberValue })
             guard numbers.count == 11 && Set(numbers).count != 1 else { return "CPF doens't seem valid" }

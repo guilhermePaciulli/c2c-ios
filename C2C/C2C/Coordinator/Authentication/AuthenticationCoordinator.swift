@@ -29,6 +29,7 @@ class AuthenticationCoordinator: AuthenticationCoordinationProtocol {
         switch state {
         case .Authentication:
             state = .AccountCreation
+            injector.createAccountViewModel.coordinator = self
             injector.navigationController.pushViewController(injector.createAccountViewController, animated: true)
         case .AccountCreation:
             NSLog("Trying to go further than it can")
@@ -41,6 +42,7 @@ class AuthenticationCoordinator: AuthenticationCoordinationProtocol {
             NSLog("Trying to return from base view ctrl")
         case .AccountCreation:
             state = .Authentication
+            injector.authenticationViewModel.coordinator = self
             injector.navigationController.popViewController(animated: true)
         }
     }
