@@ -6,11 +6,12 @@
 //  Copyright © 2020 Guilherme Paciulli. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CreateAccountViewModelProtocol {
     func didTapToCreateAccount()
     func didTapBackButton()
+    func didSelectProfilePicture(_ picture: UIImage)
 }
 
 class CreateAccountViewModel: CreateAccountViewModelProtocol {
@@ -19,6 +20,7 @@ class CreateAccountViewModel: CreateAccountViewModelProtocol {
     var interactor: UserInteractor
     var coordinator: AuthenticationCoordinationProtocol?
     var view: CreateAccountViewControllerPresentable?
+    var profilePicture: UIImage?
     
     // MARK:- Initialization
     init(interactor: UserInteractor) {
@@ -28,7 +30,8 @@ class CreateAccountViewModel: CreateAccountViewModelProtocol {
     // MARK:- Delegate methods
     func didTapToCreateAccount() {
         guard let view = self.view else { return }
-        let errors = AccountFields.allCases.compactMap({ return $0.validate(string: view.get(field: $0)) })
+        var errors = AccountFields.allCases.compactMap({ return $0.validate(string: view.get(field: $0)) })
+        if profilePicture == nil { errors.append("You have to add a profile picture") }
         if errors.isEmpty, let acc = getAccount() {
             view.startLoading()
             interactor.createAccount(acc).done { [weak self] (_) in
@@ -39,8 +42,12 @@ class CreateAccountViewModel: CreateAccountViewModelProtocol {
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             }
         } else {
-            view.showAlert(withTitle: "Invalid fields", message: errors.reduce("", { "\($0), \($1)" }))
+            view.showAlert(withTitle: "Invalid fields", message: errors.joined(separator: ", "))
         }
+    }
+    
+    func didSelectProfilePicture(_ picture: UIImage) {
+        profilePicture = picture
     }
     
     func didTapBackButton() {

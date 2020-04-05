@@ -157,8 +157,42 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ROx-U1-kRw">
+                                        <rect key="frame" x="0.0" y="528" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ROx-U1-kRw" id="LOH-0H-Iyl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-fy-FFW">
+                                                    <rect key="frame" x="24" y="38" width="117" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stub_profile" translatesAutoresizingMaskIntoConstraints="NO" id="I4L-wc-hYd">
+                                                    <rect key="frame" x="294" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="I4L-wc-hYd" secondAttribute="height" multiplier="1:1" id="0Qw-gy-cRf"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstItem="I4L-wc-hYd" firstAttribute="height" secondItem="LOH-0H-Iyl" secondAttribute="height" id="KlX-LG-u31"/>
+                                                <constraint firstItem="I4L-wc-hYd" firstAttribute="centerY" secondItem="LOH-0H-Iyl" secondAttribute="centerY" id="PeI-kf-Ive"/>
+                                                <constraint firstAttribute="trailing" secondItem="I4L-wc-hYd" secondAttribute="trailing" constant="20" id="TWg-7G-YeV"/>
+                                                <constraint firstItem="cuk-fy-FFW" firstAttribute="centerY" secondItem="LOH-0H-Iyl" secondAttribute="centerY" id="XWC-HA-i5g"/>
+                                                <constraint firstItem="cuk-fy-FFW" firstAttribute="leading" secondItem="LOH-0H-Iyl" secondAttribute="leading" constant="24" id="cqY-mO-qcP"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="dMt-dC-gcz" appends="YES" id="sxa-Im-EmP"/>
+                                            </connections>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="hbz-Kn-SMQ">
-                                        <rect key="frame" x="0.0" y="528" width="414" height="65"/>
+                                        <rect key="frame" x="0.0" y="628" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hbz-Kn-SMQ" id="fEi-6r-zYg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -197,11 +231,21 @@
                         <outlet property="firstNameTextField" destination="DES-R6-REG" id="0CN-cf-x6C"/>
                         <outlet property="lastNameTextField" destination="hDl-xU-Fqd" id="l0B-sb-FX4"/>
                         <outlet property="passwordTextField" destination="V7w-Ak-BPe" id="L4x-qs-5PC"/>
+                        <outlet property="profilePicture" destination="I4L-wc-hYd" id="PBA-0J-QDj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dV0-yM-8bs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dMt-dC-gcz">
+                    <connections>
+                        <action selector="didTapToInputImage:" destination="mQj-KR-wy9" id="x8O-Bw-j7a"/>
+                        <outlet property="delegate" destination="I4L-wc-hYd" id="fHQ-sI-QIE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="930" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stub_profile" width="170.66667175292969" height="170.66667175292969"/>
+    </resources>
 </document>

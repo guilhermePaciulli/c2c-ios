@@ -19,10 +19,13 @@ class CreateAccountViewController: UITableViewController {
     @IBOutlet weak var cpfTextField: UITextField?
     @IBOutlet weak var firstNameTextField: UITextField?
     @IBOutlet weak var lastNameTextField: UITextField?
+    @IBOutlet weak var profilePicture: UIImageView?
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        profilePicture?.layer.cornerRadius = (profilePicture?.frame.height ?? 0) / 2
+        profilePicture?.clipsToBounds = true
         setBackButton(#selector(didTapBackButton))
         title = "Create Account"
     }
@@ -37,8 +40,12 @@ class CreateAccountViewController: UITableViewController {
     }
 
     // MARK:- Actions
-    @IBAction func didTapToCreateAccount(_ sender: Any) {
+    @IBAction func didTapToCreateAccount(_ sender: UIButton) {
         viewModel?.didTapToCreateAccount()
+    }
+    
+    @IBAction func didTapToInputImage(_ sender: UITapGestureRecognizer) {
+        startSelectingImage()
     }
     
     @objc func didTapBackButton() {

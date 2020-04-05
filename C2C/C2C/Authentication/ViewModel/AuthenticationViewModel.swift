@@ -39,7 +39,7 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             }
         } else {
-            view.showAlert(withTitle: "Invalid fields", message: errors.reduce("", { "\($0), \($1)" }))
+            view.showAlert(withTitle: "Invalid fields", message: errors.joined(separator: ", "))
         }
         
     }
