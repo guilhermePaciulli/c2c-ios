@@ -36,11 +36,7 @@ extension Endpoint {
         
         return body as Data
     }
-    
-    var boundary: String {
-        return "Boundary-\(UUID().uuidString)"
-    }
-    
+        
     private var mimeType: String {
         return "image/jpg"
     }

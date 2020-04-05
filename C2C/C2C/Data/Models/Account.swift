@@ -21,7 +21,7 @@ struct CreateAccount: FormDatable {
     }
     
     var images: [String : UIImage] {
-        return ["profilePicture": profilePicture]
+        return ["profile_picture": profilePicture]
     }
 }
 
