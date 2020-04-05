@@ -30,6 +30,7 @@ extension ProductDetailViewController: ProductDetailViewControllerPresentable {
     func showAlert(withTitle title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (_) in
+            alert.dismiss(animated: true)
             self?.viewModel?.didTapExitButton()
         }
         alert.addAction(alertAction)

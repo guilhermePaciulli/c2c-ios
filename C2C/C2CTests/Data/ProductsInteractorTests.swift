@@ -10,7 +10,7 @@
 import Nimble
 import Quick
 
-class ImageInteractorTests: QuickSpec {
+class ProductsInteractorTests: QuickSpec {
     
     var subject = ProductsInteractor()
     var mockedRepository = MockedProductsRespository()

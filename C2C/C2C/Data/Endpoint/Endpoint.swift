@@ -8,6 +8,8 @@
 
 import Foundation
 
+private var generatedBoundary: String =  "Boundary-\(UUID().uuidString)"
+
 protocol Endpoint {
     var request: URLRequest { get }
     var method: RequestMethod { get }
@@ -50,6 +52,10 @@ extension Endpoint {
     
     var method: RequestMethod {
         return .post
+    }
+    
+    var boundary: String {
+        return generatedBoundary
     }
     
 }

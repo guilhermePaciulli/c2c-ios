@@ -13,10 +13,14 @@ protocol BasicCoordinationProtocol: class {
     func presentPreviousStep()
 }
 
-class AppCoordinator {
+protocol AppCoordinatable: CoordinatorPresentable, AppAuthenticable { }
+
+class AppCoordinator: AppCoordinatable {
     
     // MARK:- Properties
     lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
+    lazy var accountCoordinator: AccountCoordinator = .init(baseCoordinator: self)
+    lazy var authenticationCoordinator: AuthenticationCoordinator = .init(baseCoordinator: self)
     var injector: AppCoordinatorDependencyInjector
     var window: UIWindow
     
@@ -26,13 +30,20 @@ class AppCoordinator {
     }
     
     func start() {
+        KeychainManager.init().delete(key: "jwt")
         setUpTabBar()
         window.rootViewController = injector.tabBarController
         window.makeKeyAndVisible()
     }
     
-    private func setUpTabBar() {
-        injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController]
+    internal func setUpTabBar() {
+        if injector.userInteractor.hasUser() {
+            injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                         accountCoordinator.injector.navigationController]
+        } else {
+            injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                         authenticationCoordinator.injector.navigationController]
+        }
     }
     
 }

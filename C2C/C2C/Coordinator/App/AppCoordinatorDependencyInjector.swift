@@ -17,4 +17,8 @@ class AppCoordinatorDependencyInjector {
         return tabBarController
     }()
     
+    lazy var userInteractor: UserInteractor = {
+        return .init()
+    }()
+    
 }
