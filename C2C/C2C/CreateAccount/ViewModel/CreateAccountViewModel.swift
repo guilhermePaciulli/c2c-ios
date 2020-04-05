@@ -33,8 +33,8 @@ class CreateAccountViewModel: CreateAccountViewModelProtocol {
         if errors.isEmpty, let acc = getAccount() {
             view.startLoading()
             interactor.createAccount(acc).done { [weak self] (_) in
-                view.stopLoading()
                 self?.coordinator?.didLogin()
+                view.stopLoading()
             }.catch { (error) in
                 view.stopLoading()
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)

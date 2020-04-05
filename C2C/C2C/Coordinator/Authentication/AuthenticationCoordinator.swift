@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol AuthenticationCoordinationProtocol: BasicCoordinationProtocol {
     func didLogin()
@@ -16,9 +17,9 @@ class AuthenticationCoordinator: AuthenticationCoordinationProtocol {
     
     var state: AuthenticationRoutingState
     var injector: AuthenticationDependencyInjector
-    var baseCoordinator: CoordinatorPresentable
+    var baseCoordinator: AppCoordinatable
 
-    init(baseCoordinator: CoordinatorPresentable) {
+    init(baseCoordinator: AppCoordinatable) {
         self.baseCoordinator = baseCoordinator
         self.state = .Authentication
         injector = .init()
@@ -47,7 +48,10 @@ class AuthenticationCoordinator: AuthenticationCoordinationProtocol {
         }
     }
     
-    func didLogin() { }
+    func didLogin() {
+        self.injector.navigationController.popViewController(animated: true)
+        self.baseCoordinator.didLogin()
+    }
     
     enum AuthenticationRoutingState {
         case Authentication

@@ -11,8 +11,8 @@ import UIKit
 class AuthenticationDependencyInjector {
     
     // MARK:- ViewControllers
-    lazy var navigationController: UINavigationController = {
-        let navigationController = UINavigationController()
+    lazy var navigationController: TabBarNavigationController = {
+        let navigationController = TabBarNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setViewControllers([authenticationViewController], animated: false)
         navigationController.title = "Login"

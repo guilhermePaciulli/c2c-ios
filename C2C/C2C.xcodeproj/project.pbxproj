@@ -34,6 +34,7 @@
 		A363FCBA243981B9002081BF /* CreateAccountViewController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCB9243981B9002081BF /* CreateAccountViewController+Camera.swift */; };
 		A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCBB24398707002081BF /* Endpoint+FormData.swift */; };
 		A363FCBE2439901D002081BF /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCBD2439901D002081BF /* String+Validations.swift */; };
+		A363FCC0243A4080002081BF /* TabBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCBF243A4080002081BF /* TabBarNavigationController.swift */; };
 		A39A65FE2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */; };
 		A39A66012436B30B00FBBDC2 /* CoordinationMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */; };
 		A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */; };
@@ -74,6 +75,7 @@
 		A3E6B1962436C1F700B55441 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E6B1952436C1F700B55441 /* Authentication.storyboard */; };
 		A3E6B1992436C21500B55441 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B1982436C21500B55441 /* AuthenticationViewModel.swift */; };
 		A3E6B19C2436C25800B55441 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B19B2436C25800B55441 /* LoginViewModelTests.swift */; };
+		A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */; };
 		C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */; };
 		C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */; };
 		C1415EF2242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EF1242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift */; };
@@ -142,6 +144,7 @@
 		A363FCB9243981B9002081BF /* CreateAccountViewController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateAccountViewController+Camera.swift"; sourceTree = "<group>"; };
 		A363FCBB24398707002081BF /* Endpoint+FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+FormData.swift"; sourceTree = "<group>"; };
 		A363FCBD2439901D002081BF /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
+		A363FCBF243A4080002081BF /* TabBarNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationController.swift; sourceTree = "<group>"; };
 		A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCoordinatorTests.swift; sourceTree = "<group>"; };
 		A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinationMocks.swift; sourceTree = "<group>"; };
 		A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorMock.swift; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 		A3E6B1952436C1F700B55441 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		A3E6B1982436C21500B55441 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		A3E6B19B2436C25800B55441 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Authenticable.swift"; sourceTree = "<group>"; };
 		B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C2CTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
 		C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Presentable.swift"; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 			children = (
 				A313C2AD24156BEC002FC41B /* AppCoordinator.swift */,
 				C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */,
+				A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */,
 				A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */,
 			);
 			path = App;
@@ -358,6 +363,7 @@
 				A3E6B1942436C1EB00B55441 /* Authentication */,
 				A3B47CCA243963170009A6AF /* Account */,
 				A3E6B1932436C1E300B55441 /* CreateAccount */,
+				A363FCC1243A4088002081BF /* TabBarNavigation */,
 				A39C54B624156A06009FCF8B /* Resources */,
 				A3C496C424156AD10019E0E1 /* Extensions */,
 				A313C2CF24170447002FC41B /* Utils */,
@@ -416,6 +422,14 @@
 				A3C60E4F2436AB7E00426F40 /* AccessToken.json */,
 			);
 			path = JSONMocks;
+			sourceTree = "<group>";
+		};
+		A363FCC1243A4088002081BF /* TabBarNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				A363FCBF243A4080002081BF /* TabBarNavigationController.swift */,
+			);
+			path = TabBarNavigation;
 			sourceTree = "<group>";
 		};
 		A39A65FF2436B2F500FBBDC2 /* Coordinator */ = {
@@ -968,9 +982,11 @@
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,
 				A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */,
 				A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */,
+				A363FCC0243A4080002081BF /* TabBarNavigationController.swift in Sources */,
 				A332551824155F6A002CADF6 /* ProductCell.swift in Sources */,
 				A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */,
 				C1415EF2242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift in Sources */,
+				A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */,
 				A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */,
 				A3C60E46243698AC00426F40 /* KeychainRepository.swift in Sources */,
 				A363FCBE2439901D002081BF /* String+Validations.swift in Sources */,

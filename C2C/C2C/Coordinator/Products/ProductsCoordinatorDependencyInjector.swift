@@ -11,8 +11,8 @@ import UIKit
 class ProductsCoordinatorDependencyInjector {
     
     // MARK:- ViewControllers
-    lazy var navigationController: UINavigationController = {
-        let navigationController = UINavigationController()
+    lazy var navigationController: TabBarNavigationController = {
+        let navigationController = TabBarNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setViewControllers([productsViewController], animated: false)
         return navigationController

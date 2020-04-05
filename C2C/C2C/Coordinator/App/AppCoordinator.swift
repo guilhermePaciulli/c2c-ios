@@ -13,7 +13,9 @@ protocol BasicCoordinationProtocol: class {
     func presentPreviousStep()
 }
 
-class AppCoordinator {
+protocol AppCoordinatable: CoordinatorPresentable, AppAuthenticable { }
+
+class AppCoordinator: AppCoordinatable {
     
     // MARK:- Properties
     lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
@@ -33,7 +35,7 @@ class AppCoordinator {
         window.makeKeyAndVisible()
     }
     
-    private func setUpTabBar() {
+    internal func setUpTabBar() {
         if injector.userInteractor.hasUser() {
             injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
                                                          accountCoordinator.injector.navigationController]

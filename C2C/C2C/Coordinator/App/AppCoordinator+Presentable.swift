@@ -13,7 +13,7 @@ protocol CoordinatorPresentable {
 }
 
 
-extension AppCoordinator: CoordinatorPresentable {
+extension AppCoordinator {
 
     func present(_ controller: UIViewController) {
         injector.tabBarController.present(controller, animated: true)

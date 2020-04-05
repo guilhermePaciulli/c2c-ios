@@ -32,8 +32,8 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
         if errors.isEmpty {
             view.startLoading()
             interactor.login(withEmail: view.get(field: .Email), andPassword: view.get(field: .Password)).done(on: .main) { [weak self] (_) in
-                view.stopLoading()
                 self?.coordinator?.didLogin()
+                view.stopLoading()
             }.catch { (error) in
                 view.stopLoading()
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)

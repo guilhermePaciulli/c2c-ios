@@ -27,7 +27,7 @@ extension Endpoint {
 
         model.images.forEach({
             body.appendString(boundaryPrefix)
-            body.appendString("Content-Disposition: form-data; name=\"file\"; filename=\"\($0.key)\"\r\n")
+            body.appendString("Content-Disposition: form-data; name=\"\($0.key)\"; filename=\"\($0.key).jpg\"\r\n")
             body.appendString("Content-Type: \(mimeType)\r\n\r\n")
             body.append($0.value.jpegData(compressionQuality: 0.7) ?? .init())
             body.appendString("\r\n")

@@ -37,8 +37,8 @@ enum UserEndpoints: Endpoint {
         switch self {
         case .createAcount(_):
             return ["Content-Type": "multipart/form-data; boundary=\(boundary)"]
-        default:
-            return nil
+        case .login(_):
+            return ["Content-Type": "application/json"]
         }
     }
     
