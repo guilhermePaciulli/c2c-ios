@@ -37,7 +37,13 @@ struct AccessToken: Codable {
     }
 }
 
-struct UserData {
+struct UserData: Codable {
+    let id: String
+    let type: String
+    let attributes: UserDataAttributes
+}
+
+struct UserDataAttributes: Codable {
     let email: String
     let name: String
     let surname: String

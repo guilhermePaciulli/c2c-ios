@@ -23,6 +23,7 @@ class AccountViewController: UITableViewController {
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = .init()
         title = "Account"
     }
     

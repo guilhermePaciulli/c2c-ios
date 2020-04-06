@@ -11,6 +11,7 @@ import Foundation
 enum UserEndpoints: Endpoint {
     case login(account: LoginAccount)
     case createAcount(account: CreateAccount)
+    case userInfo
     
     var path: String {
         switch self {
@@ -18,6 +19,8 @@ enum UserEndpoints: Endpoint {
             return "/user_token"
         case .createAcount:
             return "/users"
+        case .userInfo:
+            return "/user_info"
         }
     }
     var request: URLRequest {
@@ -29,6 +32,8 @@ enum UserEndpoints: Endpoint {
             request.httpBody = try? JSONEncoder().encode(body)
         case .createAcount(let body):
             request.httpBody = createFormDataFrom(model: body)
+        case .userInfo:
+            break
         }
         return request
     }
@@ -37,7 +42,7 @@ enum UserEndpoints: Endpoint {
         switch self {
         case .createAcount(_):
             return ["Content-Type": "multipart/form-data; boundary=\(boundary)"]
-        case .login(_):
+        default:
             return ["Content-Type": "application/json"]
         }
     }
@@ -52,6 +57,8 @@ enum UserEndpoints: Endpoint {
             return .post
         case .createAcount:
             return .post
+        case .userInfo:
+            return .get
         }
     }
         

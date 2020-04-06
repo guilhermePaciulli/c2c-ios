@@ -38,15 +38,17 @@ extension AccountViewController: AccountViewControllerPresentable {
     }
     
     func setProfilePicture() -> UIImageView? {
+        profilePicture?.layer.cornerRadius = (profilePicture?.frame.height ?? .zero) / 2
+        profilePicture?.clipsToBounds = true
         return profilePicture
     }
     
     func startLoading() {
-        showSpinnerView()
+        showSpinnerView(false)
     }
     
     func stopLoading() {
-        removeSpinnerView()
+        removeSpinnerView(false)
     }
     
     func showAlert(withTitle title: String, message: String) {

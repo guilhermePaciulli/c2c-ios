@@ -11,20 +11,23 @@ import PromiseKit
 protocol UserInteractorProtocol: class {
     func createAccount(_ account: CreateAccount) -> Promise<Void>
     func login(withEmail email: String, andPassword password: String) -> Promise<Void>
+    func savedUser() -> UserData?
     func fetchUser() -> Promise<UserData>
     func hasUser() -> Bool
 }
 
 class UserInteractor: UserInteractorProtocol {
     
-    
     var userRepository: UserRepositoryProtocol
     var keychainAccess: KeychainManagerProtocol
+    var userDefaultsRepository: UserDefaultsRepositoryProtocol
     
     init(user: UserRepositoryProtocol = UserRepository(),
-         keychain: KeychainManagerProtocol = KeychainManager()) {
+         keychain: KeychainManagerProtocol = KeychainManager(),
+         userDefaults: UserDefaultsRepositoryProtocol = UserDefaultsRepository()) {
         userRepository = user
         keychainAccess = keychain
+        userDefaultsRepository = userDefaults
     }
     
     func createAccount(_ account: CreateAccount) -> Promise<Void> {
@@ -37,17 +40,20 @@ class UserInteractor: UserInteractorProtocol {
         return userRepository.login(.init(email: email, password: password)).map({ [weak self] token in
             self?.keychainAccess.save(key: "jwt", data: token.token.data(using: .utf8) ?? .init())
             return
-        })
+        }).then { _ -> Promise<UserData> in
+            return self.fetchUser()
+        }.map { (userData) -> Void in
+            self.userDefaultsRepository.save(userData, withKey: .User)
+            return
+        }
+    }
+    
+    func savedUser() -> UserData? {
+        return userDefaultsRepository.fetch(key: .User)
     }
     
     func fetchUser() -> Promise<UserData> {
-        return Promise<UserData> { seal in
-            guard let jwt = keychainAccess.load(key: "jwt") else {
-                throw ResponseError.missingUser
-            }
-            // TODO:- Fetch user
-        }
-        
+        return self.userRepository.userInfo()
     }
     
     func hasUser() -> Bool {

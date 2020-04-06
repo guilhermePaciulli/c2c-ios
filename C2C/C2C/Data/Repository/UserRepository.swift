@@ -11,6 +11,7 @@ import PromiseKit
 protocol UserRepositoryProtocol {
     func createAccount(_ account: CreateAccount) -> Promise<EmptyResponse>
     func login(_ account: LoginAccount) -> Promise<AccessToken>
+    func userInfo() -> Promise<UserData>
 }
 
 
@@ -22,6 +23,10 @@ class UserRepository: APIClient, UserRepositoryProtocol {
     
     func login(_ account: LoginAccount) -> Promise<AccessToken> {
         return dispatchRequest(with: UserEndpoints.login(account: account).request, decodingType: AccessToken.self)
+    }
+    
+    func userInfo() -> Promise<UserData> {
+        return dispatchRequest(with: UserEndpoints.userInfo.request, decodingType: UserData.self)
     }
     
 }

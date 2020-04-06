@@ -18,11 +18,11 @@ protocol AuthenticationViewControllerPresentable {
 extension AuthenticationViewController: AuthenticationViewControllerPresentable {
     
     func startLoading() {
-        showSpinnerView()
+        showSpinnerView(false)
     }
     
     func stopLoading() {
-        removeSpinnerView()
+        removeSpinnerView(false)
     }
     
     func showAlert(withTitle title: String, message: String) {
