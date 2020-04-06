@@ -36,6 +36,7 @@ class AccountViewModel: AccountViewModelProtocol {
             self?.setView(withUser: $0)
         }.catch { [weak self] (error) in
             self?.view?.stopLoading()
+            self?.userNotFoundError()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
         }
     }
@@ -47,6 +48,16 @@ class AccountViewModel: AccountViewModelProtocol {
         view?.setSurname(user.attributes.surname)
         guard let url = URL(string: user.attributes.profile_picture_url) else { return }
         view?.setProfilePicture()?.kf.setImage(with: url)
+        view?.setProfilePicture()?.backgroundColor = .clear
+    }
+    
+    private func userNotFoundError() {
+        view?.setName("Error fetching user")
+        view?.setCPF("")
+        view?.setEmail("")
+        view?.setSurname("Try again later")
+        view?.setProfilePicture()?.image = UIImage(named: "stub_profile")
+        view?.setProfilePicture()?.backgroundColor = .systemYellow
     }
     
 }
