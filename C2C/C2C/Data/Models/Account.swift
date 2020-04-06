@@ -42,4 +42,5 @@ struct UserData {
     let name: String
     let surname: String
     let cpf: String
+    let profile_picture_url: String
 }
