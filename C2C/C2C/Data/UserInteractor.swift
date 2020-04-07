@@ -53,7 +53,10 @@ class UserInteractor: UserInteractorProtocol {
     }
     
     func fetchUser() -> Promise<UserData> {
-        return self.userRepository.userInfo()
+        return self.userRepository.userInfo().map { userData -> UserData in
+            self.userDefaultsRepository.save(userData, withKey: .User)
+            return userData
+        }
     }
     
     func hasUser() -> Bool {

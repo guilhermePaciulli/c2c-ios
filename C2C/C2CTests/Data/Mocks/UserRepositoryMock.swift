@@ -21,4 +21,8 @@ class UserRepositoryMock: UserRepositoryProtocol {
         return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: AccessToken.self)
     }
     
+    func userInfo() -> Promise<UserData> {
+        return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: UserData.self)
+    }
+    
 }

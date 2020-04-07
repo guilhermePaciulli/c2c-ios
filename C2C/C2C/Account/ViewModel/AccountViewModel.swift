@@ -17,7 +17,7 @@ class AccountViewModel: AccountViewModelProtocol {
     
     // MARK:- Properties
     var interactor: UserInteractorProtocol
-    var coordinator: AccountCoordinationProtocol?
+    var coordinator: BasicCoordinationProtocol?
     var view: AccountViewControllerPresentable?
     
     // MARK:- Initialization

@@ -85,12 +85,6 @@ class AuthenticationViewModelTests: QuickSpec {
         var showAlertMessage: String?
         var email = "rogerinho@doinga.com"
         var password = "12345678"
-        /*
-        var firstName = "Rogerinho"
-        var surname = "do Ingá"
-        var cpf = "41548807800"
-        var profilePicture: UIImage = .init()
-         */
         
         func startLoading() {
             startLoadingCalled = true
