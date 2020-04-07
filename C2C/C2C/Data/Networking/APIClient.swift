@@ -9,7 +9,7 @@
 import PromiseKit
 import UIKit
 
-private var session: URLSession = .shared
+private var networkSession: NetworkSession = .init()
 
 protocol APIClient {
     func dispatchRequest<T: Decodable>(with request: URLRequest, decodingType: T.Type) -> Promise<T>
@@ -18,8 +18,7 @@ protocol APIClient {
 extension APIClient {
     
     func dispatchRequest<T: Decodable>(with request: URLRequest, decodingType: T.Type) -> Promise<T> {
-        
-        return firstly { session.dataTask(.promise, with: request) }.map({ data, response in
+        return firstly { networkSession.buildSession().dataTask(.promise, with: request) }.map({ data, response in
             guard let httpResponse = response as? HTTPURLResponse else { throw ResponseError.timeout }
             
             guard 200...299 ~= httpResponse.statusCode else {

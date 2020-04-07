@@ -8,12 +8,10 @@
 
 import UIKit
 
-protocol AccountCoordinatorProtocol: BasicCoordinationProtocol {
-    func didTapCreateAccount()
-    func didLoginSuccessfully()
+protocol AccountCoordinationProtocol: BasicCoordinationProtocol {
 }
 
-class AccountCoordinator: AccountCoordinatorProtocol {
+class AccountCoordinator: AccountCoordinationProtocol {
     
     
     // MARK:- Properties
@@ -25,6 +23,7 @@ class AccountCoordinator: AccountCoordinatorProtocol {
         state = .Account
         injector = .init()
         self.baseCoordinator = baseCoordinator
+        injector.accountViewModel.coordinator = self
     }
     
     // MARK:- CoordinationDelegates
@@ -32,14 +31,6 @@ class AccountCoordinator: AccountCoordinatorProtocol {
     }
     
     func presentPreviousStep() {
-    }
-    
-    func didTapCreateAccount() {
-        
-    }
-    
-    func didLoginSuccessfully() {
-        
     }
     
     enum AccountCoordinatorRoutingState {

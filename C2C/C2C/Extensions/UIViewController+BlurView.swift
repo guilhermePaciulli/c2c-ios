@@ -11,9 +11,11 @@ import UIKit
 private var loadingView: UIView?
 
 extension UIViewController {
-    func showSpinnerView() {
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        tabBarController?.tabBar.isHidden = true
+    func showSpinnerView(_ hidingUIElements: Bool = true) {
+        if hidingUIElements {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            tabBarController?.tabBar.isHidden = true
+        }
         let spinnerView: UIVisualEffectView = .init(frame: view.bounds)
         spinnerView.effect = UIBlurEffect(style: .systemChromeMaterial)
 
@@ -29,10 +31,12 @@ extension UIViewController {
         loadingView = spinnerView
     }
     
-    func removeSpinnerView() {
+    func removeSpinnerView(_ hidingUIElements: Bool = true) {
         DispatchQueue.main.async {
-            self.tabBarController?.tabBar.isHidden = true
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            if hidingUIElements {
+                self.tabBarController?.tabBar.isHidden = true
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+            }
             loadingView?.removeFromSuperview()
             loadingView = nil
         }

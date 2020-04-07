@@ -21,7 +21,21 @@ class AccountDependencyInjector {
     
     lazy var accountViewController: AccountViewController = {
         let controller: AccountViewController = .instantiate()
+        controller.viewModel = accountViewModel
+        accountViewModel.view = controller
         return controller
+    }()
+    
+    // MARK:- ViewModels
+    lazy var accountViewModel: AccountViewModel = {
+        let viewModel = AccountViewModel()
+        viewModel.interactor = userInteractor
+        return viewModel
+    }()
+    
+    // MARK:- Interactors
+    lazy var userInteractor: UserInteractor = {
+        return .init()
     }()
     
 }

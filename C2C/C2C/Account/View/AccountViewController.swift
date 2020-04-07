@@ -8,16 +8,22 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: UITableViewController {
     
     // MARK:- Properties
     var viewModel: AccountViewModelProtocol?
 
     // MARK:- IBOutlets
-
+    @IBOutlet weak var profilePicture: UIImageView?
+    @IBOutlet weak var name: UILabel?
+    @IBOutlet weak var surname: UILabel?
+    @IBOutlet weak var email: UILabel?
+    @IBOutlet weak var cpf: UILabel?
+    
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = .init()
         title = "Account"
     }
     
