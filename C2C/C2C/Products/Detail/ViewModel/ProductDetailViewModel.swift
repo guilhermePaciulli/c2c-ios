@@ -22,6 +22,7 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
     var productID: Int?
     var coordinator: BasicCoordinationProtocol?
     var interactor: ProductsInteractor?
+    var userInteractor: UserInteractorProtocol?
     var blurView: UIView?
     
     // MARK:- Viewmodel delegate

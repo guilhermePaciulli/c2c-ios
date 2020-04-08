@@ -9,18 +9,21 @@
 import UIKit
 
 protocol ProductsViewModelDelegate {
+    func shouldDisplayAddButton() -> Bool
     func getObject()
     func numberOfRowsInSection(section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func didSelectAt(indexPath: IndexPath)
+    func didTapAddButton()
 }
 
 class ProductsViewModel: ProductsViewModelDelegate {
     
     // MARK:- Properties
     weak var interactor: ProductsInteractorProtocol?
+    weak var userInteractor: UserInteractorProtocol?
     weak var delegate: ProductsViewControllerPresentable?
-    weak var coordinator: BasicCoordinationProtocol?
+    weak var coordinator: ProductsCoordinationProtocol?
     var selectedProduct: ProductAttributes?
     var productsList: [Product] = []
     var isLoading = false
@@ -57,9 +60,17 @@ class ProductsViewModel: ProductsViewModelDelegate {
         return cell
     }
     
+    func shouldDisplayAddButton() -> Bool {
+        return userInteractor?.hasUser() ?? false
+    }
+    
     func didSelectAt(indexPath: IndexPath) {
         selectedProduct = productsList[indexPath.row].attributes
         coordinator?.presentNextStep()
+    }
+    
+    func didTapAddButton() {
+        coordinator?.goToAddProductFlow()
     }
     
     

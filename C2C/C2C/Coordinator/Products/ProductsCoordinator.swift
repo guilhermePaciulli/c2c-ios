@@ -8,7 +8,11 @@
 
 import Foundation
 
-class ProductsCoordinator: BasicCoordinationProtocol {
+protocol ProductsCoordinationProtocol: BasicCoordinationProtocol {
+    func goToAddProductFlow()
+}
+
+class ProductsCoordinator: ProductsCoordinationProtocol {
     
     // MARK:- Properties
     var state: ProductsCoordinatorRoutingState
@@ -44,6 +48,10 @@ class ProductsCoordinator: BasicCoordinationProtocol {
             injector.productsViewModel.coordinator = self
             injector.productDetailViewController.dismiss(animated: true)
         }
+    }
+    
+    func goToAddProductFlow() {
+        
     }
     
     enum ProductsCoordinatorRoutingState {

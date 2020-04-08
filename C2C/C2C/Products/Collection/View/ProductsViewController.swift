@@ -36,14 +36,26 @@ class ProductsViewController: UIViewController {
         viewModel?.getObject()
     }
     
+    @objc func didTapAddButton() {
+        viewModel?.didTapAddButton()
+    }
+    
     // MARK:- Private methods
-    func setupView() {
+    private func setupView() {
         title = "Products"
         tabBarController?.navigationController?.title = title
         let refresh: UIRefreshControl = .init()
         refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         tableView?.addSubview(refresh)
         refreshControl = refresh
+        if viewModel?.shouldDisplayAddButton() ?? false {
+            setupAddButton()
+        }
+    }
+    
+    private func setupAddButton() {
+        navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
+        navigationItem.rightBarButtonItem?.tintColor = .systemYellow
     }
         
 }
