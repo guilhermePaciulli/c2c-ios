@@ -96,7 +96,10 @@ class UserInteractorTests: QuickSpec {
                 
                 waitUntil { (done) in
                     self.subject.fetchUser().done({ _ in XCTFail("the request should have failed"); done() })
-                        .catch({ expect($0.localizedDescription).to(equal(message)); done() })
+                        .catch({
+                            expect(self.mockedKeychain.load(key: "jwt")).to(beNil())
+                            expect($0.localizedDescription).to(equal(message)); done()
+                        })
                 }
                 
             }

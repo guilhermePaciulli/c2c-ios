@@ -14,6 +14,10 @@ class UserDefaultsRepositoryMock: UserDefaultsRepositoryProtocol {
     var userDefaultsDictionary: [UserDefaultsKeys: Codable] = [:]
     var shouldReturnValue = true
     var didSaveValue: UserDefaultsKeys?
+    
+    func delete(key: UserDefaultsKeys) {
+        userDefaultsDictionary[.User] = nil
+    }
 
     func save<T>(_ data: T, withKey key: UserDefaultsKeys) where T : Decodable, T : Encodable {
         didSaveValue = key

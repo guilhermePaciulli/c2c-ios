@@ -12,6 +12,7 @@ import UIKit
 class AppCoordinatorMock: AppCoordinatable {
     
     var didLoginCalled = false
+    var didLogoutCalled = false
     var presentedViewController: UIViewController?
     
     func present(_ controller: UIViewController) {
@@ -22,5 +23,8 @@ class AppCoordinatorMock: AppCoordinatable {
         didLoginCalled = true
     }
     
+    func didLogout() {
+        didLogoutCalled = true
+    }
     
 }

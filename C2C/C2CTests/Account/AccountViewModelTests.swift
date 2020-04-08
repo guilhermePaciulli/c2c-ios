@@ -13,7 +13,8 @@ import Nimble
 class AccountViewModelTests: QuickSpec {
     
     var subject = AccountViewModel()
-    var coordinator = BasicCoordinatorMock()
+    var appCoordinator = AppCoordinatorMock()
+    var coordinator = AccountCoordinator(baseCoordinator: AppCoordinatorMock())
     var interactor = UserInteractor()
     var repository = UserRepositoryMock()
     var keychainManager = KeychainRepositoryMock()
@@ -25,7 +26,8 @@ class AccountViewModelTests: QuickSpec {
         
         beforeEach {
             self.subject = .init()
-            self.coordinator = .init()
+            self.appCoordinator = .init()
+            self.coordinator = .init(baseCoordinator: self.appCoordinator)
             self.repository = .init()
             self.keychainManager = .init()
             self.keychainManager = .init()
@@ -67,12 +69,7 @@ class AccountViewModelTests: QuickSpec {
                 self.subject.fetchUser()
                 expect(self.view.startLoadingCalled).to(beTrue())
                 expect(self.view.stopLoadingCalled).toEventually(beTrue())
-                expect(self.view.firstName).toEventuallyNot(beNil())
-                expect(self.view.surname).toEventuallyNot(beNil())
-                expect(self.view.email).toEventuallyNot(beNil())
-                expect(self.view.cpf).toEventuallyNot(beNil())
-                expect(self.view.profilePicture).toEventuallyNot(beNil())
-                expect(self.view.showAlertMessage).toEventually(equal(errorMessage))
+                expect(self.appCoordinator.didLogoutCalled).toEventually(beTrue())
             }
             
         }
