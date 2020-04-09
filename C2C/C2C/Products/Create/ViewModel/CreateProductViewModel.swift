@@ -25,7 +25,7 @@ class CreateProductViewModel: CreateProductViewModelProtocol {
     func didTapCreateProduct() {
         guard let view = self.view else { return }
         var errors = ProductFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
-        if view.getProductImage() == nil { errors.append("You have to add a profile picture") }
+        if view.getProductImage() == nil { errors.append("You have to add a product picture") }
         if errors.isEmpty, let prod = createProduct() {
             view.startLoading()
             interactor?.createProduct(product: prod).done({ [weak self] (_) in

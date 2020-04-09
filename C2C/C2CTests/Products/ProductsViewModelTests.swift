@@ -13,8 +13,9 @@ import Nimble
 class ProductsViewModelTests: QuickSpec {
     
     var subject = ProductsViewModel()
-    var mockedCoordinator = BasicCoordinatorMock()
     var mockedRepository = MockedProductsRespository()
+    var mockedCoordinator = AppCoordinatorMock()
+    var coordinator = ProductsCoordinator(baseCoordinator: AppCoordinatorMock())
     var mockedInteractor = ProductsInteractor(repository: MockedProductsRespository())
     var mockedView = MockedView()
     
@@ -23,11 +24,12 @@ class ProductsViewModelTests: QuickSpec {
         beforeEach {
             self.subject = .init()
             self.mockedCoordinator = .init()
+            self.coordinator = .init(baseCoordinator: self.mockedCoordinator)
             self.mockedRepository = .init()
             self.mockedInteractor = .init(repository: self.mockedRepository)
             self.mockedView = .init()
             self.subject.delegate = self.mockedView
-            self.subject.coordinator = self.mockedCoordinator
+            self.subject.coordinator = self.coordinator
             self.subject.interactor = self.mockedInteractor
         }
         
@@ -53,8 +55,14 @@ class ProductsViewModelTests: QuickSpec {
                 expect(self.mockedView.reloadDataCalled).toEventually(beTrue())
                 self.subject.didSelectAt(indexPath: .init(row: 0, section: 0))
                 expect(self.subject.selectedProduct).toEventuallyNot(beNil())
-                expect(self.mockedCoordinator.didCallPresentNextStep).toEventually(beTrue())
+                expect(self.mockedCoordinator.presentedViewController).toEventually(beAKindOf(ProductDetailViewController.self))
             }
+            
+            it("should display and dismiss add product view controller") {
+                self.subject.didTapAddButton()
+                expect(self.coordinator.state).toEventually(equal(.CreateProduct))
+            }
+            
         }
         
     }

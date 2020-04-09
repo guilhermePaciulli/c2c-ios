@@ -79,6 +79,7 @@
 		A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */; };
 		A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */; };
 		A3D86991243EA079000963F8 /* ProductFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86990243EA079000963F8 /* ProductFields.swift */; };
+		A3D86993243EB96F000963F8 /* CreateProductViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */; };
 		A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */; };
 		A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */; };
 		A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */; };
@@ -203,6 +204,7 @@
 		A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateProduct+Presentable.swift"; sourceTree = "<group>"; };
 		A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateProduct+Camera.swift"; sourceTree = "<group>"; };
 		A3D86990243EA079000963F8 /* ProductFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFields.swift; sourceTree = "<group>"; };
+		A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewModelTests.swift; sourceTree = "<group>"; };
 		A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDependencyInjector.swift; sourceTree = "<group>"; };
 		A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			children = (
 				A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */,
 				A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */,
+				A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -1109,6 +1112,7 @@
 				A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */,
 				A358521E243BFA78002D93E5 /* AccountViewModelTests.swift in Sources */,
 				A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */,
+				A3D86993243EB96F000963F8 /* CreateProductViewModelTests.swift in Sources */,
 				A3585220243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift in Sources */,
 				A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */,
 				A3E6B18D2436B5EC00B55441 /* ProductsViewModelTests.swift in Sources */,
