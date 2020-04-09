@@ -32,6 +32,13 @@ class ProductsCoordinatorDependencyInjector {
         return controller
     }()
     
+    lazy var createProductViewController: CreateProductTableViewController = {
+        let controller: CreateProductTableViewController = CreateProductTableViewController.instantiate()
+        controller.viewModel = createProductViewModel
+        createProductViewModel.view = controller
+        return controller
+    }()
+    
     
     // MARK:- ViewModels
     lazy var productsViewModel: ProductsViewModel = {
@@ -45,6 +52,12 @@ class ProductsCoordinatorDependencyInjector {
         let viewModel = ProductDetailViewModel()
         viewModel.interactor = productsInteractor
         viewModel.userInteractor = userInteractor
+        return viewModel
+    }()
+    
+    lazy var createProductViewModel: CreateProductViewModel = {
+        let viewModel = CreateProductViewModel()
+        viewModel.interactor = productsInteractor
         return viewModel
     }()
     

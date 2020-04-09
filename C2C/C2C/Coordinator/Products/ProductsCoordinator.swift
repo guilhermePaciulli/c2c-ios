@@ -10,6 +10,7 @@ import Foundation
 
 protocol ProductsCoordinationProtocol: BasicCoordinationProtocol {
     func goToAddProductFlow()
+    func didCreateProduct()
 }
 
 class ProductsCoordinator: ProductsCoordinationProtocol {
@@ -51,7 +52,11 @@ class ProductsCoordinator: ProductsCoordinationProtocol {
     }
     
     func goToAddProductFlow() {
-        
+        injector.navigationController.pushViewController(injector.createProductViewController, animated: true)
+    }
+    
+    func didCreateProduct() {
+        injector.navigationController.popViewController(animated: true)
     }
     
     enum ProductsCoordinatorRoutingState {

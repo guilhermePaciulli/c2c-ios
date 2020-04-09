@@ -25,10 +25,22 @@ class CreateProductViewModel: CreateProductViewModelProtocol {
         guard let view = self.view else { return }
         var errors = ProductFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
         if view.getProductImage() == nil { errors.append("You have to add a profile picture") }
-        if errors.isEmpty /*let acc = getAccount()*/ {
+        if errors.isEmpty, let prod = createProduct() {
+            interactor?.createProduct(product: prod).done({ [weak self] (_) in
+                view.showAlert(withTitle: "Product created successfully", message: "")
+                view.stopLoading()
+                self?.coordinator?.didCreateProduct()
+            }).catch({ (error) in
+                view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+            })
         } else {
             view.showAlert(withTitle: "Invalid fields", message: errors.joined(separator: ", "))
         }
+    }
+    
+    func createProduct() -> CreateProduct? {
+        guard let view = self.view else { return nil }
+        return .init(name: view.getField(.Name), description: view.getField(.Description), price: view.getField(.Price), picture: view.getProductImage() ?? .init())
     }
     
 }
