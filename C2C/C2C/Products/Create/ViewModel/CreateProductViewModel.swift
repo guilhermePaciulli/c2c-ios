@@ -27,11 +27,13 @@ class CreateProductViewModel: CreateProductViewModelProtocol {
         var errors = ProductFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
         if view.getProductImage() == nil { errors.append("You have to add a profile picture") }
         if errors.isEmpty, let prod = createProduct() {
+            view.startLoading()
             interactor?.createProduct(product: prod).done({ [weak self] (_) in
-                view.showAlert(withTitle: "Product created successfully", message: "")
                 view.stopLoading()
                 self?.coordinator?.presentNextStep()
+                view.showAlert(withTitle: "Product created successfully", message: "")
             }).catch({ (error) in
+                view.stopLoading()
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             })
         } else {

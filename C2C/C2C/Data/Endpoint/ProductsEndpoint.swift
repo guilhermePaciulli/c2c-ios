@@ -20,7 +20,7 @@ enum ProductsEndpoint: Endpoint {
         case .getProduct(let id):
             return "/products/\(id)"
         case .createProduct(_):
-            return "products"
+            return "/products"
         }
     }
     

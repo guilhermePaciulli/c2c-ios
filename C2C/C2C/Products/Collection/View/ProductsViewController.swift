@@ -29,6 +29,9 @@ class ProductsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.getObject()
+        if viewModel?.shouldDisplayAddButton() ?? false {
+            setupAddButton()
+        }
     }
     
     // MARK:- Actions
