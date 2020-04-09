@@ -30,14 +30,15 @@ class CreateProductViewModel: CreateProductViewModelProtocol {
             view.startLoading()
             interactor?.createProduct(product: prod).done({ [weak self] (_) in
                 view.stopLoading()
-                self?.coordinator?.presentNextStep()
-                view.showAlert(withTitle: "Product created successfully", message: "")
+                view.showAlert(withTitle: "Product created successfully", message: "").done { (_) in
+                    self?.coordinator?.presentNextStep()
+                }
             }).catch({ (error) in
                 view.stopLoading()
-                view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+                _ = view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             })
         } else {
-            view.showAlert(withTitle: "Invalid fields", message: errors.joined(separator: ", "))
+            _ = view.showAlert(withTitle: "Invalid fields", message: errors.joined(separator: ", "))
         }
     }
     

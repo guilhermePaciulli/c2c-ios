@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol CreateProductPresentable: class {
     func startLoading()
     func stopLoading()
-    func showAlert(withTitle title: String, message: String)
+    func showAlert(withTitle title: String, message: String) -> Guarantee<Void>
     func getProductImage() -> UIImage?
     func getField(_ field: ProductFields) -> String
 }
@@ -26,13 +27,16 @@ extension CreateProductViewController: CreateProductPresentable {
         removeSpinnerView()
     }
     
-    func showAlert(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
-            alert.dismiss(animated: true)
+    func showAlert(withTitle title: String, message: String) -> Guarantee<Void> {
+        return .init { seal in
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
+                alert.dismiss(animated: true)
+                seal(())
+            }
+            alert.addAction(alertAction)
+            present(alert, animated: true)
         }
-        alert.addAction(alertAction)
-        present(alert, animated: true)
     }
     
     func getProductImage() -> UIImage? {

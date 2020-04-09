@@ -47,6 +47,7 @@ class AccountViewModel: AccountViewModelProtocol {
         view?.setEmail(user.attributes.email)
         view?.setSurname(user.attributes.surname)
         guard let url = URL(string: user.attributes.profile_picture_url) else { return }
+        view?.setProfilePicture()?.kf.indicatorType = .activity
         view?.setProfilePicture()?.kf.setImage(with: url)
         view?.setProfilePicture()?.backgroundColor = .clear
     }

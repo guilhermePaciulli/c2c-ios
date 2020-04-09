@@ -37,6 +37,7 @@ class ProductsCoordinator: ProductsCoordinationProtocol {
         case .ProductsDetail:
             fatalError()
         case .CreateProduct:
+            state = .ProductsList
             injector.navigationController.popViewController(animated: true)
         }
     }
@@ -50,6 +51,7 @@ class ProductsCoordinator: ProductsCoordinationProtocol {
             injector.productsViewModel.coordinator = self
             injector.productDetailViewController.dismiss(animated: true)
         case .CreateProduct:
+            state = .ProductsList
             injector.navigationController.popViewController(animated: true)
         }
     }

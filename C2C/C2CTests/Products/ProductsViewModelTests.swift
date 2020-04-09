@@ -17,6 +17,8 @@ class ProductsViewModelTests: QuickSpec {
     var mockedCoordinator = AppCoordinatorMock()
     var coordinator = ProductsCoordinator(baseCoordinator: AppCoordinatorMock())
     var mockedInteractor = ProductsInteractor(repository: MockedProductsRespository())
+    var mockedKeychain = KeychainRepositoryMock()
+    var userInteractor = UserInteractor.init(user: UserRepository(), keychain: KeychainRepositoryMock(), userDefaults: UserDefaultsRepositoryMock())
     var mockedView = MockedView()
     
     override func spec() {
@@ -26,11 +28,14 @@ class ProductsViewModelTests: QuickSpec {
             self.mockedCoordinator = .init()
             self.coordinator = .init(baseCoordinator: self.mockedCoordinator)
             self.mockedRepository = .init()
+            self.mockedKeychain = .init()
+            self.userInteractor = .init(user: UserRepository(), keychain: self.mockedKeychain, userDefaults: UserDefaultsRepositoryMock())
             self.mockedInteractor = .init(repository: self.mockedRepository)
             self.mockedView = .init()
             self.subject.delegate = self.mockedView
             self.subject.coordinator = self.coordinator
             self.subject.interactor = self.mockedInteractor
+            self.subject.userInteractor = self.userInteractor
         }
         
         
@@ -63,6 +68,12 @@ class ProductsViewModelTests: QuickSpec {
                 expect(self.coordinator.state).toEventually(equal(.CreateProduct))
             }
             
+            it("should show/hide add button whether jwt exists or not") {
+                _ = self.mockedKeychain.save(key: "jwt", data: .init())
+                expect(self.subject.shouldDisplayAddButton()).to(beTrue())
+                _ = self.mockedKeychain.delete(key: "jwt")
+                expect(self.subject.shouldDisplayAddButton()).to(beFalse())
+            }
         }
         
     }

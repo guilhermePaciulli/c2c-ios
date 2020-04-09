@@ -9,6 +9,7 @@
 @testable import C2C
 import Quick
 import Nimble
+import PromiseKit
 
 class CreateProductViewModelTests: QuickSpec {
     
@@ -97,9 +98,10 @@ class CreateProductViewModelTests: QuickSpec {
             stopLoadingCalled = true
         }
         
-        func showAlert(withTitle title: String, message: String) {
+        func showAlert(withTitle title: String, message: String) -> Guarantee<Void> {
             showAlertTitle = title
             showAlertMessage = message
+            return .init(resolver: { $0(()) })
         }
         
         func getProductImage() -> UIImage? {
