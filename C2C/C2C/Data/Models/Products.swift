@@ -6,7 +6,7 @@
 //  Copyright © 2020 Guilherme Paciulli. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Product: Codable {
     let id, type: String
@@ -25,4 +25,20 @@ struct ProductAttributes: Codable {
         case price
         case productImageURL = "product_image_url"
     }
+}
+
+struct CreateProduct: FormDatable {
+    let name: String
+    let description: String
+    let price: String
+    let picture: UIImage
+    
+    var parameters: [String : Any] {
+        return ["name": name, "description": description, "price": price]
+    }
+    
+    var images: [String : UIImage] {
+        return ["picture": picture]
+    }
+    
 }

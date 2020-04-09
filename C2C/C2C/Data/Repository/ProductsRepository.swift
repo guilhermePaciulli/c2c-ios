@@ -11,6 +11,7 @@ import PromiseKit
 protocol ProductsRepositoryProtocol {
     func getAll() -> Promise<[Product]>
     func getProduct(withId id: Int) -> Promise<Product>
+    func createProduct(product: CreateProduct) -> Promise<Void>
 }
 
 
@@ -22,6 +23,10 @@ class ProductsRepository: APIClient, ProductsRepositoryProtocol {
     
     func getProduct(withId id: Int) -> Promise<Product> {
         return dispatchRequest(with: ProductsEndpoint.getProduct(id: id).request, decodingType: Product.self)
+    }
+    
+    func createProduct(product: CreateProduct) -> Promise<Void> {
+        return dispatchRequest(with: ProductsEndpoint.createProduct(product: product).request, decodingType: Product.self).map({ _ in return })
     }
     
 }
