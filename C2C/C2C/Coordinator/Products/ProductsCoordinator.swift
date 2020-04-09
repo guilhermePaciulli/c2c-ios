@@ -56,6 +56,7 @@ class ProductsCoordinator: ProductsCoordinationProtocol {
     
     func goToAddProductFlow() {
         state = .CreateProduct
+        injector.createProductViewModel.coordinator = self
         injector.navigationController.pushViewController(injector.createProductViewController, animated: true)
     }
     
