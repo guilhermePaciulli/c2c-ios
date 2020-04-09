@@ -10,6 +10,12 @@ import UIKit
 
 extension CreateProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            startSelectingImage()
+        }
+    }
+    
     func startSelectingImage() {
         let alert: UIAlertController = .init(title: "What do you preffer?", message: nil, preferredStyle: .actionSheet)
         let cameraAction: UIAlertAction = .init(title: "Camera", style: .default) { (_) in
@@ -43,6 +49,7 @@ extension CreateProductViewController: UIImagePickerControllerDelegate, UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             productImage?.image = image
+            productImage?.contentMode = .scaleAspectFill
         }
         picker.dismiss(animated: true)
     }

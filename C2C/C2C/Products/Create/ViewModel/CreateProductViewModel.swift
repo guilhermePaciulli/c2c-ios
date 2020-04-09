@@ -10,6 +10,7 @@ import UIKit
 
 protocol CreateProductViewModelProtocol {
     func didTapCreateProduct()
+    func didTapBackButton()
 }
 
 class CreateProductViewModel: CreateProductViewModelProtocol {
@@ -29,7 +30,7 @@ class CreateProductViewModel: CreateProductViewModelProtocol {
             interactor?.createProduct(product: prod).done({ [weak self] (_) in
                 view.showAlert(withTitle: "Product created successfully", message: "")
                 view.stopLoading()
-                self?.coordinator?.didCreateProduct()
+                self?.coordinator?.presentNextStep()
             }).catch({ (error) in
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             })
@@ -41,6 +42,10 @@ class CreateProductViewModel: CreateProductViewModelProtocol {
     func createProduct() -> CreateProduct? {
         guard let view = self.view else { return nil }
         return .init(name: view.getField(.Name), description: view.getField(.Description), price: view.getField(.Price), picture: view.getProductImage() ?? .init())
+    }
+    
+    func didTapBackButton() {
+        coordinator?.presentPreviousStep()
     }
     
 }

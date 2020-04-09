@@ -23,21 +23,20 @@ class CreateProductViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton(#selector(didTapBackButton))
+        title = "Create product"
     }
     
     // MARK:- Actions
     @objc func didTapBackButton() {
+        viewModel?.didTapBackButton()
         productName?.text = ""
         productImage?.image = UIImage(named: "stub_product")
-        productDescription?.text = ""
+        productImage?.contentMode = .scaleAspectFit
+        productDescription?.text = "Insert your description here"
         productPrice?.text = ""
     }
     
     @IBAction func didTapCreateProduct(_ sender: UIButton) {
         viewModel?.didTapCreateProduct()
-    }
-    
-    @IBAction func didTapAddImage(_ sender: UITapGestureRecognizer) {
-        startSelectingImage()
     }
 }
