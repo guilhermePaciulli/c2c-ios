@@ -8,14 +8,12 @@
 
 import UIKit
 
-protocol CreateProductPresentable {
+protocol CreateProductPresentable: class {
     func startLoading()
     func stopLoading()
     func showAlert(withTitle title: String, message: String)
-    func getProductName() -> String
-    func getProductDescription() -> String
-    func getProductPrice() -> String
     func getProductImage() -> UIImage?
+    func getField(_ field: ProductFields) -> String
 }
 
 extension CreateProductTableViewController: CreateProductPresentable {
@@ -30,27 +28,26 @@ extension CreateProductTableViewController: CreateProductPresentable {
     
     func showAlert(withTitle title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (_) in
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
             alert.dismiss(animated: true)
-//            self?.viewModel?.didTapExitButton()
         }
         alert.addAction(alertAction)
         present(alert, animated: true)
     }
     
-    func getProductName() -> String {
-        return productName?.text ?? ""
-    }
-    
-    func getProductDescription() -> String {
-        return productDescription?.text ?? ""
-    }
-    
-    func getProductPrice() -> String {
-        return productPrice?.text ?? ""
-    }
-    
     func getProductImage() -> UIImage? {
         return productImage?.image
+    }
+    
+    func getField(_ field: ProductFields) -> String {
+        switch field {
+        case .Name:
+            return productName?.text ?? ""
+        case .Description:
+            return productDescription?.text ?? ""
+        case .Price:
+            return productPrice?.text ?? ""
+            
+        }
     }
 }
