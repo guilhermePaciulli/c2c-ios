@@ -76,6 +76,9 @@
 		A3D86984243E9B53000963F8 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D86983243E9B53000963F8 /* CreateProduct.storyboard */; };
 		A3D86986243E9B63000963F8 /* CreateProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86985243E9B63000963F8 /* CreateProductTableViewController.swift */; };
 		A3D86988243E9B6C000963F8 /* CreateProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */; };
+		A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */; };
+		A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */; };
+		A3D86991243EA079000963F8 /* ProductFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86990243EA079000963F8 /* ProductFields.swift */; };
 		A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */; };
 		A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */; };
 		A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */; };
@@ -197,6 +200,9 @@
 		A3D86983243E9B53000963F8 /* CreateProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
 		A3D86985243E9B63000963F8 /* CreateProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductTableViewController.swift; sourceTree = "<group>"; };
 		A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewModel.swift; sourceTree = "<group>"; };
+		A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateProduct+Presentable.swift"; sourceTree = "<group>"; };
+		A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateProduct+Camera.swift"; sourceTree = "<group>"; };
+		A3D86990243EA079000963F8 /* ProductFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFields.swift; sourceTree = "<group>"; };
 		A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDependencyInjector.swift; sourceTree = "<group>"; };
 		A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
@@ -362,6 +368,7 @@
 			children = (
 				A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */,
 				A3B47CD3243973640009A6AF /* AccountFields.swift */,
+				A3D86990243EA079000963F8 /* ProductFields.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -620,6 +627,8 @@
 			children = (
 				A3D86983243E9B53000963F8 /* CreateProduct.storyboard */,
 				A3D86985243E9B63000963F8 /* CreateProductTableViewController.swift */,
+				A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */,
+				A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1031,6 +1040,7 @@
 				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
 				A3B47CD4243973640009A6AF /* AccountFields.swift in Sources */,
 				C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */,
+				A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */,
 				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
 				C17D87F524202F3C00E90BF4 /* ProductDetailViewController+Presentable.swift in Sources */,
 				A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */,
@@ -1040,6 +1050,7 @@
 				A3C60E402436947200426F40 /* UserEndpoints.swift in Sources */,
 				A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */,
 				A3B47CD224396D590009A6AF /* UIViewController+Backbutton.swift in Sources */,
+				A3D86991243EA079000963F8 /* ProductFields.swift in Sources */,
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A3C60E44243697AF00426F40 /* UserInteractor.swift in Sources */,
 				A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */,
@@ -1075,6 +1086,7 @@
 				A3B47CC9243963130009A6AF /* AccountViewController.swift in Sources */,
 				A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */,
 				A3B47CC7243963130009A6AF /* AccountViewController+Presentable.swift in Sources */,
+				A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */,
 				A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
