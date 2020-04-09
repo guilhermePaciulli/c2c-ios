@@ -16,7 +16,7 @@ protocol CreateProductPresentable: class {
     func getField(_ field: ProductFields) -> String
 }
 
-extension CreateProductTableViewController: CreateProductPresentable {
+extension CreateProductViewController: CreateProductPresentable {
     
     func startLoading() {
         showSpinnerView()

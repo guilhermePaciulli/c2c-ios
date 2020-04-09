@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CreateProductTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CreateProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func startSelectingImage() {
         let alert: UIAlertController = .init(title: "What do you preffer?", message: nil, preferredStyle: .actionSheet)

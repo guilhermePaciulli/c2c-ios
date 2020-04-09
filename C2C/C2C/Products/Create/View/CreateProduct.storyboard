@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Product Table View Controller-->
+        <!--Create Product View Controller-->
         <scene sceneID="MYD-wy-iQ2">
             <objects>
-                <tableViewController storyboardIdentifier="CreateProductTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nB9-XH-Pdy" customClass="CreateProductTableViewController" customModule="C2C" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CreateProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nB9-XH-Pdy" customClass="CreateProductViewController" customModule="C2C" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="n6T-6x-AD7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

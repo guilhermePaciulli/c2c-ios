@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateProductTableViewController: UITableViewController {
+class CreateProductViewController: UITableViewController {
     
     // MARK:- IBOutlets
     @IBOutlet weak var productImage: UIImageView?
