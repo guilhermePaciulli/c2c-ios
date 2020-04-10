@@ -12,6 +12,8 @@
 		A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */; };
 		A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */; };
 		A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */; };
+		A301E61D243FEFB800A0607F /* UIViewController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */; };
+		A301E61F243FF42700A0607F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E61E243FF42700A0607F /* UIViewController+Alert.swift */; };
 		A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2AD24156BEC002FC41B /* AppCoordinator.swift */; };
 		A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */; };
 		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
@@ -131,6 +133,8 @@
 		A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinationMock.swift; sourceTree = "<group>"; };
 		A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelTests.swift; sourceTree = "<group>"; };
 		A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFieldsTests.swift; sourceTree = "<group>"; };
+		A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Camera.swift"; sourceTree = "<group>"; };
+		A301E61E243FF42700A0607F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		A313C2AD24156BEC002FC41B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorDependencyInjector.swift; sourceTree = "<group>"; };
 		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -591,6 +595,8 @@
 				A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */,
 				A3B47CD124396D590009A6AF /* UIViewController+Backbutton.swift */,
 				A363FCBD2439901D002081BF /* String+Validations.swift */,
+				A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */,
+				A301E61E243FF42700A0607F /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1089,6 +1095,8 @@
 				A3B47CC9243963130009A6AF /* AccountViewController.swift in Sources */,
 				A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */,
 				A3B47CC7243963130009A6AF /* AccountViewController+Presentable.swift in Sources */,
+				A301E61F243FF42700A0607F /* UIViewController+Alert.swift in Sources */,
+				A301E61D243FEFB800A0607F /* UIViewController+Camera.swift in Sources */,
 				A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */,
 				A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */,
 			);

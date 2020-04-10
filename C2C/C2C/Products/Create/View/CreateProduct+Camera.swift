@@ -8,50 +8,17 @@
 
 import UIKit
 
-extension CreateProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CreateProductViewController: MediaCapturePresentable {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            startSelectingImage()
+            startSelectingImage(self)
         }
     }
     
-    func startSelectingImage() {
-        let alert: UIAlertController = .init(title: "What do you preffer?", message: nil, preferredStyle: .actionSheet)
-        let cameraAction: UIAlertAction = .init(title: "Camera", style: .default) { (_) in
-            self.open(.camera)
-            alert.dismiss(animated: true)
-        }
-        let galeryAction: UIAlertAction = .init(title: "Select from your photos", style: .default) { (_) in
-            self.open(.photoLibrary)
-            alert.dismiss(animated: true)
-        }
-        let cancelAction: UIAlertAction = .init(title: "Cancel", style: .default) { (_) in
-            alert.dismiss(animated: true)
-        }
-        alert.addAction(cameraAction)
-        alert.addAction(galeryAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
-    }
-    
-    func open(_ type: UIImagePickerController.SourceType) {
-        let cameraController = UIImagePickerController()
-        cameraController.delegate = self
-        cameraController.sourceType = type
-        present(cameraController, animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
-            productImage?.image = image
-            productImage?.contentMode = .scaleAspectFill
-        }
-        picker.dismiss(animated: true)
+    func didSelectImage(_ image: UIImage) {
+        productImage?.image = image
+        productImage?.contentMode = .scaleAspectFill
     }
     
 }

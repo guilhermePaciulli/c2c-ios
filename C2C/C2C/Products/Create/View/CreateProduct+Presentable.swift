@@ -19,26 +19,6 @@ protocol CreateProductPresentable: class {
 
 extension CreateProductViewController: CreateProductPresentable {
     
-    func startLoading() {
-        showSpinnerView()
-    }
-    
-    func stopLoading() {
-        removeSpinnerView()
-    }
-    
-    func showAlert(withTitle title: String, message: String) -> Guarantee<Void> {
-        return .init { seal in
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
-                alert.dismiss(animated: true)
-                seal(())
-            }
-            alert.addAction(alertAction)
-            present(alert, animated: true)
-        }
-    }
-    
     func getProductImage() -> UIImage? {
         return productImage?.image
     }

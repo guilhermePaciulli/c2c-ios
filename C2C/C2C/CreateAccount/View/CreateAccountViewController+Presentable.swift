@@ -18,23 +18,6 @@ protocol CreateAccountViewControllerPresentable {
 
 extension CreateAccountViewController: CreateAccountViewControllerPresentable {
     
-    func startLoading() {
-        showSpinnerView()
-    }
-    
-    func stopLoading() {
-        removeSpinnerView()
-    }
-    
-    func showAlert(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
-            alert.dismiss(animated: true)
-        }
-        alert.addAction(alertAction)
-        present(alert, animated: true)
-    }
-    
     func get(field: AccountFields) -> String {
         switch field {
         case .Email:

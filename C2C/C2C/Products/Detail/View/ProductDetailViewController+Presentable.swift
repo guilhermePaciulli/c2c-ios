@@ -19,23 +19,6 @@ protocol ProductDetailViewControllerPresentable {
 }
 
 extension ProductDetailViewController: ProductDetailViewControllerPresentable {
-    func startLoading() {
-        showSpinnerView()
-    }
-    
-    func stopLoading() {
-        removeSpinnerView()
-    }
-    
-    func showAlert(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (_) in
-            alert.dismiss(animated: true)
-            self?.viewModel?.didTapExitButton()
-        }
-        alert.addAction(alertAction)
-        present(alert, animated: true)
-    }
     
     func setProduct(name: String) {
         productName?.text = name

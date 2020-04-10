@@ -43,21 +43,4 @@ extension AccountViewController: AccountViewControllerPresentable {
         return profilePicture
     }
     
-    func startLoading() {
-        showSpinnerView(false)
-    }
-    
-    func stopLoading() {
-        removeSpinnerView(false)
-    }
-    
-    func showAlert(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in
-            alert.dismiss(animated: true)
-        }
-        alert.addAction(alertAction)
-        present(alert, animated: true)
-    }
-    
 }

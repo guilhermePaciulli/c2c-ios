@@ -30,12 +30,12 @@ class AuthenticationViewModel: AuthenticationViewModelProtocol {
         guard let view = self.view else { return }
         let errors = [AccountFields.Email, AccountFields.Password].compactMap({ $0.validate(string: view.get(field: $0)) })
         if errors.isEmpty {
-            view.startLoading()
+            view.startLoading(false)
             interactor.login(withEmail: view.get(field: .Email), andPassword: view.get(field: .Password)).done(on: .main) { [weak self] (_) in
                 self?.coordinator?.didLogin()
-                view.stopLoading()
+                view.stopLoading(false)
             }.catch { (error) in
-                view.stopLoading()
+                view.stopLoading(false)
                 view.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             }
         } else {
