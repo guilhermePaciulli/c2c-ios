@@ -11,6 +11,23 @@ import UIKit
 private var loadingView: UIView?
 
 extension UIViewController {
+    
+    func startLoading(_ hidingUIElements: Bool = true) {
+        showSpinnerView(hidingUIElements)
+    }
+    
+    func startLoading() {
+        showSpinnerView()
+    }
+    
+    func stopLoading() {
+        removeSpinnerView()
+    }
+    
+    func stopLoading(_ hidingUIElements: Bool = true) {
+        removeSpinnerView(hidingUIElements)
+    }
+    
     func showSpinnerView(_ hidingUIElements: Bool = true) {
         if hidingUIElements {
             navigationController?.setNavigationBarHidden(true, animated: true)

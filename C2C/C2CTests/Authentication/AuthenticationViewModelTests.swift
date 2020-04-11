@@ -86,11 +86,11 @@ class AuthenticationViewModelTests: QuickSpec {
         var email = "rogerinho@doinga.com"
         var password = "12345678"
         
-        func startLoading() {
+        func startLoading(_ hidingUIElements: Bool) {
             startLoadingCalled = true
         }
         
-        func stopLoading() {
+        func stopLoading(_ hidingUIElements: Bool) {
             stopLoadingCalled = true
         }
         

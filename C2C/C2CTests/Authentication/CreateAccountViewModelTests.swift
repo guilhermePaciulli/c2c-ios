@@ -50,7 +50,7 @@ class CreateAccountViewModelTests: QuickSpec {
                 self.view.profilePicture = invalidProfilePicture
                 
                 let invalidEmailError = AccountFields.Email.validate(string: invalidEmail) ?? ""
-                let invalidCPFError = AccountFields.CPF.validate(string: invalidEmail) ?? ""
+                let invalidCPFError = AccountFields.CPF.validate(string: invalidCPF) ?? ""
                 let invalidProfilePictureError = "You have to add a profile picture"
 
                 self.subject.didTapToCreateAccount()

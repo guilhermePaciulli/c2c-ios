@@ -20,4 +20,8 @@ class MockedProductsRespository: ProductsRepositoryProtocol {
     func getProduct(withId id: Int) -> Promise<Product> {
         return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: Product.self)
     }
+    
+    func createProduct(product: CreateProduct) -> Promise<Void> {
+        return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: EmptyResponse.self).map({ _ in return })
+    }
 }

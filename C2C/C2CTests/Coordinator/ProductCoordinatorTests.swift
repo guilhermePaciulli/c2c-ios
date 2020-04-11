@@ -40,6 +40,23 @@ class ProductCoordinatorTests: QuickSpec {
                 expect(self.subject.state).to(equal(.ProductsList))
             }
             
+            it("should go to add product view controller") {
+                self.subject.goToAddProductFlow()
+                expect(self.subject.state).toEventually(equal(.CreateProduct))
+            }
+            
+            it("should go back to product list when in create product flow") {
+                self.subject.goToAddProductFlow()
+                self.subject.presentPreviousStep()
+                expect(self.subject.state).toEventually(equal(.ProductsList))
+            }
+            
+            it("should go to product list after creating a new product") {
+                self.subject.goToAddProductFlow()
+                self.subject.presentNextStep()
+                expect(self.subject.state).toEventually(equal(.ProductsList))
+            }
+            
         }
         
     }

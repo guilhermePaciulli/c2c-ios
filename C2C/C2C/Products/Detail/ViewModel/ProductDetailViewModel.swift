@@ -22,6 +22,7 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
     var productID: Int?
     var coordinator: BasicCoordinationProtocol?
     var interactor: ProductsInteractor?
+    var userInteractor: UserInteractorProtocol?
     var blurView: UIView?
     
     // MARK:- Viewmodel delegate
@@ -36,6 +37,7 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
             let productPrice = "R$"+String(product.price)
             self?.view?.setProduct(price: productPrice)
             guard let url = URL(string: product.productImageURL) else { return }
+            self?.view?.setProductImage()?.kf.indicatorType = .activity
             self?.view?.setProductImage()?.kf.setImage(with: url)
             self?.view?.stopLoading()
         }).catch({ [weak self] (error) in

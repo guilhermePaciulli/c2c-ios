@@ -12,6 +12,8 @@
 		A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */; };
 		A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */; };
 		A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */; };
+		A301E61D243FEFB800A0607F /* UIViewController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */; };
+		A301E61F243FF42700A0607F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E61E243FF42700A0607F /* UIViewController+Alert.swift */; };
 		A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2AD24156BEC002FC41B /* AppCoordinator.swift */; };
 		A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */; };
 		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
@@ -73,6 +75,13 @@
 		A3C60E4C2436AA6B00426F40 /* C2CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C60E4B2436AA6B00426F40 /* C2CUITests.swift */; };
 		A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */; };
 		A3C60E502436AB7E00426F40 /* AccessToken.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C60E4F2436AB7E00426F40 /* AccessToken.json */; };
+		A3D86984243E9B53000963F8 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D86983243E9B53000963F8 /* CreateProduct.storyboard */; };
+		A3D86986243E9B63000963F8 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86985243E9B63000963F8 /* CreateProductViewController.swift */; };
+		A3D86988243E9B6C000963F8 /* CreateProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */; };
+		A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */; };
+		A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */; };
+		A3D86991243EA079000963F8 /* ProductFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86990243EA079000963F8 /* ProductFields.swift */; };
+		A3D86993243EB96F000963F8 /* CreateProductViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */; };
 		A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */; };
 		A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */; };
 		A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */; };
@@ -124,6 +133,8 @@
 		A3017044243A670D00D08CE6 /* AuthenticationCoordinationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinationMock.swift; sourceTree = "<group>"; };
 		A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelTests.swift; sourceTree = "<group>"; };
 		A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFieldsTests.swift; sourceTree = "<group>"; };
+		A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Camera.swift"; sourceTree = "<group>"; };
+		A301E61E243FF42700A0607F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		A313C2AD24156BEC002FC41B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorDependencyInjector.swift; sourceTree = "<group>"; };
 		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -191,6 +202,13 @@
 		A3C60E4B2436AA6B00426F40 /* C2CUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2CUITests.swift; sourceTree = "<group>"; };
 		A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
 		A3C60E4F2436AB7E00426F40 /* AccessToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AccessToken.json; sourceTree = "<group>"; };
+		A3D86983243E9B53000963F8 /* CreateProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
+		A3D86985243E9B63000963F8 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
+		A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewModel.swift; sourceTree = "<group>"; };
+		A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateProduct+Presentable.swift"; sourceTree = "<group>"; };
+		A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateProduct+Camera.swift"; sourceTree = "<group>"; };
+		A3D86990243EA079000963F8 /* ProductFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFields.swift; sourceTree = "<group>"; };
+		A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewModelTests.swift; sourceTree = "<group>"; };
 		A3DB829C2438DBDA0086FECF /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		A3DB829F2438DC0F0086FECF /* AccountDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDependencyInjector.swift; sourceTree = "<group>"; };
 		A3DC204F24395F950074B87E /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
@@ -356,6 +374,7 @@
 			children = (
 				A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */,
 				A3B47CD3243973640009A6AF /* AccountFields.swift */,
+				A3D86990243EA079000963F8 /* ProductFields.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -506,6 +525,7 @@
 			children = (
 				A3C0123E241E61AE00A50422 /* Detail */,
 				A3C0123D241E61A400A50422 /* Collection */,
+				A3D86989243E9B70000963F8 /* Create */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -575,6 +595,8 @@
 				A3BCC10024257AC60047CF4B /* UIViewController+BlurView.swift */,
 				A3B47CD124396D590009A6AF /* UIViewController+Backbutton.swift */,
 				A363FCBD2439901D002081BF /* String+Validations.swift */,
+				A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */,
+				A301E61E243FF42700A0607F /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -595,6 +617,34 @@
 			isa = PBXGroup;
 			children = (
 				A3C496C624156AF40019E0E1 /* ProductsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A3D86989243E9B70000963F8 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				A3D8698A243E9B8C000963F8 /* View */,
+				A3D8698B243E9B93000963F8 /* ViewModel */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		A3D8698A243E9B8C000963F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3D86983243E9B53000963F8 /* CreateProduct.storyboard */,
+				A3D86985243E9B63000963F8 /* CreateProductViewController.swift */,
+				A3D8698C243E9F0C000963F8 /* CreateProduct+Presentable.swift */,
+				A3D8698E243EA013000963F8 /* CreateProduct+Camera.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3D8698B243E9B93000963F8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -632,6 +682,7 @@
 			children = (
 				A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */,
 				A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */,
+				A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -834,6 +885,7 @@
 			files = (
 				A3DC205424395FAB0074B87E /* CreateAccount.storyboard in Resources */,
 				A33254EE24154EAE002CADF6 /* LaunchScreen.storyboard in Resources */,
+				A3D86984243E9B53000963F8 /* CreateProduct.storyboard in Resources */,
 				A33254EB24154EAE002CADF6 /* Assets.xcassets in Resources */,
 				A3E6B1962436C1F700B55441 /* Authentication.storyboard in Resources */,
 				A33254E924154EAC002CADF6 /* Products.storyboard in Resources */,
@@ -990,12 +1042,14 @@
 			files = (
 				A3DC205224395FA20074B87E /* CreateAccountViewController.swift in Sources */,
 				A3C60E3E243693E900426F40 /* Account.swift in Sources */,
+				A3D86986243E9B63000963F8 /* CreateProductViewController.swift in Sources */,
 				A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */,
 				A3BCC0FF242579680047CF4B /* Products.swift in Sources */,
 				A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */,
 				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
 				A3B47CD4243973640009A6AF /* AccountFields.swift in Sources */,
 				C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */,
+				A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */,
 				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
 				C17D87F524202F3C00E90BF4 /* ProductDetailViewController+Presentable.swift in Sources */,
 				A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */,
@@ -1005,6 +1059,7 @@
 				A3C60E402436947200426F40 /* UserEndpoints.swift in Sources */,
 				A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */,
 				A3B47CD224396D590009A6AF /* UIViewController+Backbutton.swift in Sources */,
+				A3D86991243EA079000963F8 /* ProductFields.swift in Sources */,
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A3C60E44243697AF00426F40 /* UserInteractor.swift in Sources */,
 				A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */,
@@ -1029,6 +1084,7 @@
 				A3C60E46243698AC00426F40 /* KeychainRepository.swift in Sources */,
 				A363FCBE2439901D002081BF /* String+Validations.swift in Sources */,
 				A3B47CD0243964970009A6AF /* CreateAccountViewController+Presentable.swift in Sources */,
+				A3D86988243E9B6C000963F8 /* CreateProductViewModel.swift in Sources */,
 				C17D87F824202F6700E90BF4 /* ProductDetailViewModel.swift in Sources */,
 				A39AB18224395CE6001ED77C /* AuthenticationCoordinator.swift in Sources */,
 				A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */,
@@ -1039,6 +1095,9 @@
 				A3B47CC9243963130009A6AF /* AccountViewController.swift in Sources */,
 				A3A91F412438E0D300CE4353 /* AuthenticationViewController+Presentable.swift in Sources */,
 				A3B47CC7243963130009A6AF /* AccountViewController+Presentable.swift in Sources */,
+				A301E61F243FF42700A0607F /* UIViewController+Alert.swift in Sources */,
+				A301E61D243FEFB800A0607F /* UIViewController+Camera.swift in Sources */,
+				A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */,
 				A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1061,6 +1120,7 @@
 				A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */,
 				A358521E243BFA78002D93E5 /* AccountViewModelTests.swift in Sources */,
 				A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */,
+				A3D86993243EB96F000963F8 /* CreateProductViewModelTests.swift in Sources */,
 				A3585220243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift in Sources */,
 				A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */,
 				A3E6B18D2436B5EC00B55441 /* ProductsViewModelTests.swift in Sources */,

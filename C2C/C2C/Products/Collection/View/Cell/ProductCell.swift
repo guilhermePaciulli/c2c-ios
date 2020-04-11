@@ -33,6 +33,7 @@ class ProductCell: UITableViewCell {
         productDescription?.text = description
         productPrice?.text = price
         guard let url = URL(string: image) else { return }
+        productImage?.kf.indicatorType = .activity
         productImage?.kf.setImage(with: url)
     }
     

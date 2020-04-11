@@ -36,7 +36,7 @@ class CreateAccountViewController: UITableViewController {
     }
     
     @IBAction func didTapToInputImage(_ sender: UITapGestureRecognizer) {
-        startSelectingImage()
+        startSelectingImage(self)
     }
     
     @objc func didTapBackButton() {
