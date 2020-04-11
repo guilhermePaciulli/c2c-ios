@@ -14,6 +14,9 @@
 		A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */; };
 		A301E61D243FEFB800A0607F /* UIViewController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */; };
 		A301E61F243FF42700A0607F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E61E243FF42700A0607F /* UIViewController+Alert.swift */; };
+		A301E62124423D1100A0607F /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62024423D1100A0607F /* AddressViewModel.swift */; };
+		A301E62424423D2900A0607F /* AddressViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A301E62324423D2900A0607F /* AddressViewController.storyboard */; };
+		A301E62624423D3500A0607F /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62524423D3500A0607F /* AddressViewController.swift */; };
 		A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2AD24156BEC002FC41B /* AppCoordinator.swift */; };
 		A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */; };
 		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
@@ -135,6 +138,9 @@
 		A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFieldsTests.swift; sourceTree = "<group>"; };
 		A301E61C243FEFB800A0607F /* UIViewController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Camera.swift"; sourceTree = "<group>"; };
 		A301E61E243FF42700A0607F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		A301E62024423D1100A0607F /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		A301E62324423D2900A0607F /* AddressViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressViewController.storyboard; sourceTree = "<group>"; };
+		A301E62524423D3500A0607F /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		A313C2AD24156BEC002FC41B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorDependencyInjector.swift; sourceTree = "<group>"; };
 		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -277,6 +283,32 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A301E62224423D1600A0607F /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				A301E62724423D3800A0607F /* View */,
+				A301E62824423D4000A0607F /* ViewModel */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		A301E62724423D3800A0607F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A301E62324423D2900A0607F /* AddressViewController.storyboard */,
+				A301E62524423D3500A0607F /* AddressViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A301E62824423D4000A0607F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A301E62024423D1100A0607F /* AddressViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A313C2AF24156C0A002FC41B /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +442,7 @@
 				A3E6B1942436C1EB00B55441 /* Authentication */,
 				A3B47CCA243963170009A6AF /* Account */,
 				A3E6B1932436C1E300B55441 /* CreateAccount */,
+				A301E62224423D1600A0607F /* Address */,
 				A363FCC1243A4088002081BF /* TabBarNavigation */,
 				A39C54B624156A06009FCF8B /* Resources */,
 				A3C496C424156AD10019E0E1 /* Extensions */,
@@ -891,6 +924,7 @@
 				A33254E924154EAC002CADF6 /* Products.storyboard in Resources */,
 				A3C496C124156A7B0019E0E1 /* Main.storyboard in Resources */,
 				A3B47CC8243963130009A6AF /* Account.storyboard in Resources */,
+				A301E62424423D2900A0607F /* AddressViewController.storyboard in Resources */,
 				A3C01240241E61C600A50422 /* ProductDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1044,6 +1078,7 @@
 				A3C60E3E243693E900426F40 /* Account.swift in Sources */,
 				A3D86986243E9B63000963F8 /* CreateProductViewController.swift in Sources */,
 				A3BCC10124257AC60047CF4B /* UIViewController+BlurView.swift in Sources */,
+				A301E62624423D3500A0607F /* AddressViewController.swift in Sources */,
 				A3BCC0FF242579680047CF4B /* Products.swift in Sources */,
 				A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */,
 				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
@@ -1063,6 +1098,7 @@
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A3C60E44243697AF00426F40 /* UserInteractor.swift in Sources */,
 				A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */,
+				A301E62124423D1100A0607F /* AddressViewModel.swift in Sources */,
 				A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */,
 				A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */,
 				A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */,
