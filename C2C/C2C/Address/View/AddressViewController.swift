@@ -21,8 +21,13 @@ class AddressViewController: UITableViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCancelButton()
         setBackButton(#selector(didTapToCancel))
+        title = "Address"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchAddress()
     }
     
     // MARK: - Actions
@@ -32,12 +37,6 @@ class AddressViewController: UITableViewController {
     
     @objc func didTapToCancel() {
         viewModel?.didTapToCancel()
-    }
-    
-    // MARK: - Private methods
-    private func setupCancelButton() {
-        navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .add, target: self, action: #selector(didTapToCancel))
-        navigationItem.rightBarButtonItem?.tintColor = .systemYellow
     }
     
 

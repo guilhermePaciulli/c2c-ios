@@ -33,6 +33,7 @@ class AccountCoordinator: AccountCoordinationProtocol {
             switch injector.accountViewModel.selectedFlow {
             case .Address:
                 state = .Address
+                injector.addressViewModel.coordinator = self
                 injector.navigationController.pushViewController(injector.addressViewController, animated: true)
             default:
                 break

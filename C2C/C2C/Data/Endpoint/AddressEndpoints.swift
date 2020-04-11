@@ -14,7 +14,7 @@ enum AddressEndpoints: Endpoint {
     case get
     
     var path: String {
-        return "/addresses"
+        return "/address"
     }
     
     var request: URLRequest {
