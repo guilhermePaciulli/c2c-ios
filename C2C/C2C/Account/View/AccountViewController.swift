@@ -31,5 +31,9 @@ class AccountViewController: UITableViewController {
         super.viewWillAppear(animated)
         viewModel?.fetchUser()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didSelectRowAt(indexPath: indexPath)
+    }
 
 }

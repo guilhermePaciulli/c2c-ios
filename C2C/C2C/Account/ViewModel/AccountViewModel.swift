@@ -11,6 +11,7 @@ import Kingfisher
 
 protocol AccountViewModelProtocol {
     func fetchUser()
+    func didSelectRowAt(indexPath: IndexPath)
 }
 
 class AccountViewModel: AccountViewModelProtocol {
@@ -19,6 +20,7 @@ class AccountViewModel: AccountViewModelProtocol {
     var interactor: UserInteractorProtocol
     var coordinator: AccountCoordinationProtocol?
     var view: AccountViewControllerPresentable?
+    var selectedFlow: AccountCoordinatorRoutingState = .Account
     
     // MARK:- Initialization
     init(interactor: UserInteractorProtocol = UserInteractor()) {
@@ -38,6 +40,21 @@ class AccountViewModel: AccountViewModelProtocol {
             self?.view?.stopLoading()
             self?.coordinator?.userNotFound()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+        }
+    }
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 3:
+                selectedFlow = .Address
+                coordinator?.presentNextStep()
+            default:
+                break
+            }
+        default:
+            break
         }
     }
     

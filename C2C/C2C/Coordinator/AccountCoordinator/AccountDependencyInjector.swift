@@ -26,6 +26,13 @@ class AccountDependencyInjector {
         return controller
     }()
     
+    lazy var addressViewController: AddressViewController = {
+        let controller: AddressViewController = .instantiate()
+        controller.viewModel = addressViewModel
+        addressViewModel.view = controller
+        return controller
+    }()
+    
     // MARK:- ViewModels
     lazy var accountViewModel: AccountViewModel = {
         let viewModel = AccountViewModel()
@@ -33,8 +40,17 @@ class AccountDependencyInjector {
         return viewModel
     }()
     
+    lazy var addressViewModel: AddressViewModel = {
+        let viewModel: AddressViewModel = .init(interactor: addressInteractor)
+        return viewModel
+    }()
+    
     // MARK:- Interactors
     lazy var userInteractor: UserInteractor = {
+        return .init()
+    }()
+    
+    lazy var addressInteractor: AddressInteractor = {
         return .init()
     }()
     
