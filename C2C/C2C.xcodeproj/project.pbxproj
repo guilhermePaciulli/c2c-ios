@@ -41,6 +41,8 @@
 		A3341A192427FB1100C96A0C /* Array<Product>.json in Resources */ = {isa = PBXBuildFile; fileRef = A3341A182427FB1100C96A0C /* Array<Product>.json */; };
 		A3341A1B2427FB3400C96A0C /* Product.json in Resources */ = {isa = PBXBuildFile; fileRef = A3341A1A2427FB3400C96A0C /* Product.json */; };
 		A3444B0D243B82FC009CB16F /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3444B0C243B82FC009CB16F /* NetworkSession.swift */; };
+		A353252624423F4A00FECBF6 /* Address+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252524423F4A00FECBF6 /* Address+Presentable.swift */; };
+		A353252824423F7600FECBF6 /* AddressFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252724423F7600FECBF6 /* AddressFields.swift */; };
 		A358521C243BFA2F002D93E5 /* UserData.json in Resources */ = {isa = PBXBuildFile; fileRef = A358521B243BFA2F002D93E5 /* UserData.json */; };
 		A358521E243BFA78002D93E5 /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358521D243BFA78002D93E5 /* AccountViewModelTests.swift */; };
 		A3585220243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358521F243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift */; };
@@ -172,6 +174,8 @@
 		A3341A182427FB1100C96A0C /* Array<Product>.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Array<Product>.json"; sourceTree = "<group>"; };
 		A3341A1A2427FB3400C96A0C /* Product.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Product.json; sourceTree = "<group>"; };
 		A3444B0C243B82FC009CB16F /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		A353252524423F4A00FECBF6 /* Address+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+Presentable.swift"; sourceTree = "<group>"; };
+		A353252724423F7600FECBF6 /* AddressFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFields.swift; sourceTree = "<group>"; };
 		A358521B243BFA2F002D93E5 /* UserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserData.json; sourceTree = "<group>"; };
 		A358521D243BFA78002D93E5 /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
 		A358521F243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepositoryMock.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 			children = (
 				A301E62324423D2900A0607F /* AddressViewController.storyboard */,
 				A301E62524423D3500A0607F /* AddressViewController.swift */,
+				A353252524423F4A00FECBF6 /* Address+Presentable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */,
 				A3B47CD3243973640009A6AF /* AccountFields.swift */,
 				A3D86990243EA079000963F8 /* ProductFields.swift */,
+				A353252724423F7600FECBF6 /* AddressFields.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1085,6 +1091,7 @@
 				A3B47CD4243973640009A6AF /* AccountFields.swift in Sources */,
 				C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */,
 				A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */,
+				A353252624423F4A00FECBF6 /* Address+Presentable.swift in Sources */,
 				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
 				C17D87F524202F3C00E90BF4 /* ProductDetailViewController+Presentable.swift in Sources */,
 				A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */,
@@ -1124,6 +1131,7 @@
 				C17D87F824202F6700E90BF4 /* ProductDetailViewModel.swift in Sources */,
 				A39AB18224395CE6001ED77C /* AuthenticationCoordinator.swift in Sources */,
 				A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */,
+				A353252824423F7600FECBF6 /* AddressFields.swift in Sources */,
 				A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */,
 				C17D87F324202EE200E90BF4 /* ProductDetailViewController.swift in Sources */,
 				A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */,

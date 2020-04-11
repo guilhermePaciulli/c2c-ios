@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Address View Controller-->
         <scene sceneID="RIo-a3-SM1">
             <objects>
-                <tableViewController id="zbr-yJ-yn9" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zbr-yJ-yn9" customClass="AddressViewController" customModule="C2C" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tp2-yv-VnY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,8 +45,36 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="124" id="qZU-KT-C81">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="124" id="2R0-Og-boJ">
                                         <rect key="frame" x="0.0" y="152" width="414" height="124"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2R0-Og-boJ" id="Foz-E9-GT6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dPr-GC-aiy">
+                                                    <rect key="frame" x="20" y="51" width="374" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKe-z0-fwq">
+                                                    <rect key="frame" x="24" y="10" width="65" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GKe-z0-fwq" firstAttribute="leading" secondItem="Foz-E9-GT6" secondAttribute="leading" constant="24" id="67J-BW-ctC"/>
+                                                <constraint firstItem="dPr-GC-aiy" firstAttribute="leading" secondItem="Foz-E9-GT6" secondAttribute="leading" constant="20" id="Ard-y7-AfN"/>
+                                                <constraint firstItem="GKe-z0-fwq" firstAttribute="top" secondItem="Foz-E9-GT6" secondAttribute="top" constant="10" id="OQj-Zk-Ac9"/>
+                                                <constraint firstAttribute="trailing" secondItem="dPr-GC-aiy" secondAttribute="trailing" constant="20" id="Zwt-BZ-Sy0"/>
+                                                <constraint firstItem="dPr-GC-aiy" firstAttribute="top" secondItem="GKe-z0-fwq" secondAttribute="bottom" constant="20" id="x2K-bR-GR4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="124" id="qZU-KT-C81">
+                                        <rect key="frame" x="0.0" y="276" width="414" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZU-KT-C81" id="c0B-4H-d8i">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -74,7 +102,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="124" id="9c0-yF-qdS">
-                                        <rect key="frame" x="0.0" y="276" width="414" height="124"/>
+                                        <rect key="frame" x="0.0" y="400" width="414" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9c0-yF-qdS" id="nST-O2-mL6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -85,6 +113,9 @@
                                                     <state key="normal" title="Save Address">
                                                         <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapToSaveAddress:" destination="zbr-yJ-yn9" eventType="touchUpInside" id="bxb-wc-T9c"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -103,6 +134,11 @@
                             <outlet property="delegate" destination="zbr-yJ-yn9" id="1wC-Tx-SGL"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="complement" destination="g2t-iZ-XS3" id="08b-hB-Ukf"/>
+                        <outlet property="number" destination="dPr-GC-aiy" id="fj6-rv-KLF"/>
+                        <outlet property="zipCode" destination="MjM-4u-ZG8" id="Mc6-Mj-202"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LmO-B6-blT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
