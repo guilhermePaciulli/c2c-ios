@@ -56,6 +56,10 @@ class UserInteractor: UserInteractorProtocol {
         return self.userRepository.userInfo().map { userData -> UserData in
             self.userDefaultsRepository.save(userData, withKey: .User)
             return userData
+        }.recover { (error) -> Promise<UserData> in
+            self.keychainAccess.delete(key: "jwt")
+            self.userDefaultsRepository.delete(key: .User)
+            throw error
         }
     }
     

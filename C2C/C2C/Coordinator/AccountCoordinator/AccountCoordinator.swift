@@ -9,17 +9,17 @@
 import UIKit
 
 protocol AccountCoordinationProtocol: BasicCoordinationProtocol {
+    func userNotFound()
 }
 
 class AccountCoordinator: AccountCoordinationProtocol {
     
-    
     // MARK:- Properties
     var state: AccountCoordinatorRoutingState
     var injector: AccountDependencyInjector
-    var baseCoordinator: CoordinatorPresentable
+    var baseCoordinator: AppCoordinatable
     
-    init(baseCoordinator: CoordinatorPresentable) {
+    init(baseCoordinator: AppCoordinatable) {
         state = .Account
         injector = .init()
         self.baseCoordinator = baseCoordinator
@@ -31,6 +31,10 @@ class AccountCoordinator: AccountCoordinationProtocol {
     }
     
     func presentPreviousStep() {
+    }
+    
+    func userNotFound() {
+        baseCoordinator.didLogout()
     }
     
     enum AccountCoordinatorRoutingState {

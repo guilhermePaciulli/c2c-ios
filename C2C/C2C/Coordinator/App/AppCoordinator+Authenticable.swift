@@ -10,11 +10,16 @@ import UIKit
 
 protocol AppAuthenticable {
     func didLogin()
+    func didLogout()
 }
 
 extension AppCoordinator {
     
     func didLogin() {
+        setUpTabBar()
+    }
+    
+    func didLogout() {
         setUpTabBar()
     }
     

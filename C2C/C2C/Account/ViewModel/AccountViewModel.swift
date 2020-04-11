@@ -17,7 +17,7 @@ class AccountViewModel: AccountViewModelProtocol {
     
     // MARK:- Properties
     var interactor: UserInteractorProtocol
-    var coordinator: BasicCoordinationProtocol?
+    var coordinator: AccountCoordinationProtocol?
     var view: AccountViewControllerPresentable?
     
     // MARK:- Initialization
@@ -36,7 +36,7 @@ class AccountViewModel: AccountViewModelProtocol {
             self?.setView(withUser: $0)
         }.catch { [weak self] (error) in
             self?.view?.stopLoading()
-            self?.userNotFoundError()
+            self?.coordinator?.userNotFound()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
         }
     }
@@ -49,15 +49,6 @@ class AccountViewModel: AccountViewModelProtocol {
         guard let url = URL(string: user.attributes.profile_picture_url) else { return }
         view?.setProfilePicture()?.kf.setImage(with: url)
         view?.setProfilePicture()?.backgroundColor = .clear
-    }
-    
-    private func userNotFoundError() {
-        view?.setName("Error fetching user")
-        view?.setCPF("")
-        view?.setEmail("")
-        view?.setSurname("Try again later")
-        view?.setProfilePicture()?.image = UIImage(named: "stub_profile")
-        view?.setProfilePicture()?.backgroundColor = .systemYellow
     }
     
 }

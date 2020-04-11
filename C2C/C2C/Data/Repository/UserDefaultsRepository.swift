@@ -9,11 +9,16 @@
 import UIKit
 
 protocol UserDefaultsRepositoryProtocol {
+    func delete(key: UserDefaultsKeys)
     func save<T: Codable>(_ data: T, withKey key: UserDefaultsKeys)
     func fetch<T: Codable>(key: UserDefaultsKeys) -> T?
 }
 
 class UserDefaultsRepository: UserDefaultsRepositoryProtocol {
+    
+    func delete(key: UserDefaultsKeys) {
+        UserDefaults.standard.removeObject(forKey: key.rawValue)
+    }
     
     func save<T: Codable>(_ data: T, withKey key: UserDefaultsKeys) {
         UserDefaults.standard.saveCodableToStandard(data, forKey: key.rawValue)
