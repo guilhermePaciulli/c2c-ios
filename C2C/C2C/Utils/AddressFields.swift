@@ -20,10 +20,10 @@ enum AddressFields: CaseIterable {
         case .Complement:
             return string.isEmpty ? "Address line 2 seems invalid" : nil
         case .Number:
-            if let price = Int(string) {
-                return price <= 0 ? "Number is not valid" : nil
+            if let addressNumber = Int(string) {
+                return addressNumber <= 0 ? "Address number is not valid" : nil
             }
-            return "Number is not valid"
+            return "address number is not valid"
         }
     }
     
