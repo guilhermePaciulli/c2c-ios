@@ -1,0 +1,10 @@
+{
+    "data": {
+        "id": "1",
+        "type": "address",
+        "attributes": {
+            "zip_code": "3124223",
+            "complement": "345, apt 56"
+        }
+    }
+}
