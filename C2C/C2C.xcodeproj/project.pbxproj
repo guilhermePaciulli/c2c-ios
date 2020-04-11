@@ -108,6 +108,13 @@
 		A3F1AA34244257DA001E741F /* Address.json in Resources */ = {isa = PBXBuildFile; fileRef = A3F1AA33244257DA001E741F /* Address.json */; };
 		A3F1AA3624425A56001E741F /* AddressViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA3524425A56001E741F /* AddressViewModelTests.swift */; };
 		A3F1AA39244260AB001E741F /* AddressFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA38244260AB001E741F /* AddressFieldsTests.swift */; };
+		A3F1AA3B24426719001E741F /* CreditCardEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA3A24426719001E741F /* CreditCardEndpoints.swift */; };
+		A3F1AA3D24426724001E741F /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA3C24426724001E741F /* CreditCard.swift */; };
+		A3F1AA3F244269C9001E741F /* CreditCardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA3E244269C8001E741F /* CreditCardRepository.swift */; };
+		A3F1AA41244269F3001E741F /* CreditCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA40244269F3001E741F /* CreditCardInteractor.swift */; };
+		A3F1AA4324426A1D001E741F /* CreditCardInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA4224426A1D001E741F /* CreditCardInteractorTests.swift */; };
+		A3F1AA4524426A2A001E741F /* CreditCard.json in Resources */ = {isa = PBXBuildFile; fileRef = A3F1AA4424426A2A001E741F /* CreditCard.json */; };
+		A3F1AA4724426A5C001E741F /* CreditCardRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA4624426A5C001E741F /* CreditCardRepositoryMock.swift */; };
 		A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */; };
 		C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */; };
 		C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */; };
@@ -250,6 +257,13 @@
 		A3F1AA33244257DA001E741F /* Address.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Address.json; sourceTree = "<group>"; };
 		A3F1AA3524425A56001E741F /* AddressViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModelTests.swift; sourceTree = "<group>"; };
 		A3F1AA38244260AB001E741F /* AddressFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFieldsTests.swift; sourceTree = "<group>"; };
+		A3F1AA3A24426719001E741F /* CreditCardEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardEndpoints.swift; sourceTree = "<group>"; };
+		A3F1AA3C24426724001E741F /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		A3F1AA3E244269C8001E741F /* CreditCardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRepository.swift; sourceTree = "<group>"; };
+		A3F1AA40244269F3001E741F /* CreditCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInteractor.swift; sourceTree = "<group>"; };
+		A3F1AA4224426A1D001E741F /* CreditCardInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInteractorTests.swift; sourceTree = "<group>"; };
+		A3F1AA4424426A2A001E741F /* CreditCard.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CreditCard.json; sourceTree = "<group>"; };
+		A3F1AA4624426A5C001E741F /* CreditCardRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRepositoryMock.swift; sourceTree = "<group>"; };
 		A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Authenticable.swift"; sourceTree = "<group>"; };
 		B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C2CTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
@@ -377,6 +391,7 @@
 				A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */,
 				A3C60E3F2436947200426F40 /* UserEndpoints.swift */,
 				A35325292442425C00FECBF6 /* AddressEndpoints.swift */,
+				A3F1AA3A24426719001E741F /* CreditCardEndpoints.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -397,6 +412,7 @@
 				A313C2BD2416F673002FC41B /* Products.swift */,
 				A313C2C02416F685002FC41B /* APIResponseError.swift */,
 				A353252B2442427400FECBF6 /* Address.swift */,
+				A3F1AA3C24426724001E741F /* CreditCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,6 +423,7 @@
 				A313C2C224170149002FC41B /* ProductsRepository.swift */,
 				A3C60E412436957F00426F40 /* UserRepository.swift */,
 				A353252F244244A200FECBF6 /* AddressRepository.swift */,
+				A3F1AA3E244269C8001E741F /* CreditCardRepository.swift */,
 				A3532531244244AA00FECBF6 /* Local */,
 			);
 			path = Repository;
@@ -418,6 +435,7 @@
 				A313C2C5241701AD002FC41B /* ProductsInteractor.swift */,
 				A3C60E43243697AF00426F40 /* UserInteractor.swift */,
 				A353252D2442449100FECBF6 /* AddressInteractor.swift */,
+				A3F1AA40244269F3001E741F /* CreditCardInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -512,6 +530,7 @@
 				A3341A132427F9F400C96A0C /* ProductsInteractorTests.swift */,
 				A3C60E492436A9A500426F40 /* UserInteractorTests.swift */,
 				A3F1AA2B2442562A001E741F /* AddressInteractorTests.swift */,
+				A3F1AA4224426A1D001E741F /* CreditCardInteractorTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -522,9 +541,9 @@
 				A3341A0B2427DF4700C96A0C /* MocksHelper.swift */,
 				A3341A102427F5F900C96A0C /* ProductsRepositoryMock.swift */,
 				A3F1AA2D24425657001E741F /* AddressRepositoryMock.swift */,
+				A3F1AA4624426A5C001E741F /* CreditCardRepositoryMock.swift */,
 				A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */,
-				A358521F243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift */,
-				A3C60E472436A87E00426F40 /* KeychainRepositoryMock.swift */,
+				A3F1AA4824426A63001E741F /* Local */,
 				A3341A172427FAF600C96A0C /* JSONMocks */,
 			);
 			path = Mocks;
@@ -538,6 +557,7 @@
 				A3C60E4F2436AB7E00426F40 /* AccessToken.json */,
 				A358521B243BFA2F002D93E5 /* UserData.json */,
 				A3F1AA33244257DA001E741F /* Address.json */,
+				A3F1AA4424426A2A001E741F /* CreditCard.json */,
 			);
 			path = JSONMocks;
 			sourceTree = "<group>";
@@ -817,6 +837,15 @@
 			path = Address;
 			sourceTree = "<group>";
 		};
+		A3F1AA4824426A63001E741F /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				A358521F243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift */,
+				A3C60E472436A87E00426F40 /* KeychainRepositoryMock.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		C1415EEE2420337E00CAC689 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,6 +1018,7 @@
 				A3C60E502436AB7E00426F40 /* AccessToken.json in Resources */,
 				A3341A192427FB1100C96A0C /* Array<Product>.json in Resources */,
 				A358521C243BFA2F002D93E5 /* UserData.json in Resources */,
+				A3F1AA4524426A2A001E741F /* CreditCard.json in Resources */,
 				A3341A1B2427FB3400C96A0C /* Product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1135,11 +1165,13 @@
 				A3BCC0FF242579680047CF4B /* Products.swift in Sources */,
 				A3C496C724156AF40019E0E1 /* ProductsViewModel.swift in Sources */,
 				A313C2BA2416F652002FC41B /* APIClient.swift in Sources */,
+				A3F1AA3F244269C9001E741F /* CreditCardRepository.swift in Sources */,
 				A3B47CD4243973640009A6AF /* AccountFields.swift in Sources */,
 				C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */,
 				A3D8698D243E9F0C000963F8 /* CreateProduct+Presentable.swift in Sources */,
 				A353252624423F4A00FECBF6 /* Address+Presentable.swift in Sources */,
 				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
+				A3F1AA3B24426719001E741F /* CreditCardEndpoints.swift in Sources */,
 				C17D87F524202F3C00E90BF4 /* ProductDetailViewController+Presentable.swift in Sources */,
 				A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */,
 				A313C2CE24170445002FC41B /* PromiseKit+Utils.swift in Sources */,
@@ -1156,6 +1188,7 @@
 				A3DC205024395F950074B87E /* CreateAccountViewModel.swift in Sources */,
 				A313C2C6241701AD002FC41B /* ProductsInteractor.swift in Sources */,
 				A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */,
+				A3F1AA3D24426724001E741F /* CreditCard.swift in Sources */,
 				C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */,
 				A3B47CCD243963350009A6AF /* AccountViewModel.swift in Sources */,
 				A363FCBA243981B9002081BF /* CreateAccountViewController+Camera.swift in Sources */,
@@ -1168,6 +1201,7 @@
 				A3444B0D243B82FC009CB16F /* NetworkSession.swift in Sources */,
 				A363FCC0243A4080002081BF /* TabBarNavigationController.swift in Sources */,
 				A332551824155F6A002CADF6 /* ProductCell.swift in Sources */,
+				A3F1AA41244269F3001E741F /* CreditCardInteractor.swift in Sources */,
 				A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */,
 				C1415EF2242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift in Sources */,
 				A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */,
@@ -1203,6 +1237,7 @@
 			files = (
 				A3E6B19C2436C25800B55441 /* AuthenticationViewModelTests.swift in Sources */,
 				A39A66012436B30B00FBBDC2 /* CoordinationMocks.swift in Sources */,
+				A3F1AA4324426A1D001E741F /* CreditCardInteractorTests.swift in Sources */,
 				A3F1AA2E24425657001E741F /* AddressRepositoryMock.swift in Sources */,
 				A3F1AA39244260AB001E741F /* AddressFieldsTests.swift in Sources */,
 				A3F1AA3624425A56001E741F /* AddressViewModelTests.swift in Sources */,
@@ -1218,6 +1253,7 @@
 				A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */,
 				A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */,
 				A358521E243BFA78002D93E5 /* AccountViewModelTests.swift in Sources */,
+				A3F1AA4724426A5C001E741F /* CreditCardRepositoryMock.swift in Sources */,
 				A3017047243A6C9000D08CE6 /* CreateAccountViewModelTests.swift in Sources */,
 				A3D86993243EB96F000963F8 /* CreateProductViewModelTests.swift in Sources */,
 				A3585220243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift in Sources */,
