@@ -28,17 +28,39 @@ class AccountCoordinator: AccountCoordinationProtocol {
     
     // MARK:- CoordinationDelegates
     func presentNextStep() {
+        switch state {
+        case .Account:
+            switch injector.accountViewModel.selectedFlow {
+            case .Address:
+                state = .Address
+                injector.addressViewModel.coordinator = self
+                injector.navigationController.pushViewController(injector.addressViewController, animated: true)
+            default:
+                break
+            }
+        case .Address:
+            state = .Account
+            injector.navigationController.popViewController(animated: true)
+        }
     }
     
     func presentPreviousStep() {
+        switch state {
+        case .Account:
+            NSLog("Invalid action trying to return from root view controller")
+        case .Address:
+            state = .Account
+            injector.navigationController.popViewController(animated: true)
+        }
     }
     
     func userNotFound() {
         baseCoordinator.didLogout()
     }
     
-    enum AccountCoordinatorRoutingState {
-        case Account
-    }
     
+}
+enum AccountCoordinatorRoutingState {
+    case Account
+    case Address
 }
