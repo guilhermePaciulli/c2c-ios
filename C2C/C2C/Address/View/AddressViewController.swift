@@ -22,6 +22,7 @@ class AddressViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCancelButton()
+        setBackButton(#selector(didTapToCancel))
     }
     
     // MARK: - Actions

@@ -43,6 +43,10 @@
 		A3444B0D243B82FC009CB16F /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3444B0C243B82FC009CB16F /* NetworkSession.swift */; };
 		A353252624423F4A00FECBF6 /* Address+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252524423F4A00FECBF6 /* Address+Presentable.swift */; };
 		A353252824423F7600FECBF6 /* AddressFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252724423F7600FECBF6 /* AddressFields.swift */; };
+		A353252A2442425C00FECBF6 /* AddressEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35325292442425C00FECBF6 /* AddressEndpoints.swift */; };
+		A353252C2442427400FECBF6 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252B2442427400FECBF6 /* Address.swift */; };
+		A353252E2442449100FECBF6 /* AddressInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252D2442449100FECBF6 /* AddressInteractor.swift */; };
+		A3532530244244A200FECBF6 /* AddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353252F244244A200FECBF6 /* AddressRepository.swift */; };
 		A358521C243BFA2F002D93E5 /* UserData.json in Resources */ = {isa = PBXBuildFile; fileRef = A358521B243BFA2F002D93E5 /* UserData.json */; };
 		A358521E243BFA78002D93E5 /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358521D243BFA78002D93E5 /* AccountViewModelTests.swift */; };
 		A3585220243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358521F243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift */; };
@@ -176,6 +180,10 @@
 		A3444B0C243B82FC009CB16F /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		A353252524423F4A00FECBF6 /* Address+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+Presentable.swift"; sourceTree = "<group>"; };
 		A353252724423F7600FECBF6 /* AddressFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFields.swift; sourceTree = "<group>"; };
+		A35325292442425C00FECBF6 /* AddressEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressEndpoints.swift; sourceTree = "<group>"; };
+		A353252B2442427400FECBF6 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		A353252D2442449100FECBF6 /* AddressInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractor.swift; sourceTree = "<group>"; };
+		A353252F244244A200FECBF6 /* AddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepository.swift; sourceTree = "<group>"; };
 		A358521B243BFA2F002D93E5 /* UserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserData.json; sourceTree = "<group>"; };
 		A358521D243BFA78002D93E5 /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
 		A358521F243BFBC1002D93E5 /* UserDefaultsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepositoryMock.swift; sourceTree = "<group>"; };
@@ -355,6 +363,7 @@
 				A363FCBB24398707002081BF /* Endpoint+FormData.swift */,
 				A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */,
 				A3C60E3F2436947200426F40 /* UserEndpoints.swift */,
+				A35325292442425C00FECBF6 /* AddressEndpoints.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -374,6 +383,7 @@
 				A3C60E3D243693E900426F40 /* Account.swift */,
 				A313C2BD2416F673002FC41B /* Products.swift */,
 				A313C2C02416F685002FC41B /* APIResponseError.swift */,
+				A353252B2442427400FECBF6 /* Address.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,8 +393,8 @@
 			children = (
 				A313C2C224170149002FC41B /* ProductsRepository.swift */,
 				A3C60E412436957F00426F40 /* UserRepository.swift */,
-				A3C60E45243698AC00426F40 /* KeychainRepository.swift */,
-				A377936F243BE0B20093F7E8 /* UserDefaultsRepository.swift */,
+				A353252F244244A200FECBF6 /* AddressRepository.swift */,
+				A3532531244244AA00FECBF6 /* Local */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -394,6 +404,7 @@
 			children = (
 				A313C2C5241701AD002FC41B /* ProductsInteractor.swift */,
 				A3C60E43243697AF00426F40 /* UserInteractor.swift */,
+				A353252D2442449100FECBF6 /* AddressInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -512,6 +523,15 @@
 				A358521B243BFA2F002D93E5 /* UserData.json */,
 			);
 			path = JSONMocks;
+			sourceTree = "<group>";
+		};
+		A3532531244244AA00FECBF6 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				A3C60E45243698AC00426F40 /* KeychainRepository.swift */,
+				A377936F243BE0B20093F7E8 /* UserDefaultsRepository.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		A3585221243BFF07002D93E5 /* Account */ = {
@@ -1114,6 +1134,7 @@
 				A363FCBA243981B9002081BF /* CreateAccountViewController+Camera.swift in Sources */,
 				A3779370243BE0B20093F7E8 /* UserDefaultsRepository.swift in Sources */,
 				A3E6B1992436C21500B55441 /* AuthenticationViewModel.swift in Sources */,
+				A3532530244244A200FECBF6 /* AddressRepository.swift in Sources */,
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,
 				A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */,
 				A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */,
@@ -1123,6 +1144,8 @@
 				A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */,
 				C1415EF2242034C400CAC689 /* ProductsCoordinatorDependencyInjector.swift in Sources */,
 				A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */,
+				A353252E2442449100FECBF6 /* AddressInteractor.swift in Sources */,
+				A353252A2442425C00FECBF6 /* AddressEndpoints.swift in Sources */,
 				A3DB82A02438DC0F0086FECF /* AccountDependencyInjector.swift in Sources */,
 				A3C60E46243698AC00426F40 /* KeychainRepository.swift in Sources */,
 				A363FCBE2439901D002081BF /* String+Validations.swift in Sources */,
@@ -1133,6 +1156,7 @@
 				A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */,
 				A353252824423F7600FECBF6 /* AddressFields.swift in Sources */,
 				A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */,
+				A353252C2442427400FECBF6 /* Address.swift in Sources */,
 				C17D87F324202EE200E90BF4 /* ProductDetailViewController.swift in Sources */,
 				A3C496C324156ABE0019E0E1 /* Identifiable.swift in Sources */,
 				A39AB18524395D0E001ED77C /* AuthenticationDependencyInjector.swift in Sources */,
