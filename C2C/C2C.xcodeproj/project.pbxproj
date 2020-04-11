@@ -106,6 +106,7 @@
 		A3F1AA2C2442562A001E741F /* AddressInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA2B2442562A001E741F /* AddressInteractorTests.swift */; };
 		A3F1AA2E24425657001E741F /* AddressRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA2D24425657001E741F /* AddressRepositoryMock.swift */; };
 		A3F1AA34244257DA001E741F /* Address.json in Resources */ = {isa = PBXBuildFile; fileRef = A3F1AA33244257DA001E741F /* Address.json */; };
+		A3F1AA3624425A56001E741F /* AddressViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA3524425A56001E741F /* AddressViewModelTests.swift */; };
 		A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */; };
 		C1415EED242032C500CAC689 /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */; };
 		C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415EEF242033CC00CAC689 /* AppCoordinator+Presentable.swift */; };
@@ -246,6 +247,7 @@
 		A3F1AA2B2442562A001E741F /* AddressInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractorTests.swift; sourceTree = "<group>"; };
 		A3F1AA2D24425657001E741F /* AddressRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepositoryMock.swift; sourceTree = "<group>"; };
 		A3F1AA33244257DA001E741F /* Address.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Address.json; sourceTree = "<group>"; };
+		A3F1AA3524425A56001E741F /* AddressViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModelTests.swift; sourceTree = "<group>"; };
 		A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Authenticable.swift"; sourceTree = "<group>"; };
 		B6A0E253E252EB3080FE7E90 /* Pods_C2CTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C2CTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1415EEC242032C500CAC689 /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				A3E6B18E2436B5EF00B55441 /* Products */,
 				A3E6B19D2436C25F00B55441 /* Authentication */,
 				A3585221243BFF07002D93E5 /* Account */,
+				A3F1AA3724425A5C001E741F /* Address */,
 				A301704A243A6F6D00D08CE6 /* Utils */,
 				A33254FA24154EAE002CADF6 /* Info.plist */,
 			);
@@ -801,6 +804,14 @@
 				A3017046243A6C9000D08CE6 /* CreateAccountViewModelTests.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A3F1AA3724425A5C001E741F /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				A3F1AA3524425A56001E741F /* AddressViewModelTests.swift */,
+			);
+			path = Address;
 			sourceTree = "<group>";
 		};
 		C1415EEE2420337E00CAC689 /* Products */ = {
@@ -1190,6 +1201,7 @@
 				A3E6B19C2436C25800B55441 /* AuthenticationViewModelTests.swift in Sources */,
 				A39A66012436B30B00FBBDC2 /* CoordinationMocks.swift in Sources */,
 				A3F1AA2E24425657001E741F /* AddressRepositoryMock.swift in Sources */,
+				A3F1AA3624425A56001E741F /* AddressViewModelTests.swift in Sources */,
 				A39A65FE2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift in Sources */,
 				A3341A142427F9F400C96A0C /* ProductsInteractorTests.swift in Sources */,
 				A3C60E4A2436A9A500426F40 /* UserInteractorTests.swift in Sources */,

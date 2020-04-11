@@ -39,7 +39,9 @@ class AddressViewModel: AddressViewModelProtocol {
         }.catch { [weak self] (error) in
             self?.didFetchSuccessfully = false
             self?.view?.stopLoading()
-            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+            self?.view?.setField(.ZipCode, withValue: "")
+            self?.view?.setField(.Number, withValue: "")
+            self?.view?.setField(.Complement, withValue: "")
         }
     }
     
@@ -47,6 +49,7 @@ class AddressViewModel: AddressViewModelProtocol {
         guard let view = self.view else { return }
         let errors = AddressFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
         if errors.isEmpty, let addr = getAddress() {
+            view.startLoading()
             (didFetchSuccessfully ? interactor.update(addr) : interactor.create(addr)).done(on: .main) { [weak self] _ in
                 self?.view?.stopLoading()
                 self?.coordinator?.presentPreviousStep()
