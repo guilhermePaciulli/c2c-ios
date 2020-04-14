@@ -7,7 +7,7 @@
 //
 
 import Foundation
-enum CreditCardFields {
+enum CreditCardFields: CaseIterable {
     case Number
     case Owner
     case CVV

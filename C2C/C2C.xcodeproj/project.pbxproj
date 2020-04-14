@@ -94,6 +94,7 @@
 		A3C60E4C2436AA6B00426F40 /* C2CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C60E4B2436AA6B00426F40 /* C2CUITests.swift */; };
 		A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */; };
 		A3C60E502436AB7E00426F40 /* AccessToken.json in Resources */ = {isa = PBXBuildFile; fileRef = A3C60E4F2436AB7E00426F40 /* AccessToken.json */; };
+		A3CE3E1524453FE700FBCF9C /* CreditCardFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CE3E1424453FE700FBCF9C /* CreditCardFieldsTests.swift */; };
 		A3D86984243E9B53000963F8 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D86983243E9B53000963F8 /* CreateProduct.storyboard */; };
 		A3D86986243E9B63000963F8 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86985243E9B63000963F8 /* CreateProductViewController.swift */; };
 		A3D86988243E9B6C000963F8 /* CreateProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */; };
@@ -252,6 +253,7 @@
 		A3C60E4B2436AA6B00426F40 /* C2CUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2CUITests.swift; sourceTree = "<group>"; };
 		A3C60E4D2436AAD500426F40 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
 		A3C60E4F2436AB7E00426F40 /* AccessToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AccessToken.json; sourceTree = "<group>"; };
+		A3CE3E1424453FE700FBCF9C /* CreditCardFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFieldsTests.swift; sourceTree = "<group>"; };
 		A3D86983243E9B53000963F8 /* CreateProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
 		A3D86985243E9B63000963F8 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
 		A3D86987243E9B6C000963F8 /* CreateProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewModel.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */,
 				A3F1AA38244260AB001E741F /* AddressFieldsTests.swift */,
 				A31679D024440E6B0088510B /* ExpirationDateComponentsTests.swift */,
+				A3CE3E1424453FE700FBCF9C /* CreditCardFieldsTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1307,6 +1310,7 @@
 				A3C60E482436A87E00426F40 /* KeychainRepositoryMock.swift in Sources */,
 				A3017043243A656800D08CE6 /* AuthenticationCoordinatorTests.swift in Sources */,
 				A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */,
+				A3CE3E1524453FE700FBCF9C /* CreditCardFieldsTests.swift in Sources */,
 				A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */,
 				A3341A112427F5F900C96A0C /* ProductsRepositoryMock.swift in Sources */,
 				A3017049243A6F6700D08CE6 /* AccountFieldsTests.swift in Sources */,

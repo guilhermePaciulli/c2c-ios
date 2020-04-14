@@ -15,7 +15,7 @@ protocol CreditCardPresentable {
     func stopLoading()
     func showAlert(withTitle title: String, message: String)
     func setExpirationDate(_ date: String)
-    func getExpirationDate() -> String?
+    func getExpirationDate() -> String
 }
 
 extension CreditCardViewController: CreditCardPresentable {
@@ -26,8 +26,8 @@ extension CreditCardViewController: CreditCardPresentable {
         expirationDate?.selectRow(selection.year ?? 0, inComponent: 1, animated: true)
     }
     
-    func getExpirationDate() -> String? {
-        guard let picker = expirationDate else { return nil }
+    func getExpirationDate() -> String {
+        guard let picker = expirationDate else { return "" }
         return expirationDateSource.getDateFormatted(atMonth: picker.selectedRow(inComponent: 0), year: picker.selectedRow(inComponent: 1))
     }
     
