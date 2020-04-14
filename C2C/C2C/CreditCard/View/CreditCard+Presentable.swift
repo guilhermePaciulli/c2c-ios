@@ -21,6 +21,7 @@ protocol CreditCardPresentable {
 extension CreditCardViewController: CreditCardPresentable {
     
     func setExpirationDate(_ date: String) {
+        guard !date.isEmpty else { return }
         let selection = expirationDateSource.getIndexes(forString: date)
         expirationDate?.selectRow(selection.month ?? 0, inComponent: 0, animated: true)
         expirationDate?.selectRow(selection.year ?? 0, inComponent: 1, animated: true)
@@ -36,7 +37,7 @@ extension CreditCardViewController: CreditCardPresentable {
         case .Owner:
             owner?.text = value
         case .CVV:
-            owner?.text = value
+            cvv?.text = value
         case .Number:
             number?.text = value
         }
@@ -47,7 +48,7 @@ extension CreditCardViewController: CreditCardPresentable {
         case .Owner:
             return owner?.text ?? ""
         case .CVV:
-            return owner?.text ?? ""
+            return cvv?.text ?? ""
         case .Number:
             return number?.text ?? ""
         }

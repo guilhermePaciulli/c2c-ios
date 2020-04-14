@@ -14,7 +14,7 @@ enum CreditCardEndpoints: Endpoint {
     case get
     
     var path: String {
-        return "/credit_cards"
+        return "/credit_card"
     }
     
     var request: URLRequest {

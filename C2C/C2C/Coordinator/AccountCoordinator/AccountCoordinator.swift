@@ -35,10 +35,17 @@ class AccountCoordinator: AccountCoordinationProtocol {
                 state = .Address
                 injector.addressViewModel.coordinator = self
                 injector.navigationController.pushViewController(injector.addressViewController, animated: true)
+            case .CreditCard:
+                state = .CreditCard
+                injector.creditCardViewModel.coordinator = self
+                injector.navigationController.pushViewController(injector.creditCardViewController, animated: true)
             default:
                 break
             }
         case .Address:
+            state = .Account
+            injector.navigationController.popViewController(animated: true)
+        case .CreditCard:
             state = .Account
             injector.navigationController.popViewController(animated: true)
         }
@@ -49,6 +56,9 @@ class AccountCoordinator: AccountCoordinationProtocol {
         case .Account:
             NSLog("Invalid action trying to return from root view controller")
         case .Address:
+            state = .Account
+            injector.navigationController.popViewController(animated: true)
+        case .CreditCard:
             state = .Account
             injector.navigationController.popViewController(animated: true)
         }
@@ -63,4 +73,5 @@ class AccountCoordinator: AccountCoordinationProtocol {
 enum AccountCoordinatorRoutingState {
     case Account
     case Address
+    case CreditCard
 }
