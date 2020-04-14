@@ -28,6 +28,9 @@
 		A313C2C9241702AF002FC41B /* ProductsViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2C8241702AF002FC41B /* ProductsViewController+Presentable.swift */; };
 		A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2CA241702DB002FC41B /* ProductsViewController+TableView.swift */; };
 		A313C2CE24170445002FC41B /* PromiseKit+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */; };
+		A31679D124440E6B0088510B /* ExpirationDateComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31679D024440E6B0088510B /* ExpirationDateComponentsTests.swift */; };
+		A328F679244404B20026576E /* CreditCard+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328F678244404B20026576E /* CreditCard+TextFieldDelegate.swift */; };
+		A328F67B2444062A0026576E /* ExpirationDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A328F67A2444062A0026576E /* ExpirationDateComponents.swift */; };
 		A33254E224154EAC002CADF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33254E124154EAC002CADF6 /* AppDelegate.swift */; };
 		A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33254E324154EAC002CADF6 /* SceneDelegate.swift */; };
 		A33254E924154EAC002CADF6 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33254E724154EAC002CADF6 /* Products.storyboard */; };
@@ -178,6 +181,9 @@
 		A313C2C8241702AF002FC41B /* ProductsViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsViewController+Presentable.swift"; sourceTree = "<group>"; };
 		A313C2CA241702DB002FC41B /* ProductsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductsViewController+TableView.swift"; sourceTree = "<group>"; };
 		A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PromiseKit+Utils.swift"; sourceTree = "<group>"; };
+		A31679D024440E6B0088510B /* ExpirationDateComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationDateComponentsTests.swift; sourceTree = "<group>"; };
+		A328F678244404B20026576E /* CreditCard+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditCard+TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		A328F67A2444062A0026576E /* ExpirationDateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationDateComponents.swift; sourceTree = "<group>"; };
 		A33254DE24154EAC002CADF6 /* C2C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C2C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33254E124154EAC002CADF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33254E324154EAC002CADF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -330,6 +336,7 @@
 			children = (
 				A3017048243A6F6700D08CE6 /* AccountFieldsTests.swift */,
 				A3F1AA38244260AB001E741F /* AddressFieldsTests.swift */,
+				A31679D024440E6B0088510B /* ExpirationDateComponentsTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -463,6 +470,7 @@
 		A313C2CF24170447002FC41B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A328F67A2444062A0026576E /* ExpirationDateComponents.swift */,
 				A313C2CD24170445002FC41B /* PromiseKit+Utils.swift */,
 				A3B47CD3243973640009A6AF /* AccountFields.swift */,
 				A3D86990243EA079000963F8 /* ProductFields.swift */,
@@ -609,6 +617,7 @@
 				A355D1C824426B8B00BA2A0B /* CreditCard.storyboard */,
 				A355D1CB24426BA200BA2A0B /* CreditCardViewController.swift */,
 				A355D1CD24426BB500BA2A0B /* CreditCard+Presentable.swift */,
+				A328F678244404B20026576E /* CreditCard+TextFieldDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1244,6 +1253,7 @@
 				A3532530244244A200FECBF6 /* AddressRepository.swift in Sources */,
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,
 				A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */,
+				A328F679244404B20026576E /* CreditCard+TextFieldDelegate.swift in Sources */,
 				A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */,
 				A3444B0D243B82FC009CB16F /* NetworkSession.swift in Sources */,
 				A363FCC0243A4080002081BF /* TabBarNavigationController.swift in Sources */,
@@ -1263,6 +1273,7 @@
 				A39AB18224395CE6001ED77C /* AuthenticationCoordinator.swift in Sources */,
 				A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */,
 				A353252824423F7600FECBF6 /* AddressFields.swift in Sources */,
+				A328F67B2444062A0026576E /* ExpirationDateComponents.swift in Sources */,
 				A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */,
 				A353252C2442427400FECBF6 /* Address.swift in Sources */,
 				C17D87F324202EE200E90BF4 /* ProductDetailViewController.swift in Sources */,
@@ -1308,6 +1319,7 @@
 				A36EA8B0244254B200F52348 /* AccountCoordinatorTests.swift in Sources */,
 				A3C60E4E2436AAD500426F40 /* UserRepositoryMock.swift in Sources */,
 				A3E6B18D2436B5EC00B55441 /* ProductsViewModelTests.swift in Sources */,
+				A31679D124440E6B0088510B /* ExpirationDateComponentsTests.swift in Sources */,
 				A3341A0C2427DF4700C96A0C /* MocksHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

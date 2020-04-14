@@ -14,16 +14,29 @@ protocol CreditCardPresentable {
     func startLoading()
     func stopLoading()
     func showAlert(withTitle title: String, message: String)
+    func setExpirationDate(_ date: String)
+    func getExpirationDate() -> String?
 }
 
 extension CreditCardViewController: CreditCardPresentable {
     
+    func setExpirationDate(_ date: String) {
+        let selection = expirationDateSource.getIndexes(forString: date)
+        expirationDate?.selectRow(selection.month ?? 0, inComponent: 0, animated: true)
+        expirationDate?.selectRow(selection.year ?? 0, inComponent: 1, animated: true)
+    }
+    
+    func getExpirationDate() -> String? {
+        guard let picker = expirationDate else { return nil }
+        return expirationDateSource.getDateFormatted(atMonth: picker.selectedRow(inComponent: 0), year: picker.selectedRow(inComponent: 1))
+    }
+    
     func setField(_ field: CreditCardFields, withValue value: String?) {
         switch field {
-        case .ZipCode:
-            zipCode?.text = value
-        case .Complement:
-            complement?.text = value
+        case .Owner:
+            owner?.text = value
+        case .CVV:
+            owner?.text = value
         case .Number:
             number?.text = value
         }
@@ -31,10 +44,10 @@ extension CreditCardViewController: CreditCardPresentable {
     
     func getField(_ field: CreditCardFields) -> String {
         switch field {
-        case .ZipCode:
-            return zipCode?.text ?? ""
-        case .Complement:
-            return complement?.text ?? ""
+        case .Owner:
+            return owner?.text ?? ""
+        case .CVV:
+            return owner?.text ?? ""
         case .Number:
             return number?.text ?? ""
         }
