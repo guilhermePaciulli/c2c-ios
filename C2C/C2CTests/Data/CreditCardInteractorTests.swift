@@ -45,7 +45,8 @@ class CreditCardInteractorTests: QuickSpec {
                         XCTFail("the request did not fail :(")
                         done()
                     }).catch({ err in
-                        expect(err.localizedDescription).to(equal(message)); done()
+                        expect(err.localizedDescription).to(equal(message))
+                        done()
                     })
                 }
             }
