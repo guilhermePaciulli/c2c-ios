@@ -22,7 +22,7 @@ class AddressFieldsTests: QuickSpec {
     
     let errors: [AddressFields: String] = [.ZipCode: "ZipCode must not be empty",
                                            .Complement: "Address line 2 seems invalid",
-                                           .Number: "Number is not valid"]
+                                           .Number: "Address number is not valid"]
     
     
     override func spec() {
