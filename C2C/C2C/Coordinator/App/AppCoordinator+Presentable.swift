@@ -10,6 +10,7 @@ import UIKit
 
 protocol CoordinatorPresentable {
     func present(_ controller: UIViewController)
+    func goTo(tab: CoordinatorType)
 }
 
 
@@ -19,4 +20,12 @@ extension AppCoordinator {
         injector.tabBarController.present(controller, animated: true)
     }
     
+    func goTo(tab: CoordinatorType) {
+        injector.tabBarController.selectedIndex = tab.rawValue
+    }
+    
+}
+enum CoordinatorType: Int {
+    case Products = 0
+    case Users = 1
 }

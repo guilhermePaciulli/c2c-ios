@@ -1,5 +1,5 @@
 //
-//  AddressViewModel.swift
+//  CreditCardViewModel.swift
 //  C2C
 //
 //  Created by Guilherme Paciulli on 11/04/20.
@@ -8,49 +8,51 @@
 
 import Foundation
 
-protocol AddressViewModelProtocol {
+protocol CreditCardViewModelProtocol {
     func didTapToCancel()
-    func didTapToRegisterAddress()
-    func fetchAddress()
+    func didTapToRegisterCreditCard()
+    func fetchCreditCard()
 }
 
-class AddressViewModel: AddressViewModelProtocol {
+class CreditCardViewModel: CreditCardViewModelProtocol {
     
     // MARK:- Properties
-    var interactor: AddressInteractorProtocol
+    var interactor: CreditCardInteractorProtocol
     var coordinator: BasicCoordinationProtocol?
-    var view: AddressPresentable?
+    var view: CreditCardPresentable?
     var didFetchSuccessfully = false
     
     // MARK:- Initialization
-    init(interactor: AddressInteractorProtocol = AddressInteractor()) {
+    init(interactor: CreditCardInteractorProtocol = CreditCardInteractor()) {
         self.interactor = interactor
     }
     
     // MARK:- Delegate methods
-    func fetchAddress() {
+    func fetchCreditCard() {
         view?.startLoading()
         interactor.get().done { [weak self] (attr) in
             self?.didFetchSuccessfully = true
-            self?.view?.setField(.ZipCode, withValue: attr.zipCode)
             self?.view?.setField(.Number, withValue: attr.number)
-            self?.view?.setField(.Complement, withValue: attr.complement)
+            self?.view?.setField(.Owner, withValue: attr.owner)
+            self?.view?.setField(.CVV, withValue: attr.cvv)
+            self?.view?.setExpirationDate(attr.expiration)
             self?.view?.stopLoading()
         }.catch { [weak self] (error) in
             self?.didFetchSuccessfully = false
-            self?.view?.stopLoading()
-            self?.view?.setField(.ZipCode, withValue: "")
             self?.view?.setField(.Number, withValue: "")
-            self?.view?.setField(.Complement, withValue: "")
+            self?.view?.setField(.Owner, withValue: "")
+            self?.view?.setField(.CVV, withValue: "")
+            self?.view?.setExpirationDate("")
+            self?.view?.stopLoading()
         }
     }
     
-    func didTapToRegisterAddress() {
+    func didTapToRegisterCreditCard() {
         guard let view = self.view else { return }
-        let errors = AddressFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
-        if errors.isEmpty, let addr = getAddress() {
+        let errors = CreditCardFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
+        if errors.isEmpty, let creditCard = getCreditCard() {
             view.startLoading()
-            (didFetchSuccessfully ? interactor.update(addr) : interactor.create(addr)).done(on: .main) { [weak self] _ in
+            (didFetchSuccessfully ? interactor.update(creditCard) : interactor.create(creditCard)).done(on: .main) { [weak self] _ in
                 self?.view?.stopLoading()
                 DispatchQueue.main.async {
                     self?.coordinator?.presentPreviousStep()
@@ -69,9 +71,9 @@ class AddressViewModel: AddressViewModelProtocol {
     }
     
     // MARK:- Private methods
-    private func getAddress() -> SaveAddress? {
+    private func getCreditCard() -> SaveCreditCard? {
         guard let view = self.view else { return nil }
-        return .init(zipCode: view.getField(.ZipCode), complement: view.getField(.Complement), number: view.getField(.Number))
+        return .init(number: view.getField(.Number), cvv: view.getField(.CVV), owner: view.getField(.Owner), expiration: view.getExpirationDate())
     }
     
 }

@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol ProductDetailViewControllerPresentable {
     func startLoading()
     func stopLoading()
-    func showAlert(withTitle title: String, message: String)
+    func showDecisionAlert(withTitle title: String, message: String) -> Promise<Void>
+    @discardableResult func showAlert(withTitle title: String, message: String) -> Guarantee<Void>
     func setProduct(name: String)
     func setProduct(price: String)
     func setProduct(description: String)

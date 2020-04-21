@@ -52,6 +52,7 @@ class ProductsCoordinatorDependencyInjector {
         let viewModel = ProductDetailViewModel()
         viewModel.interactor = productsInteractor
         viewModel.userInteractor = userInteractor
+        viewModel.purchaseInterator = purchaseInteractor
         return viewModel
     }()
     
@@ -68,6 +69,10 @@ class ProductsCoordinatorDependencyInjector {
     
     lazy var productsInteractor: ProductsInteractor = {
         return ProductsInteractor()
+    }()
+    
+    lazy var purchaseInteractor: PurchaseInteractor = {
+        return .init()
     }()
     
     // MARK:- Auxiliar functions
