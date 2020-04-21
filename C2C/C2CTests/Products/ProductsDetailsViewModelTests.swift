@@ -9,6 +9,7 @@
 @testable import C2C
 import Quick
 import Nimble
+import PromiseKit
 
 class ProductsDetailsViewModelTests: QuickSpec {
     
@@ -50,12 +51,28 @@ class ProductsDetailsViewModelTests: QuickSpec {
                 self.subject.fetchObject()
                 expect(self.mockedView.startLoadingCalled).to(beTrue())
                 expect(self.mockedView.stopLoadingCalled).toEventually(beTrue())
-                expect(self.mockedView.showAlertCalled).toEventually(beTrue())
+                expect(self.mockedView.alertShownDescription).toEventually(equal(errorMessage))
             }
             
             it("should call coordinator to go back") {
                 self.subject.didTapExitButton()
                 expect(self.mockedCoordinator.didCallPresentPreviousStep).to(beTrue())
+            }
+            
+            it("should present alert to confirm purchase") {
+                self.subject.fetchObject()
+                expect(self.mockedView.startLoadingCalled).toEventually(beTrue())
+                self.mockedView.shouldCancel = true
+                self.subject.didTapBuyButton()
+                expect(self.mockedView.alertShownTitle).toEventually(equal("Are you sure you want to buy \(self.subject.product!.name)?"))
+            }
+            
+            it("should purchase successfully when requested") {
+                self.subject.fetchObject()
+                expect(self.mockedView.startLoadingCalled).toEventually(beTrue())
+                self.mockedView.shouldCancel = false
+                self.subject.didTapBuyButton()
+                expect(self.mockedView.alertShownTitle).to(equal("Are you sure you want to buy \(self.subject.product!.name)?"))
             }
             
         }
@@ -66,11 +83,14 @@ class ProductsDetailsViewModelTests: QuickSpec {
         
         var startLoadingCalled = false
         var stopLoadingCalled = false
-        var showAlertCalled = false
         var setProductNameCalled = false
         var setProductDescriptionCalled = false
         var setProductPriceCalled = false
         var setProductImageViewCalled = false
+        var shouldCancel = false
+        var alertShownTitle: String?
+        var alertShownDescription: String?
+        var alertDismissed = false
         
         func startLoading() {
             startLoadingCalled = true
@@ -80,8 +100,28 @@ class ProductsDetailsViewModelTests: QuickSpec {
             stopLoadingCalled = true
         }
         
-        func showAlert(withTitle title: String, message: String) {
-            showAlertCalled = true
+        @discardableResult func showAlert(withTitle title: String, message: String) -> Guarantee<Void> {
+            alertShownTitle = title
+            alertShownDescription = message
+            alertDismissed = false
+            return .init { seal in
+                seal(())
+                alertDismissed = true
+            }
+        }
+        
+        func showDecisionAlert(withTitle title: String, message: String) -> Promise<Void> {
+            alertShownTitle = title
+            alertShownDescription = message
+            alertDismissed = false
+            return .init { seal in
+                if self.shouldCancel {
+                    seal.fulfill(())
+                } else {
+                    seal.reject(ResponseError.missingUser)
+                }
+                alertDismissed = true
+            }
         }
         
         func setProduct(name: String) {
