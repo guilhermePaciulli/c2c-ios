@@ -22,8 +22,9 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
     var productID: Int?
     var coordinator: BasicCoordinationProtocol?
     var interactor: ProductsInteractor?
+    var purchaseInterator: PurchaseInteractorProtocol?
     var userInteractor: UserInteractorProtocol?
-    var blurView: UIView?
+    var product: ProductAttributes?
     
     // MARK:- Viewmodel delegate
     func fetchObject() {
@@ -32,6 +33,7 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
         view?.startLoading()
         interactor?.getProduct(withId: id).done(on: .main, { [weak self] (data) in
             let product = data.attributes
+            self?.product = product
             self?.view?.setProduct(name: product.name)
             self?.view?.setProduct(description: product.attributesDescription)
             let productPrice = "R$"+String(product.price)
@@ -48,11 +50,35 @@ class ProductDetailViewModel: ProductDetailViewModelProtocol {
     }
     
     func didTapBuyButton() {
-        coordinator?.presentNextStep()
+        guard let product = self.product else { return }
+        view?.showDecisionAlert(withTitle: "Are you sure you want to buy \(product.name)?", message: "")
+            .done(on: .main, { _ in
+                self.buy(product: product)
+            }).cauterize()
     }
     
     func didTapExitButton() {
         coordinator?.presentPreviousStep()
+    }
+    
+    // MARK:- Private methods
+    private func buy(product: ProductAttributes) {
+        view?.startLoading()
+        purchaseInterator?.purchase(product: product).done(on: .main, { [weak self] (_) in
+            self?.view?.stopLoading()
+            self?.endPurchase()
+        }).catch({ [weak self] (error) in
+            self?.view?.stopLoading()
+            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+        })
+    }
+    
+    private func endPurchase() {
+        let title = "Product purchased successfully"
+        let msg = "See your purchase in Purchases sections in your profile"
+        view?.showAlert(withTitle: title, message: msg).done(on: .main, { [weak self] (_) in
+            self?.coordinator?.presentNextStep()
+        })
     }
     
 }

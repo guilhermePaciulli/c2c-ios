@@ -11,6 +11,7 @@ import UIKit
 
 class AppCoordinatorMock: AppCoordinatable {
     
+    var didGoToTab: CoordinatorType?
     var didLoginCalled = false
     var didLogoutCalled = false
     var presentedViewController: UIViewController?
@@ -27,4 +28,7 @@ class AppCoordinatorMock: AppCoordinatable {
         didLogoutCalled = true
     }
     
+    func goTo(tab: CoordinatorType) {
+        didGoToTab = tab
+    }
 }

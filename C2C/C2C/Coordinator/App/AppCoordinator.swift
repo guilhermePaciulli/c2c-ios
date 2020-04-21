@@ -47,7 +47,3 @@ class AppCoordinator: AppCoordinatable {
     }
     
 }
-
-enum CoordinatorType {
-    case Products
-}

@@ -32,8 +32,6 @@ class ProductDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.fetchObject()
-        exitButton?.isUserInteractionEnabled = true
-        buyButton?.isUserInteractionEnabled = true
     }
     
     // MARK:- Private methods
@@ -44,12 +42,10 @@ class ProductDetailViewController: UIViewController {
     
     // MARK:- LifeCycle
     @IBAction func didTapBuyButton(_ sender: UIButton) {
-        sender.isUserInteractionEnabled = false
         viewModel?.didTapBuyButton()
     }
     
     @IBAction func didTapExitButton(_ sender: UIButton) {
-        sender.isUserInteractionEnabled = false
         viewModel?.didTapExitButton()
     }
 }

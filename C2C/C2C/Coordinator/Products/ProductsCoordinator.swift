@@ -35,7 +35,9 @@ class ProductsCoordinator: ProductsCoordinationProtocol {
             injector.productDetailViewModel.coordinator = self
             baseCoordinator.present(injector.productDetailViewController)
         case .ProductsDetail:
-            fatalError()
+            injector.productDetailViewController.dismiss(animated: true) { [weak self] in
+                self?.baseCoordinator.goTo(tab: .Users)
+            }
         case .CreateProduct:
             state = .ProductsList
             injector.navigationController.popViewController(animated: true)

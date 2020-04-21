@@ -52,7 +52,9 @@ class AddressViewModel: AddressViewModelProtocol {
             view.startLoading()
             (didFetchSuccessfully ? interactor.update(addr) : interactor.create(addr)).done(on: .main) { [weak self] _ in
                 self?.view?.stopLoading()
-                self?.coordinator?.presentPreviousStep()
+                DispatchQueue.main.async {
+                    self?.coordinator?.presentPreviousStep()
+                }
             }.catch { [weak self] (error) in
                 self?.view?.stopLoading()
                 self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)

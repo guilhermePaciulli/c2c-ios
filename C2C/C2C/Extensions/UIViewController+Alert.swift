@@ -24,6 +24,23 @@ extension UIViewController {
         }
     }
     
+    func showDecisionAlert(withTitle title: String, message: String) -> Promise<Void> {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        return .init { seal in
+            let alertAction = UIAlertAction(title: "Ok", style: .destructive) { (_) in
+                alert.dismiss(animated: true)
+                seal.fulfill(())
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (_) in
+                alert.dismiss(animated: true)
+                seal.reject(ResponseError.missingUser)
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(alertAction)
+            present(alert, animated: true)
+        }
+    }
+    
     func showAlert(withTitle title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .default) { (_) in

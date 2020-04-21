@@ -15,18 +15,18 @@ protocol CreditCardViewModelProtocol {
 }
 
 class CreditCardViewModel: CreditCardViewModelProtocol {
-    
+
     // MARK:- Properties
     var interactor: CreditCardInteractorProtocol
     var coordinator: BasicCoordinationProtocol?
     var view: CreditCardPresentable?
     var didFetchSuccessfully = false
-    
+
     // MARK:- Initialization
     init(interactor: CreditCardInteractorProtocol = CreditCardInteractor()) {
         self.interactor = interactor
     }
-    
+
     // MARK:- Delegate methods
     func fetchCreditCard() {
         view?.startLoading()
@@ -46,7 +46,7 @@ class CreditCardViewModel: CreditCardViewModelProtocol {
             self?.view?.stopLoading()
         }
     }
-    
+
     func didTapToRegisterCreditCard() {
         guard let view = self.view else { return }
         let errors = CreditCardFields.allCases.compactMap({ return $0.validate(string: view.getField($0)) })
@@ -63,15 +63,15 @@ class CreditCardViewModel: CreditCardViewModelProtocol {
             view.showAlert(withTitle: "Invalid fields", message: errors.joined(separator: ", "))
         }
     }
-    
+
     func didTapToCancel() {
         coordinator?.presentPreviousStep()
     }
-    
+
     // MARK:- Private methods
     private func getCreditCard() -> SaveCreditCard? {
         guard let view = self.view else { return nil }
         return .init(number: view.getField(.Number), cvv: view.getField(.CVV), owner: view.getField(.Owner), expiration: view.getExpirationDate())
     }
-    
+
 }
