@@ -22,27 +22,20 @@ class CreditCardViewModelTests: QuickSpec {
         
         
         beforeEach {
-            self.subject = .init()
-            self.repository = .init()
-            self.interactor = .init(repository: self.repository)
-            self.coordinator = .init()
-            self.view = .init()
-            self.subject.view = self.view
-            self.subject.coordinator = self.coordinator
-            self.subject.interactor = self.interactor
+            self.setup()
         }
         
-        describe("CreditCardViewModel fetch when view appears") {
+        describe("CreditCardViewModel should fetch for credit card") {
             
-            it("should show view behaviour as success") {
+            it("should behave as success") {
                 self.subject.fetchCreditCard()
                 expect(self.view.startLoadingCalled).to(beTrue())
                 expect(self.view.stopLoadingCalled).toEventually(beTrue())
-                expect(self.subject.didFetchSuccessfully).toEventually(beTrue())
+                expect(self.view.expirationDate).toNot(beNil())
                 expect(self.view.number).toNot(beNil())
                 expect(self.view.cvv).toNot(beNil())
                 expect(self.view.owner).toNot(beNil())
-                expect(self.view.expirationDate).toNot(beNil())
+                expect(self.subject.didFetchSuccessfully).toEventually(beTrue())
             }
             
             it("should handle request errors") {
@@ -116,6 +109,17 @@ class CreditCardViewModelTests: QuickSpec {
             
         }
         
+    }
+    
+    func setup() {
+        self.subject = CreditCardViewModel()
+        self.repository = CreditCardRepositoryMock()
+        self.interactor = CreditCardInteractor(repository: self.repository)
+        self.coordinator = BasicCoordinatorMock()
+        self.view = PresentableMock()
+        self.subject.view = self.view
+        self.subject.coordinator = self.coordinator
+        self.subject.interactor = self.interactor
     }
     
     class PresentableMock: CreditCardPresentable {
