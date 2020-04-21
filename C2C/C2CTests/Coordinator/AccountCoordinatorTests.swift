@@ -28,6 +28,8 @@ class AccountCoordinatorTests: QuickSpec {
                 expect(self.subject.state).to(equal(.Account))
             }
             
+        }
+        describe("Address flow") {
             it("should present address flow when requested") {
                 self.subject.injector.accountViewModel.selectedFlow = .Address
                 self.subject.presentNextStep()
@@ -49,8 +51,30 @@ class AccountCoordinatorTests: QuickSpec {
                 self.subject.presentNextStep()
                 expect(self.subject.state).to(equal(.Account))
             }
+        }
+        
+        describe("Credit Card flow") {
+            it("should present credit card flow when requested") {
+                self.subject.injector.accountViewModel.selectedFlow = .CreditCard
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.CreditCard))
+            }
             
+            it("should return to credit card after credit card flow is completed") {
+                self.subject.injector.accountViewModel.selectedFlow = .CreditCard
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.CreditCard))
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.Account))
+            }
             
+            it("should return to account at credit card when requested") {
+                self.subject.injector.accountViewModel.selectedFlow = .CreditCard
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.CreditCard))
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.Account))
+            }
         }
         
     }

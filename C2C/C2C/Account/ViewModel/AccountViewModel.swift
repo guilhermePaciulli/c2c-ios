@@ -50,6 +50,9 @@ class AccountViewModel: AccountViewModelProtocol {
             case 3:
                 selectedFlow = .Address
                 coordinator?.presentNextStep()
+            case 4:
+                selectedFlow = .CreditCard
+                coordinator?.presentNextStep()
             default:
                 break
             }
