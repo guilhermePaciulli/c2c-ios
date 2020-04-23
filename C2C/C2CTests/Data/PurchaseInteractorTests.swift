@@ -53,6 +53,35 @@ class PurchaseInteractorTests: QuickSpec {
                         })
                 }
             }
+            it("should return purchases from the user") {
+                waitUntil { (done) in
+                    self.subject.getPurchases(ofType: .purchases)
+                        .done({ result in
+                            expect(result).toNot(beEmpty())
+                            done()
+                        })
+                        .catch({ error in
+                            XCTFail("The request should not have failed, error: \(error)")
+                            done()
+                        })
+                }
+            }
+            it("can fail all requests when fetching purchases from the user") {
+                let msg = "some server or internet error is happening"
+                self.repository.responseError = .init(message: msg)
+                waitUntil { (done) in
+                    self.subject
+                        .getPurchases(ofType: .purchases)
+                        .done({ result in
+                            XCTFail("The fetching should have failed")
+                            done()
+                        })
+                        .catch({ error in
+                            expect(error.localizedDescription).to(equal(msg))
+                            done()
+                        })
+                }
+            }
         }
         
     }

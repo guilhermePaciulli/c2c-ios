@@ -10,11 +10,17 @@ import Foundation
 
 enum PurchaseEndpoints: Endpoint {
     case purchase(product: Int)
+    case purchases
+    case sells
     
     var path: String {
         switch self {
         case .purchase(let id):
             return "/buy/\(id)"
+        case .purchases:
+            return "/purchases"
+        case .sells:
+            return "/sells "
         }
     }
     
@@ -29,11 +35,14 @@ enum PurchaseEndpoints: Endpoint {
         return ["Content-Type": "application/json"]
     }
     
-    
     var method: RequestMethod {
         switch self {
         case .purchase(_):
             return .post
+        case .purchases:
+            return .get
+        case .sells:
+            return .get
         }
     }
         

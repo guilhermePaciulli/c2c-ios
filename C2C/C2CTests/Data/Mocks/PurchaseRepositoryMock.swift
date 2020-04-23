@@ -18,4 +18,10 @@ class PurchaseRepositoryMock: PurchaseRepositoryProtocol {
         return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: EmptyResponse.self).map({ _ in })
     }
     
+    func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]> {
+        if type == .sells {
+            return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: [Purchase].self, withFile: "Sells")
+        }
+        return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: [Purchase].self, withFile: "Purchases")
+    }
 }

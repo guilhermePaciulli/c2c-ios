@@ -17,6 +17,9 @@
 		A301E62124423D1100A0607F /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62024423D1100A0607F /* AddressViewModel.swift */; };
 		A301E62424423D2900A0607F /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A301E62324423D2900A0607F /* Address.storyboard */; };
 		A301E62624423D3500A0607F /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62524423D3500A0607F /* AddressViewController.swift */; };
+		A309430F24510C350033F8D6 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309430E24510C350033F8D6 /* Purchase.swift */; };
+		A309431124510F4C0033F8D6 /* Purchases.json in Resources */ = {isa = PBXBuildFile; fileRef = A309431024510F4C0033F8D6 /* Purchases.json */; };
+		A3094315245112530033F8D6 /* Sells.json in Resources */ = {isa = PBXBuildFile; fileRef = A3094314245112530033F8D6 /* Sells.json */; };
 		A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2AD24156BEC002FC41B /* AppCoordinator.swift */; };
 		A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */; };
 		A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313C2B42416F5B5002FC41B /* Endpoint.swift */; };
@@ -176,6 +179,9 @@
 		A301E62024423D1100A0607F /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		A301E62324423D2900A0607F /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
 		A301E62524423D3500A0607F /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		A309430E24510C350033F8D6 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		A309431024510F4C0033F8D6 /* Purchases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Purchases.json; sourceTree = "<group>"; };
+		A3094314245112530033F8D6 /* Sells.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sells.json; sourceTree = "<group>"; };
 		A313C2AD24156BEC002FC41B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A313C2B024156CC2002FC41B /* AppCoordinatorDependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorDependencyInjector.swift; sourceTree = "<group>"; };
 		A313C2B42416F5B5002FC41B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -420,13 +426,13 @@
 		A313C2B62416F5B9002FC41B /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
-				A32E6148244F2432004461F1 /* PurchaseEndpoints.swift */,
 				A313C2B42416F5B5002FC41B /* Endpoint.swift */,
 				A363FCBB24398707002081BF /* Endpoint+FormData.swift */,
 				A313C2B72416F5F7002FC41B /* ProductsEndpoint.swift */,
 				A3C60E3F2436947200426F40 /* UserEndpoints.swift */,
 				A35325292442425C00FECBF6 /* AddressEndpoints.swift */,
 				A3F1AA3A24426719001E741F /* CreditCardEndpoints.swift */,
+				A32E6148244F2432004461F1 /* PurchaseEndpoints.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				A313C2C02416F685002FC41B /* APIResponseError.swift */,
 				A353252B2442427400FECBF6 /* Address.swift */,
 				A3F1AA3C24426724001E741F /* CreditCard.swift */,
+				A309430E24510C350033F8D6 /* Purchase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -602,6 +609,8 @@
 				A358521B243BFA2F002D93E5 /* UserData.json */,
 				A3F1AA33244257DA001E741F /* Address.json */,
 				A3F1AA4424426A2A001E741F /* CreditCard.json */,
+				A309431024510F4C0033F8D6 /* Purchases.json */,
+				A3094314245112530033F8D6 /* Sells.json */,
 			);
 			path = JSONMocks;
 			sourceTree = "<group>";
@@ -1097,8 +1106,10 @@
 			files = (
 				A3F1AA34244257DA001E741F /* Address.json in Resources */,
 				A3C60E502436AB7E00426F40 /* AccessToken.json in Resources */,
+				A309431124510F4C0033F8D6 /* Purchases.json in Resources */,
 				A3341A192427FB1100C96A0C /* Array<Product>.json in Resources */,
 				A358521C243BFA2F002D93E5 /* UserData.json in Resources */,
+				A3094315245112530033F8D6 /* Sells.json in Resources */,
 				A3F1AA4524426A2A001E741F /* CreditCard.json in Resources */,
 				A3341A1B2427FB3400C96A0C /* Product.json in Resources */,
 			);
@@ -1282,6 +1293,7 @@
 				A3E6B1992436C21500B55441 /* AuthenticationViewModel.swift in Sources */,
 				A3532530244244A200FECBF6 /* AddressRepository.swift in Sources */,
 				A313C2B124156CC2002FC41B /* AppCoordinatorDependencyInjector.swift in Sources */,
+				A309430F24510C350033F8D6 /* Purchase.swift in Sources */,
 				A313C2CB241702DB002FC41B /* ProductsViewController+TableView.swift in Sources */,
 				A328F679244404B20026576E /* CreditCard+TextFieldDelegate.swift in Sources */,
 				A313C2C324170149002FC41B /* ProductsRepository.swift in Sources */,

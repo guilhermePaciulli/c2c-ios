@@ -10,6 +10,7 @@ import PromiseKit
 
 protocol PurchaseInteractorProtocol {
     func purchase(product: ProductAttributes) -> Promise<Void>
+    func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]>
 }
 
 
@@ -23,6 +24,10 @@ class PurchaseInteractor: APIClient, PurchaseInteractorProtocol {
     
     func purchase(product: ProductAttributes) -> Promise<Void> {
         return repository.purchase(product: product.id)
+    }
+    
+    func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]> {
+        return repository.getPurchases(ofType: type)
     }
     
 }
