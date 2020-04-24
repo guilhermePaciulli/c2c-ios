@@ -32,7 +32,7 @@ class ProductsViewModel: ProductsViewModelDelegate {
     func getObject() {
         guard !isLoading else { return }
         isLoading = true
-        delegate?.startRefreshing()
+        if productsList.isEmpty { delegate?.startRefreshing() }
         interactor?.getAll().done(on: .main, { [weak self] (productsList) in
             self?.productsList = productsList
             self?.delegate?.reloadData()

@@ -43,6 +43,7 @@ class ProductsViewModelTests: QuickSpec {
             it("should fetch object successfully") {
                 self.subject.getObject()
                 expect(self.mockedView.reloadDataCalled).toEventually(beTrue())
+                expect(self.mockedView.startRefreshingCalled).toEventually(beTrue())
                 expect(self.mockedView.stopLoadingInTableCalled).toEventually(beTrue())
                 expect(self.subject.numberOfRowsInSection(section: 0)).toEventually(beGreaterThan(0))
             }
@@ -79,16 +80,22 @@ class ProductsViewModelTests: QuickSpec {
     }
     
     class MockedView: ProductsViewControllerPresentable {
+        
         var alertTitle: String?
         var alertMessage: String?
         var stopLoadingInTableCalled = false
         var reloadDataCalled = false
+        var startRefreshingCalled = false
+        
+        func startRefreshing() {
+            startRefreshingCalled = true
+        }
         
         func stopLoadingInTable() {
             stopLoadingInTableCalled = true
         }
         
-        func showAlert(withTitle title: String, andMessage message: String) {
+        func showAlert(withTitle title: String, message: String) {
             alertTitle  = title
             alertMessage = message
         }
