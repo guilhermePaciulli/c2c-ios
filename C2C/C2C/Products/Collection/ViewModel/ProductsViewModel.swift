@@ -32,6 +32,7 @@ class ProductsViewModel: ProductsViewModelDelegate {
     func getObject() {
         guard !isLoading else { return }
         isLoading = true
+        delegate?.startRefreshing()
         interactor?.getAll().done(on: .main, { [weak self] (productsList) in
             self?.productsList = productsList
             self?.delegate?.reloadData()
@@ -40,7 +41,7 @@ class ProductsViewModel: ProductsViewModelDelegate {
         }).catch({ [weak self] (error) in
             self?.delegate?.stopLoadingInTable()
             self?.delegate?.reloadData()
-            self?.delegate?.showAlert(withTitle: error.localizedTitle, andMessage: error.localizedDescription)
+            self?.delegate?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             self?.isLoading = false
         })
     }

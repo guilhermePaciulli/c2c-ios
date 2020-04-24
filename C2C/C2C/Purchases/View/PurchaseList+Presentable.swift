@@ -1,21 +1,21 @@
 //
-//  ProductsViewController+Presentable.swift
+//  PurchaseList+Presentable.swift
 //  C2C
 //
-//  Created by Guilherme Paciulli on 09/03/20.
+//  Created by Guilherme Paciulli on 23/04/20.
 //  Copyright © 2020 Guilherme Paciulli. All rights reserved.
 //
 
 import UIKit
 
-protocol ProductsViewControllerPresentable: class {
+protocol PurchaseListPresentable {
     func startRefreshing()
     func stopLoadingInTable()
     func showAlert(withTitle title: String, message: String)
     func reloadData()
 }
 
-extension ProductsViewController: ProductsViewControllerPresentable {
+extension PurchaseListViewController {
     
     func startRefreshing() {
         showSpinnerView(false, over: tableView)
@@ -27,7 +27,7 @@ extension ProductsViewController: ProductsViewControllerPresentable {
     }
     
     func reloadData() {
-        tableView?.reloadData()
+        tableView.reloadData()
     }
     
 }
