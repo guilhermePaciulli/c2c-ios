@@ -19,9 +19,10 @@ class PurchaseCell: UITableViewCell {
         super.awakeFromNib()
         cardView?.layer.cornerRadius = 20
         cardView?.clipsToBounds = true
+        purchaseStatus?.textColor = .systemYellow
     }
     
-    func configureCell(withProductName name: String, andStatus status: NSAttributedString) -> UIImageView? {
+    func configureCell(withProductName name: String, andStatus status: String) -> UIImageView? {
         productTitle?.text = name
         purchaseStatus?.attributedText = status
         return productImage

@@ -28,5 +28,18 @@ class PurchaseListViewController: UITableViewController {
     @objc func didTapBackButton() {
         viewModel?.didTapBackButton()
     }
+    
+    @objc func didPullToRefresh() {
+        viewModel?.fetchPurchases()
+    }
+    
+    // MARK:- Private methods
+    private func setupView() {
+        title = viewModel?.title
+        let refresh: UIRefreshControl = .init()
+        refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        tableView?.addSubview(refresh)
+        refreshControl = refresh
+    }
 
 }
