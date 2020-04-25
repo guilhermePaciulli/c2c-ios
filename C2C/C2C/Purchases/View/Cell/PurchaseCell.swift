@@ -24,7 +24,7 @@ class PurchaseCell: UITableViewCell {
     
     func configureCell(withProductName name: String, andStatus status: String) -> UIImageView? {
         productTitle?.text = name
-        purchaseStatus?.attributedText = status
+        purchaseStatus?.text = status
         return productImage
     }
 

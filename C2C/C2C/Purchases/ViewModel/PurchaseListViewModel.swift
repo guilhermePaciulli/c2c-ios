@@ -50,7 +50,6 @@ class PurchaseListViewModel: PurchaseListViewModelProtocol {
             self?.isLoading = false
         }.catch { [weak self] (error) in
             self?.view?.stopLoadingInTable()
-            self?.view?.reloadData()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             self?.isLoading = false
         }
