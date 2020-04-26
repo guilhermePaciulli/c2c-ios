@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 protocol PurchaseListViewModelProtocol {
-    var title: String? { get set }
+    var title: String { get }
     func fetchPurchases()
     func numberOfSections() -> Int
     func numberOfRowsInSection(section: Int) -> Int
@@ -28,14 +28,21 @@ class PurchaseListViewModel: PurchaseListViewModelProtocol {
     var view: PurchaseListPresentable?
     var purchaseList: [Purchase] = []
     var selectedPurchase: PurchaseAttributes?
-    var title: String?
+    var title: String {
+        switch type {
+        case .purchases:
+            return "Purchases"
+        case .sells:
+            return "Sells"
+        }
+    }
     var isLoading = false
     var type: PurchaseListingType
 
     // MARK:- Initialization
-    init(type: PurchaseListingType, interactor: PurchaseInteractorProtocol) {
+    init(interactor: PurchaseInteractorProtocol) {
         self.interactor = interactor
-        self.type = type
+        self.type = .purchases
     }
     
     // MARK:- Protocol methods

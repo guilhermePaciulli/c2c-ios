@@ -15,7 +15,7 @@ class PurchaseListViewModelTests: QuickSpec {
     var coordinator = BasicCoordinatorMock()
     var repository = PurchaseRepositoryMock()
     var interactor = PurchaseInteractor(repository: PurchaseRepositoryMock())
-    var subject = PurchaseListViewModel(type: .purchases, interactor: PurchaseInteractor())
+    var subject = PurchaseListViewModel(interactor: PurchaseInteractor())
     var view = MockedView()
     var viewController: PurchaseListViewController = .instantiate()
     
@@ -25,7 +25,7 @@ class PurchaseListViewModelTests: QuickSpec {
             self.coordinator = .init()
             self.repository = .init()
             self.interactor = .init(repository: self.repository)
-            self.subject = .init(type: .purchases, interactor: self.interactor)
+            self.subject = .init(interactor: self.interactor)
             self.view = .init()
             self.subject.view = self.view
             self.subject.coordinator = self.coordinator

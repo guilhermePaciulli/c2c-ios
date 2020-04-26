@@ -21,6 +21,7 @@ class PurchaseListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupView()
         viewModel?.fetchPurchases()
     }
     

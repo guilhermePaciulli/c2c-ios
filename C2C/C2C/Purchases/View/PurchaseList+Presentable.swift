@@ -15,7 +15,7 @@ protocol PurchaseListPresentable {
     func reloadData()
 }
 
-extension PurchaseListViewController {
+extension PurchaseListViewController: PurchaseListPresentable {
     
     func startRefreshing() {
         showSpinnerView(false, over: tableView)
