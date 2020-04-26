@@ -10,12 +10,12 @@
         <scene sceneID="lx8-7p-WaW">
             <objects>
                 <tableViewController storyboardIdentifier="PurchaseListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hra-AG-oXl" customClass="PurchaseListViewController" customModule="C2C" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hQZ-uA-cYn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="214" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hQZ-uA-cYn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="214" id="qps-Sb-Bau" customClass="PurchaseCell" customModule="C2C" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseCell" rowHeight="214" id="qps-Sb-Bau" customClass="PurchaseCell" customModule="C2C" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="214"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qps-Sb-Bau" id="4Wr-7S-Xu4">
@@ -32,16 +32,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-Qx-09H">
-                                                    <rect key="frame" x="157.5" y="26.5" width="186.5" height="119"/>
+                                                    <rect key="frame" x="157.5" y="17" width="186.5" height="138"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jetski" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-uq-jgc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="71"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jetski Muito louco saca só" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-uq-jgc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="152.5" height="103"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OS4-mC-kmC">
-                                                            <rect key="frame" x="0.0" y="71" width="46.5" height="48"/>
+                                                            <rect key="frame" x="0.0" y="103" width="46.5" height="35"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Status">
                                                                     <attributes>
@@ -60,7 +60,7 @@
                                                 <constraint firstItem="PhZ-gc-dzZ" firstAttribute="height" secondItem="lhh-E1-ke7" secondAttribute="height" multiplier="0.8" id="BYq-Tk-UOs"/>
                                                 <constraint firstItem="PhZ-gc-dzZ" firstAttribute="leading" secondItem="lhh-E1-ke7" secondAttribute="leading" constant="10" id="EFh-7w-sat"/>
                                                 <constraint firstItem="PhZ-gc-dzZ" firstAttribute="centerY" secondItem="lhh-E1-ke7" secondAttribute="centerY" id="dMZ-yk-Fia"/>
-                                                <constraint firstItem="v7j-Qx-09H" firstAttribute="height" secondItem="PhZ-gc-dzZ" secondAttribute="height" multiplier="0.862319" id="f6s-7g-I1j"/>
+                                                <constraint firstItem="v7j-Qx-09H" firstAttribute="height" secondItem="PhZ-gc-dzZ" secondAttribute="height" id="f6s-7g-I1j"/>
                                                 <constraint firstAttribute="trailing" secondItem="v7j-Qx-09H" secondAttribute="trailing" constant="10" id="hiu-vr-n9O"/>
                                                 <constraint firstItem="v7j-Qx-09H" firstAttribute="centerY" secondItem="lhh-E1-ke7" secondAttribute="centerY" id="htx-jM-j4z"/>
                                             </constraints>

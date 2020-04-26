@@ -20,7 +20,7 @@ enum PurchaseEndpoints: Endpoint {
         case .purchases:
             return "/purchases"
         case .sells:
-            return "/sells "
+            return "/sells"
         }
     }
     

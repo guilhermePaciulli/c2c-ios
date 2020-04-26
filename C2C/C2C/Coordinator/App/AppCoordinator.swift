@@ -30,7 +30,7 @@ class AppCoordinator: AppCoordinatable {
     }
     
     func start() {
-        KeychainManager.init().delete(key: "jwt")
+//        KeychainManager.init().delete(key: "jwt")
         setUpTabBar()
         window.rootViewController = injector.tabBarController
         window.makeKeyAndVisible()
