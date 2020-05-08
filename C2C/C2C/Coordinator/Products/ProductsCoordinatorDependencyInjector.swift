@@ -15,6 +15,7 @@ class ProductsCoordinatorDependencyInjector {
         let navigationController = TabBarNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setViewControllers([productsViewController], animated: false)
+        navigationController.tabBarItem = .init(title: "Products", image: #imageLiteral(resourceName: "cart.png"), tag: 0)
         return navigationController
     }()
     

@@ -16,6 +16,7 @@ class AccountDependencyInjector {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setViewControllers([accountViewController], animated: false)
         navigationController.title = "Account"
+        navigationController.tabBarItem = .init(title: "Account", image: #imageLiteral(resourceName: "account"), tag: 0)
         return navigationController
     }()
     

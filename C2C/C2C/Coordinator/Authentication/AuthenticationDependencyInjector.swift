@@ -16,6 +16,7 @@ class AuthenticationDependencyInjector {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.setViewControllers([authenticationViewController], animated: false)
         navigationController.title = "Login"
+        navigationController.tabBarItem = .init(title: "Login", image: #imageLiteral(resourceName: "account"), tag: 0)
         return navigationController
     }()
     
