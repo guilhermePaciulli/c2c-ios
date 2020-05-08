@@ -24,8 +24,6 @@ platform :ios do
               scheme: "C2C")
     xcov(scheme: "C2C",
          output_directory: "fastlane/")
-
-    sh "xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/"
     clear_derived_data
   end
 end

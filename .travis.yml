@@ -1,5 +1,4 @@
 addons:
-  postgresql: 9.3
   sonarcloud:
     organization: guilhermepaciulli
     token:
@@ -11,4 +10,5 @@ before_install:
 script:
   - cd C2C
   - fastlane tests
+  - sh "xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/"
   - sonar-scanner
