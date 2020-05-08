@@ -77,6 +77,24 @@ class AccountCoordinatorTests: QuickSpec {
             }
         }
         
+        describe("Purchases flow") {
+            it("should present purchase flow when requested") {
+                self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .purchases)
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.Purchases(type: .purchases)))
+            }
+            it("should present sells flow when requested") {
+                self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .sells)
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.Purchases(type: .sells)))
+            }
+            it("should return to account at credit card when requested") {
+                self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .purchases)
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.Purchases(type: .purchases)))
+                self.subject.presentPreviousStep()
+                expect(self.subject.state).to(equal(.Account))
+            }
+        }
     }
-    
 }

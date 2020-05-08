@@ -28,21 +28,22 @@ extension UIViewController {
         removeSpinnerView(hidingUIElements)
     }
     
-    func showSpinnerView(_ hidingUIElements: Bool = true) {
+    func showSpinnerView(_ hidingUIElements: Bool = true, over superView: UIView? = nil) {
         if hidingUIElements {
             navigationController?.setNavigationBarHidden(true, animated: true)
             tabBarController?.tabBar.isHidden = true
         }
-        let spinnerView: UIVisualEffectView = .init(frame: view.bounds)
+        let overView: UIView = superView ?? view
+        let spinnerView: UIVisualEffectView = .init(frame: overView.bounds)
         spinnerView.effect = UIBlurEffect(style: .systemChromeMaterial)
 
         let activityIndicatorView: UIActivityIndicatorView = .init(style: .medium)
         activityIndicatorView.startAnimating()
         activityIndicatorView.center = spinnerView.center
         
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async {
             spinnerView.contentView.addSubview(activityIndicatorView)
-            self?.view?.addSubview(spinnerView)
+            overView.addSubview(spinnerView)
         }
         
         loadingView = spinnerView

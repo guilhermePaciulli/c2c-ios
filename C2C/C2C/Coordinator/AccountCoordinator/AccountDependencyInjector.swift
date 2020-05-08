@@ -41,6 +41,13 @@ class AccountDependencyInjector {
         return controller
     }()
     
+    lazy var purchaseViewController: PurchaseListViewController = {
+        let controller: PurchaseListViewController = .instantiate()
+        controller.viewModel = purchaseListViewModel
+        purchaseListViewModel.view = controller
+        return controller
+    }()
+    
     // MARK:- ViewModels
     lazy var accountViewModel: AccountViewModel = {
         let viewModel = AccountViewModel()
@@ -56,6 +63,10 @@ class AccountDependencyInjector {
         return .init(interactor: creditCardInteractor)
     }()
     
+    lazy var purchaseListViewModel: PurchaseListViewModel = {
+        return .init(interactor: purchasesInteractor)
+    }()
+    
     // MARK:- Interactors
     lazy var userInteractor: UserInteractor = {
         return .init()
@@ -66,6 +77,10 @@ class AccountDependencyInjector {
     }()
     
     lazy var creditCardInteractor: CreditCardInteractor = {
+        return .init()
+    }()
+    
+    lazy var purchasesInteractor: PurchaseInteractor = {
         return .init()
     }()
     

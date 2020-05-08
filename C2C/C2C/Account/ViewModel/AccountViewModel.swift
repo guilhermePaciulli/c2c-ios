@@ -56,6 +56,18 @@ class AccountViewModel: AccountViewModelProtocol {
             default:
                 break
             }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                selectedFlow = .Purchases(type: .purchases)
+                coordinator?.presentNextStep()
+            case 1:
+                selectedFlow = .Purchases(type: .sells)
+                coordinator?.presentNextStep()
+            default:
+                break
+            }
+            break
         default:
             break
         }

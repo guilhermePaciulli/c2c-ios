@@ -39,6 +39,11 @@ class AccountCoordinator: AccountCoordinationProtocol {
                 state = .CreditCard
                 injector.creditCardViewModel.coordinator = self
                 injector.navigationController.pushViewController(injector.creditCardViewController, animated: true)
+            case .Purchases(let type):
+                state = .Purchases(type: type)
+                injector.purchaseListViewModel.type = type
+                injector.purchaseListViewModel.coordinator = self
+                injector.navigationController.pushViewController(injector.purchaseViewController, animated: true)
             default:
                 break
             }
@@ -48,6 +53,9 @@ class AccountCoordinator: AccountCoordinationProtocol {
         case .CreditCard:
             state = .Account
             injector.navigationController.popViewController(animated: true)
+        case .Purchases(_):
+            // TODO:- Add purchase details here
+            break
         }
     }
     
@@ -55,10 +63,7 @@ class AccountCoordinator: AccountCoordinationProtocol {
         switch state {
         case .Account:
             NSLog("Invalid action trying to return from root view controller")
-        case .Address:
-            state = .Account
-            injector.navigationController.popViewController(animated: true)
-        case .CreditCard:
+        default:
             state = .Account
             injector.navigationController.popViewController(animated: true)
         }
@@ -70,8 +75,9 @@ class AccountCoordinator: AccountCoordinationProtocol {
     
     
 }
-enum AccountCoordinatorRoutingState {
+enum AccountCoordinatorRoutingState: Equatable {
     case Account
     case Address
     case CreditCard
+    case Purchases(type: PurchaseListingType)
 }
