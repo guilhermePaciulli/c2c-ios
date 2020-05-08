@@ -2,7 +2,7 @@ addons:
   sonarcloud:
     organization: guilhermepaciulli
     token:
-      secure: C4CpDSqw/aXdNFFum53fdbkO/mccnYpW38YtYjICAlp5nfGwtZ4i7LqGwpTVgzZw4VJcyrenzuiL0UCe5ca+OqyJUUtxFud30oqWUbxI1rTEMq0c5tgzS3iCQdFQHRy9JdvEzYjCxTKEOFTsUXCJquKyNVQYZoidL/MLS7szN4SVe8dp82Eg+d3X1vWbtb2H88BA3BPDQx62riSGeXtmoGOgeWPsMDoAGtqe4o9T1qltPRxg6h9CaSfKuifVjOrUsEC+pcRNGCesrFTGBbv+9hwkpcZp4EU4h7hO5MuZFgYcMElWZYYQvbv110ehLQythJymCRzLFy8/FM5bGfnzHqEy1RvqQoEHIogKaNeKftARRYgPeMu079Gf3jg/Nw43GBQlqSZz1qHCmC443cP+TNG/sp1acok0z0O6DtqiUPV3uwrTr1SMQjMkqiQsyM6enAjh8B1T4z9ITOnZgV/F7tXL+UzPVe4V+bi1pPhk0xzosF7bT/7qf5v7iAYMZC7gdgodtRmj0c0VPhS2X6lPL7fSqXJSmHgBxEVHmhboNyFZLGvHiykBr2fDHkJV3QzO0VG7CBOcAn6Lyv0B7j2T7hZeQ9EulcIMIUpFXeXwFs3f6odpHuyIHreZ3zKtpQItQE8Sr16WW+vf/pzSzk9Evke5Am5NzIvgrw2SygSbzvM=
+      secure: "AiSZMB9rEXUh3gyjLMEqTioiWsfdzGQJkwPjKkFxrdUOrCAOADwLm/AJQdSK1Ceo9FL+8vYawszNvAiRoO2ueBSmddv5A7qN0Vs0vGjK7zzvtt/sCtcPRTppIwR5cp6DAUjFShYm9KvV78nM8M3+f6mROs6k0TWOp88iy87lBhOYt8zZZLrGFkysFJCYtjkL/t/vsAl3hTxRFBUfyS9kbMQ41Ntoj/EOYPjxLxDch9YuvbtGIRurHIq/c5cE6eepznbNEZfBk9HMYGI8OIAtVfblKqDZCtnLH1gLUudDXLq7NOeqx8ochgRm6XfO5mq587oX/7HvgFVTNhUGL7dxk6zKTnVMbmilGnOKnzT2HoJTb3Ha/go6rWeQIJwJrfSgocvlu5qnfgAzQLYP7HicxIA5ir0HTH7CE9m+xP/U8Kt3eXbKxXsWqUA3DAzozSxPeKLtIZXwkOFvfOrqB2zS6g0PUre6WLFCfm22dQym8KD5PKoh4NEcaVYQtmoYMZNIGzrjhDa971naWQCKblS8vm6B8kak1cFeQf/HFZCpnvQR/bONFk95riJ8qjGpSs3u+U0LzJ0wtX42faFGG1LCFWckQgXEHQ15Cp3W2Es5bAjIK60ZYHHq/5vzxMH+U5pWndq9IlkY6lSj6jNK7JDhwJwwH4MmwRpzHqTtEiP0Rb8="
 language: swift
 osx_image: xcode11.4
 before_install:
@@ -10,5 +10,5 @@ before_install:
 script:
   - cd C2C
   - fastlane tests
-  - sh "xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/"
+  - sh "xccov-to-sonarqube-generic.sh C2C/fastlane/*.xcresult > sonarqube-generic-coverage.xml"
   - sonar-scanner
