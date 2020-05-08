@@ -3,4 +3,5 @@ osx_image: xcode11.4
 install:
   - bundle install
 script:
+  - cd C2C
   - fastlane tests
