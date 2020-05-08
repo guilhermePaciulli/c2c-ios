@@ -1,7 +1,7 @@
 language: swift
 osx_image: xcode11.4
 before_install:
-  - gem install xcov --no-ri --no-doc --no-document
+  - gem install xcov
 script:
   - cd C2C
   - fastlane tests
