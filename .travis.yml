@@ -10,7 +10,5 @@ before_install:
 script:
   - cd C2C
   - fastlane tests
-  - pwd
-  - ls -al
-  - sh "../xccov-to-sonarqube-generic.sh C2C/fastlane/*.xcresult > sonarqube-generic-coverage.xml"
+  - sh "../xccov-to-sonarqube-generic.sh fastlane/*.xccovreport > sonarqube-generic-coverage.xml"
   - sonar-scanner
