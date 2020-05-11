@@ -77,6 +77,9 @@
 		A363FCC0243A4080002081BF /* TabBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCBF243A4080002081BF /* TabBarNavigationController.swift */; };
 		A36EA8B0244254B200F52348 /* AccountCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EA8AF244254B200F52348 /* AccountCoordinatorTests.swift */; };
 		A3779370243BE0B20093F7E8 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A377936F243BE0B20093F7E8 /* UserDefaultsRepository.swift */; };
+		A392E2ED246A14A7004743CF /* PurchaseDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A392E2EC246A14A7004743CF /* PurchaseDetail.storyboard */; };
+		A392E2F0246A14BE004743CF /* PurchaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392E2EF246A14BE004743CF /* PurchaseDetailViewController.swift */; };
+		A392E2F3246A14D0004743CF /* PurchaseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392E2F2246A14D0004743CF /* PurchaseDetailViewModel.swift */; };
 		A39A65FE2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */; };
 		A39A66012436B30B00FBBDC2 /* CoordinationMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */; };
 		A39A66042436B36200FBBDC2 /* AppCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */; };
@@ -253,6 +256,9 @@
 		A363FCBF243A4080002081BF /* TabBarNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationController.swift; sourceTree = "<group>"; };
 		A36EA8AF244254B200F52348 /* AccountCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinatorTests.swift; sourceTree = "<group>"; };
 		A377936F243BE0B20093F7E8 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
+		A392E2EC246A14A7004743CF /* PurchaseDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PurchaseDetail.storyboard; sourceTree = "<group>"; };
+		A392E2EF246A14BE004743CF /* PurchaseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewController.swift; sourceTree = "<group>"; };
+		A392E2F2246A14D0004743CF /* PurchaseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewModel.swift; sourceTree = "<group>"; };
 		A39A65FD2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCoordinatorTests.swift; sourceTree = "<group>"; };
 		A39A66002436B30B00FBBDC2 /* CoordinationMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinationMocks.swift; sourceTree = "<group>"; };
 		A39A66032436B36200FBBDC2 /* AppCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorMock.swift; sourceTree = "<group>"; };
@@ -583,6 +589,7 @@
 				A355D1C624426B7700BA2A0B /* CreditCard */,
 				A301E62224423D1600A0607F /* Address */,
 				A309431824511BD90033F8D6 /* Purchases */,
+				A392E2EE246A14AF004743CF /* PurchaseDetail */,
 				A363FCC1243A4088002081BF /* TabBarNavigation */,
 				A39C54B624156A06009FCF8B /* Resources */,
 				A3C496C424156AD10019E0E1 /* Extensions */,
@@ -711,6 +718,32 @@
 				A363FCBF243A4080002081BF /* TabBarNavigationController.swift */,
 			);
 			path = TabBarNavigation;
+			sourceTree = "<group>";
+		};
+		A392E2EE246A14AF004743CF /* PurchaseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A392E2F1246A14C2004743CF /* View */,
+				A392E2F4246A14D3004743CF /* ViewModel */,
+			);
+			path = PurchaseDetail;
+			sourceTree = "<group>";
+		};
+		A392E2F1246A14C2004743CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A392E2EC246A14A7004743CF /* PurchaseDetail.storyboard */,
+				A392E2EF246A14BE004743CF /* PurchaseDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A392E2F4246A14D3004743CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A392E2F2246A14D0004743CF /* PurchaseDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A39A65FF2436B2F500FBBDC2 /* Coordinator */ = {
@@ -1153,6 +1186,7 @@
 				A33254EB24154EAE002CADF6 /* Assets.xcassets in Resources */,
 				A3E6B1962436C1F700B55441 /* Authentication.storyboard in Resources */,
 				A309431A24511BE80033F8D6 /* PurchaseList.storyboard in Resources */,
+				A392E2ED246A14A7004743CF /* PurchaseDetail.storyboard in Resources */,
 				A33254E924154EAC002CADF6 /* Products.storyboard in Resources */,
 				A3C496C124156A7B0019E0E1 /* Main.storyboard in Resources */,
 				A355D1C924426B8B00BA2A0B /* CreditCard.storyboard in Resources */,
@@ -1329,6 +1363,7 @@
 				A355D1C524426B7400BA2A0B /* CreditCardViewModel.swift in Sources */,
 				A340312624426E2400DBF30B /* CreditCardValidator.swift in Sources */,
 				A313C2C12416F685002FC41B /* APIResponseError.swift in Sources */,
+				A392E2F0246A14BE004743CF /* PurchaseDetailViewController.swift in Sources */,
 				A3F1AA3B24426719001E741F /* CreditCardEndpoints.swift in Sources */,
 				C17D87F524202F3C00E90BF4 /* ProductDetailViewController+Presentable.swift in Sources */,
 				A313C2B52416F5B5002FC41B /* Endpoint.swift in Sources */,
@@ -1396,6 +1431,7 @@
 				A301E61F243FF42700A0607F /* UIViewController+Alert.swift in Sources */,
 				A355D1CE24426BB500BA2A0B /* CreditCard+Presentable.swift in Sources */,
 				A301E61D243FEFB800A0607F /* UIViewController+Camera.swift in Sources */,
+				A392E2F3246A14D0004743CF /* PurchaseDetailViewModel.swift in Sources */,
 				A3D8698F243EA013000963F8 /* CreateProduct+Camera.swift in Sources */,
 				A33254E424154EAC002CADF6 /* SceneDelegate.swift in Sources */,
 			);
