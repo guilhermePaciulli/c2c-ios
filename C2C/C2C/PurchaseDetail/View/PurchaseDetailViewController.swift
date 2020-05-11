@@ -8,23 +8,37 @@
 
 import UIKit
 
-class PurchaseDetailViewController: UIViewController {
-
+class PurchaseDetailViewController: UITableViewController {
+    
+    // MARK:- Properties
+    weak var viewModel: PurchaseDetailViewModelProtocol?
+    
+    // MARK:- IBOutlets
+    @IBOutlet weak var productImage: UIImageView?
+    @IBOutlet weak var productName: UILabel?
+    @IBOutlet weak var productDescription: UILabel?
+    @IBOutlet weak var paymentMethodEnding: UILabel?
+    @IBOutlet weak var zipCode: UILabel?
+    @IBOutlet weak var purchaseStatus: UILabel?
+    @IBOutlet weak var changeStatusButton: UIButton?
+    @IBOutlet weak var purchaseStatusButtonCell: UITableViewCell?
+    @IBOutlet weak var paymentMethodCell: UITableViewCell?
+    
+    // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
     }
-    */
+    
+    // MARK:- Private methods
+    private func setupView() {
+        changeStatusButton?.layer.cornerRadius = 10
+        changeStatusButton?.clipsToBounds = true
+    }
 
 }

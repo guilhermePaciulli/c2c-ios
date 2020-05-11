@@ -6,4 +6,21 @@
 //  Copyright © 2020 Guilherme Paciulli. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Kingfisher
+
+protocol PurchaseDetailViewModelProtocol: class {
+    func viewWillAppear()
+}
+
+class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
+    
+    // MARK:- Properties
+    var view: PurchaseDetailPresentable?
+    var purchase: Purchase?
+    
+    func viewWillAppear() {
+        
+    }
+    
+}

@@ -71,6 +71,7 @@
 		A355D1D024426BE200BA2A0B /* CreditCardFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355D1CF24426BE200BA2A0B /* CreditCardFields.swift */; };
 		A358521C243BFA2F002D93E5 /* UserData.json in Resources */ = {isa = PBXBuildFile; fileRef = A358521B243BFA2F002D93E5 /* UserData.json */; };
 		A358521E243BFA78002D93E5 /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358521D243BFA78002D93E5 /* AccountViewModelTests.swift */; };
+		A3627FCB246A19240092E8D5 /* PurchaseDetail+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3627FCA246A19240092E8D5 /* PurchaseDetail+Presentable.swift */; };
 		A363FCBA243981B9002081BF /* CreateAccountViewController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCB9243981B9002081BF /* CreateAccountViewController+Camera.swift */; };
 		A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCBB24398707002081BF /* Endpoint+FormData.swift */; };
 		A363FCBE2439901D002081BF /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363FCBD2439901D002081BF /* String+Validations.swift */; };
@@ -250,6 +251,7 @@
 		A355D1CF24426BE200BA2A0B /* CreditCardFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFields.swift; sourceTree = "<group>"; };
 		A358521B243BFA2F002D93E5 /* UserData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserData.json; sourceTree = "<group>"; };
 		A358521D243BFA78002D93E5 /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
+		A3627FCA246A19240092E8D5 /* PurchaseDetail+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PurchaseDetail+Presentable.swift"; sourceTree = "<group>"; };
 		A363FCB9243981B9002081BF /* CreateAccountViewController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateAccountViewController+Camera.swift"; sourceTree = "<group>"; };
 		A363FCBB24398707002081BF /* Endpoint+FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+FormData.swift"; sourceTree = "<group>"; };
 		A363FCBD2439901D002081BF /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
@@ -734,6 +736,7 @@
 			children = (
 				A392E2EC246A14A7004743CF /* PurchaseDetail.storyboard */,
 				A392E2EF246A14BE004743CF /* PurchaseDetailViewController.swift */,
+				A3627FCA246A19240092E8D5 /* PurchaseDetail+Presentable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1385,6 +1388,7 @@
 				A313C2AE24156BEC002FC41B /* AppCoordinator.swift in Sources */,
 				A3F1AA3D24426724001E741F /* CreditCard.swift in Sources */,
 				C1415EF0242033CC00CAC689 /* AppCoordinator+Presentable.swift in Sources */,
+				A3627FCB246A19240092E8D5 /* PurchaseDetail+Presentable.swift in Sources */,
 				A3FF94A3245250B300185E48 /* PurchaseListViewModel.swift in Sources */,
 				A3B47CCD243963350009A6AF /* AccountViewModel.swift in Sources */,
 				A363FCBA243981B9002081BF /* CreateAccountViewController+Camera.swift in Sources */,
