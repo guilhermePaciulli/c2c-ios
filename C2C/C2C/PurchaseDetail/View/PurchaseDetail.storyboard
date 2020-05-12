@@ -168,6 +168,9 @@
                                                     <state key="normal" title="Change status to shipping">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapToChangePurchaseStatus:" destination="5pZ-Cr-IAZ" eventType="touchUpInside" id="Syn-HT-vdb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

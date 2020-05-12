@@ -40,5 +40,11 @@ class PurchaseDetailViewController: UITableViewController {
         changeStatusButton?.layer.cornerRadius = 10
         changeStatusButton?.clipsToBounds = true
     }
+    
+    // MARK:- Actions
+    @IBAction func didTapToChangePurchaseStatus(_ sender: UIButton) {
+        viewModel?.didTapToChangePurchaseStatus()
+    }
+    
 
 }

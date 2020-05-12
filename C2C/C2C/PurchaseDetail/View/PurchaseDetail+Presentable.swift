@@ -15,8 +15,8 @@ protocol PurchaseDetailPresentable {
     func setProductDescription(_ value: String)
     func setProductImage() -> UIImageView?
     func setPurchaseStatus(withTitle title: String, andColor color: UIColor)
-    func setStatusButton(_ hidden: Bool)
-    func setPaymentMethod(_ hidden: Bool)
+    func setStatusButtonHidden(_ hidden: Bool)
+    func setPaymentMethodHidden(_ hidden: Bool)
 }
 
 extension PurchaseDetailViewController: PurchaseDetailPresentable {
@@ -46,11 +46,11 @@ extension PurchaseDetailViewController: PurchaseDetailPresentable {
         purchaseStatus?.textColor = color
     }
     
-    func setStatusButton(_ hidden: Bool) {
+    func setStatusButtonHidden(_ hidden: Bool) {
         purchaseStatusButtonCell?.isHidden = hidden
     }
     
-    func setPaymentMethod(_ hidden: Bool) {
+    func setPaymentMethodHidden(_ hidden: Bool) {
         paymentMethodCell?.isHidden = hidden
     }
     
