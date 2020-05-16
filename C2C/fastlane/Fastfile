@@ -21,9 +21,8 @@ platform :ios do
     clear_derived_data
     run_tests(workspace: "C2C.xcworkspace",
               devices: ["iPhone 8"],
-              scheme: "C2C")
-    xcov(scheme: "C2C",
-         output_directory: "fastlane/")
-    clear_derived_data
+              scheme: "C2C",
+              derived_data_path: ".",
+              code_coverage: true)
   end
 end
