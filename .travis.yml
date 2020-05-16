@@ -11,5 +11,10 @@ script:
   - cd C2C
   - fastlane tests
   - cd ..
-  - sh "xccov-to-sonarqube-generic.sh C2C/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml"
+  - pwd
+  - ls -al
+  - ls C2C
+  - ls C2C/Logs
+  - ls C2C/Logs/Test
+  - sh "xccov-to-sonarqube-generic.sh ./C2C/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml"
   # - sonar-scanner
