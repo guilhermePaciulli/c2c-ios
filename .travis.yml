@@ -12,4 +12,4 @@ script:
   - fastlane tests
   - cd ..
   - bash xccov-to-sonarqube-generic.sh C2C/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
-  # - sonar-scanner
+  - sonar-scanner
