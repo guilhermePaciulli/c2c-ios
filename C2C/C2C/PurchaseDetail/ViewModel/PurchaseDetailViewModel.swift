@@ -34,13 +34,8 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
         view?.setPurchaseStatus(withTitle: status.0, andColor: status.1)
         
         view?.setPaymentMethodHidden(isSellerPurchase())
-        if purchase.attributes.purchaseStatus == .inTransit ||
-            (isSellerPurchase() && purchase.attributes.purchaseStatus != .inTransit) {
-            view?.setStatusButtonHidden(false)
-        } else {
-            view?.setStatusButtonHidden(true)
-        }
-        
+        view?.setStatusButtonHidden(!shouldShowStatusButton())
+        view?.setPaymentMethodEnding(getPaymentMethodEnding())
     }
     
     func didTapToChangePurchaseStatus() {
@@ -50,6 +45,17 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     // MARK:- Private methods
     private func isSellerPurchase() -> Bool {
         return purchase?.attributes.creditCard == nil
+    }
+    
+    private func shouldShowStatusButton() -> Bool {
+        guard let purchase = purchase else { return false }
+        return purchase.attributes.purchaseStatus == .inTransit ||
+            (isSellerPurchase() && purchase.attributes.purchaseStatus != .inTransit)
+    }
+    
+    private func getPaymentMethodEnding() -> String {
+        guard let creditCard = purchase?.attributes.creditCard?.number.reversed() else { return "" }
+        return String(creditCard.prefix(4))
     }
     
 }
