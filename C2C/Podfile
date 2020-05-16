@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '13.0'
 
 target 'C2C' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -8,10 +8,13 @@ target 'C2C' do
   # Pods for C2C
   pod 'Kingfisher'
   pod 'PromiseKit'
+  pod 'SwiftLint'
+  pod 'IQKeyboardManagerSwift'
 
   target 'C2CTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Quick', '~> 2.1.0'
+    pod 'Nimble'
   end
 
   target 'C2CUITests' do

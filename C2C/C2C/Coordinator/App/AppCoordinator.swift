@@ -8,21 +8,42 @@
 
 import UIKit
 
-class AppCoordinator {
+protocol BasicCoordinationProtocol: class {
+    func presentNextStep()
+    func presentPreviousStep()
+}
+
+protocol AppCoordinatable: CoordinatorPresentable, AppAuthenticable { }
+
+class AppCoordinator: AppCoordinatable {
     
     // MARK:- Properties
+    lazy var productsCoordinator: ProductsCoordinator = .init(baseCoordinator: self)
+    lazy var accountCoordinator: AccountCoordinator = .init(baseCoordinator: self)
+    lazy var authenticationCoordinator: AuthenticationCoordinator = .init(baseCoordinator: self)
     var injector: AppCoordinatorDependencyInjector
     var window: UIWindow
     
     init(withWindow window: UIWindow) {
-        injector = AppCoordinatorDependencyInjector()
+        injector = .init()
         self.window = window
     }
     
     func start() {
-        injector.navigationController.setViewControllers([injector.productsViewController], animated: false)
-        window.rootViewController = injector.navigationController
+//        KeychainManager.init().delete(key: "jwt")
+        setUpTabBar()
+        window.rootViewController = injector.tabBarController
         window.makeKeyAndVisible()
+    }
+    
+    internal func setUpTabBar() {
+        if injector.userInteractor.hasUser() {
+            injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                         accountCoordinator.injector.navigationController]
+        } else {
+            injector.tabBarController.viewControllers = [productsCoordinator.injector.navigationController,
+                                                         authenticationCoordinator.injector.navigationController]
+        }
     }
     
 }

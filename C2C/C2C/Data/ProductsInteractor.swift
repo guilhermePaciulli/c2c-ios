@@ -9,7 +9,9 @@
 import PromiseKit
 
 protocol ProductsInteractorProtocol: class {
-    func getAll() -> Promise<Products>
+    func getAll() -> Promise<[Product]>
+    func getProduct(withId id: Int) -> Promise<Product>
+    func createProduct(product: CreateProduct) -> Promise<Void>
 }
 
 class ProductsInteractor: ProductsInteractorProtocol {
@@ -20,9 +22,16 @@ class ProductsInteractor: ProductsInteractorProtocol {
         self.repository = repository
     }
     
-    func getAll() -> Promise<Products> {
+    func getAll() -> Promise<[Product]> {
         return repository.getAll()
     }
     
+    func getProduct(withId id: Int) -> Promise<Product> {
+        return repository.getProduct(withId: id)
+    }
+    
+    func createProduct(product: CreateProduct) -> Promise<Void> {
+        return repository.createProduct(product: product)
+    }
     
 }

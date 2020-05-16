@@ -1,0 +1,13 @@
+{
+    "data": {
+        "id": "1",
+        "type": "user",
+        "attributes": {
+            "email": "rogerinho.inga10@gmail.com",
+            "name": "Rogerinho",
+            "surname": "do Ingá",
+            "cpf": "41548807801",
+            "profile_picture_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/pvn5ll17oodgryr3jhvh68nd37a7?response-content-disposition=inline%3B%20filename%3D%22rky7o247fq611.jpg%22%3B%20filename%2A%3DUTF-8%27%27rky7o247fq611.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200406%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200406T235925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a4fa047c28f5a3c50c98368aa12d7935122c4a45eb929e886edba9a2fc726ddb"
+        }
+    }
+}

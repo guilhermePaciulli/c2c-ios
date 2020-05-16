@@ -1,0 +1,12 @@
+{
+    "data": {
+        "id": "1",
+        "type": "credit_card",
+        "attributes": {
+            "number": "4521009716146231",
+            "owner": "Rogerinho do Ingá",
+            "cvv": "385",
+            "expiration": "06/23"
+        }
+    }
+}

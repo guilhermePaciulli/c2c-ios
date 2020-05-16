@@ -9,6 +9,8 @@
 import PromiseKit
 import UIKit
 
+private var networkSession: NetworkSession = .init()
+
 protocol APIClient {
     func dispatchRequest<T: Decodable>(with request: URLRequest, decodingType: T.Type) -> Promise<T>
 }
@@ -16,19 +18,34 @@ protocol APIClient {
 extension APIClient {
     
     func dispatchRequest<T: Decodable>(with request: URLRequest, decodingType: T.Type) -> Promise<T> {
-        
-        return firstly { URLSession.shared.dataTask(.promise, with: request) }.map({ data, response in
+        return firstly { networkSession.buildSession().dataTask(.promise, with: request) }.map({ data, response in
             guard let httpResponse = response as? HTTPURLResponse else { throw ResponseError.timeout }
             
-            if 200...299 ~= httpResponse.statusCode {
-                return try JSONDecoder().decode(T.self, from: data)
-            } else if let apiResponseError = try? JSONDecoder().decode(APIResponseError.self, from: data) {
-                throw ResponseError.api(error: apiResponseError)
+            guard 200...299 ~= httpResponse.statusCode else {
+                if let apiResponseError = try? JSONDecoder().decode(APIResponseError.self, from: data) {
+                    throw ResponseError.api(error: apiResponseError)
+                }
+                throw ResponseError.server
             }
-            throw ResponseError.jsonConversionFailure
+            
+            if let dataDecodable = try? JSONDecoder().decode(DataDecodable<T>.self, from: data).data {
+                return dataDecodable
+            } else if let data = try? JSONDecoder().decode(T.self, from: data) {
+                return data
+            } else if let emptyResponse = EmptyResponse() as? T {
+                return emptyResponse
+            } else {
+                throw ResponseError.jsonConversionFailure
+            }
         }).recover({  (error) -> Promise<T> in
             if let treatableError = error as? ResponseError { throw treatableError }
             throw ResponseError.timeout
         })
     }
 }
+
+struct DataDecodable<T: Decodable>: Decodable {
+    let data: T
+}
+
+struct EmptyResponse: Codable { init(){} }
