@@ -20,9 +20,9 @@ platform :ios do
     cocoapods(clean_install: true, repo_update: true)
     clear_derived_data
     run_tests(workspace: "C2C.xcworkspace",
-              clean: true,
               devices: ["iPhone 8"],
-              scheme: "C2C")
-    clear_derived_data
+              scheme: "C2C",
+              derived_data_path: ".",
+              code_coverage: true)
   end
 end

@@ -1,0 +1,15 @@
+addons:
+  sonarcloud:
+    organization: guilhermepaciulli
+    token:
+      secure: HvtebTvUQXKE4XYlnow90/5ZJll4I8z8+r7AX68xehJNevP73fAIMY+92BJbjfa4o5d9Smhfr8qQxLHR6KNzVmQ/McfdD0uOsQTC62XFkrxTgWtGRHRSNcUlfos4s0EqvhIIelXmBcbXqUhCrIwpZED5sulrnAOXKXBZ/EuQ/VtiWJInWYR2pUxEKQp/c9v4glSJsSpUeqe3uk+PjhYng9ylxDh0bOgyAaLLo1iVYz8BWE9s5rF2KCQEiCju1TeAhK7GP7BRKcU21nfy1VOjEA1s3qAX6rwPPW5L2W6tDjbGLLHFIu6roRxOI94PfhvjO9iClBHFwgFZ0GzL2XBrV196BaMPwzbU6QKzyjY64+tuw/NRhGVBRJuyEKCGgXKmi3vjPJvfVRcHDzouGac/JszHvxRXR+PxyWKBhPCqS1qlpuGC6F7XQ7R6m3xq+I2i6EGPHxEenTT2R/iynhEM1LoTTDUEEcxY0Xwh/J9ZVcOfjFKu5WNw9PaD7/4drEP/iQNCaGXYEOTVxN41YZGOWA7RcPOhaHccNY2SG0Kq5LQTBRB7XeDzVT6k9lS7QULoDJDZtADBiPFOo0YhhWhqbIxtQLGXcV56pTiFLn91ygpNK+9BFzYP6VzqDOOPbgdn3jX4Vvf4xlT4h3AkJpqOHQ7f7baMM02Kv9fLu/LofK0=
+language: swift
+osx_image: xcode11.4
+before_install:
+  - gem install xcov
+script:
+  - cd C2C
+  - fastlane tests
+  - cd ..
+  - bash xccov-to-sonarqube-generic.sh C2C/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
+  - sonar-scanner
