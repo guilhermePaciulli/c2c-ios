@@ -142,6 +142,7 @@
 		A3F1AA4524426A2A001E741F /* CreditCard.json in Resources */ = {isa = PBXBuildFile; fileRef = A3F1AA4424426A2A001E741F /* CreditCard.json */; };
 		A3F1AA4724426A5C001E741F /* CreditCardRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA4624426A5C001E741F /* CreditCardRepositoryMock.swift */; };
 		A3F3B8D7243A438E000950F2 /* AppCoordinator+Authenticable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */; };
+		A3F61872247344F7008EB95D /* PurchaseDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F61871247344F7008EB95D /* PurchaseDetailViewModelTests.swift */; };
 		A3FF94A3245250B300185E48 /* PurchaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF94A2245250B300185E48 /* PurchaseListViewModel.swift */; };
 		A3FF94A8245260DF00185E48 /* PurchaseList+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF94A7245260DF00185E48 /* PurchaseList+TableView.swift */; };
 		A3FF94AA245263AE00185E48 /* PurchaseList+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF94A9245263AE00185E48 /* PurchaseList+Presentable.swift */; };
@@ -321,6 +322,7 @@
 		A3F1AA4424426A2A001E741F /* CreditCard.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CreditCard.json; sourceTree = "<group>"; };
 		A3F1AA4624426A5C001E741F /* CreditCardRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRepositoryMock.swift; sourceTree = "<group>"; };
 		A3F3B8D6243A438E000950F2 /* AppCoordinator+Authenticable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Authenticable.swift"; sourceTree = "<group>"; };
+		A3F61871247344F7008EB95D /* PurchaseDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseDetailViewModelTests.swift; sourceTree = "<group>"; };
 		A3FF94A2245250B300185E48 /* PurchaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseListViewModel.swift; sourceTree = "<group>"; };
 		A3FF94A7245260DF00185E48 /* PurchaseList+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PurchaseList+TableView.swift"; sourceTree = "<group>"; };
 		A3FF94A9245263AE00185E48 /* PurchaseList+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PurchaseList+Presentable.swift"; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 				A3F1AA3724425A5C001E741F /* Address */,
 				A3CE3E182445410500FBCF9C /* CreditCard */,
 				A3FF94AD2454AA5B00185E48 /* Purchases */,
+				A3F6187324734505008EB95D /* PurchaseDetails */,
 				A301704A243A6F6D00D08CE6 /* Utils */,
 				A33254FA24154EAE002CADF6 /* Info.plist */,
 			);
@@ -1014,6 +1017,14 @@
 				A337994A244F67BC00EE1565 /* UserDefaultsRepositoryMock.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		A3F6187324734505008EB95D /* PurchaseDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A3F61871247344F7008EB95D /* PurchaseDetailViewModelTests.swift */,
+			);
+			path = PurchaseDetails;
 			sourceTree = "<group>";
 		};
 		A3FF94A4245250B600185E48 /* ViewModel */ = {
@@ -1456,6 +1467,7 @@
 				A39A65FE2436B2ED00FBBDC2 /* ProductCoordinatorTests.swift in Sources */,
 				A3341A142427F9F400C96A0C /* ProductsInteractorTests.swift in Sources */,
 				A3C60E4A2436A9A500426F40 /* UserInteractorTests.swift in Sources */,
+				A3F61872247344F7008EB95D /* PurchaseDetailViewModelTests.swift in Sources */,
 				A3F1AA2C2442562A001E741F /* AddressInteractorTests.swift in Sources */,
 				A3017043243A656800D08CE6 /* AuthenticationCoordinatorTests.swift in Sources */,
 				A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */,

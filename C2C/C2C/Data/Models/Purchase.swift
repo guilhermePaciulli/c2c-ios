@@ -22,7 +22,7 @@ struct PurchaseAttributes: Decodable {
     enum CodingKeys: String, CodingKey {
         case purchaseStatus = "purchase_status"
         case product, address
-        case creditCard
+        case creditCard = "credit_card"
     }
 }
 

@@ -12,6 +12,7 @@ import Kingfisher
 protocol PurchaseDetailViewModelProtocol: class {
     func viewWillAppear()
     func didTapToChangePurchaseStatus()
+    func didTapBackButton()
 }
 
 class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
@@ -29,6 +30,7 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
         
         view?.setZipCode(purchase.attributes.address.zipCode)
         view?.setProductName(purchase.attributes.product.data.attributes.name)
+        view?.setProductDescription(purchase.attributes.product.data.attributes.attributesDescription)
         view?.setProductImage()?.kf.setImage(with: imgURL)
         let status = purchase.attributes.purchaseStatus.getTextAndColor()
         view?.setPurchaseStatus(withTitle: status.0, andColor: status.1)
@@ -40,6 +42,10 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     func didTapToChangePurchaseStatus() {
         fatalError()
+    }
+    
+    func didTapBackButton() {
+        coordinator?.presentPreviousStep()
     }
     
     // MARK:- Private methods
@@ -54,8 +60,8 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     }
     
     private func getPaymentMethodEnding() -> String {
-        guard let creditCard = purchase?.attributes.creditCard?.number.reversed() else { return "" }
-        return String(creditCard.prefix(4))
+        guard let creditCard = purchase?.attributes.creditCard?.number else { return "" }
+        return String(creditCard.suffix(4))
     }
     
 }
@@ -68,9 +74,9 @@ extension PurchaseStatus {
         case .waiting:
             return ("Waiting", .systemYellow)
         case .confirmed:
-            return ("Confirmed", .systemGreen)
+            return ("Confirmed", .systemOrange)
         case .inTransit:
-            return ("In transit", .black)
+            return ("In transit", .systemRed)
         case .received:
             return ("Received", .secondarySystemBackground)
         }

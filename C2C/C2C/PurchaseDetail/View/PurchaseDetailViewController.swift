@@ -39,6 +39,7 @@ class PurchaseDetailViewController: UITableViewController {
     private func setupView() {
         changeStatusButton?.layer.cornerRadius = 10
         changeStatusButton?.clipsToBounds = true
+        setBackButton(#selector(didTapBackButton))
     }
     
     // MARK:- Actions
@@ -46,5 +47,8 @@ class PurchaseDetailViewController: UITableViewController {
         viewModel?.didTapToChangePurchaseStatus()
     }
     
+    @objc func didTapBackButton() {
+        viewModel?.didTapBackButton()
+    }
 
 }
