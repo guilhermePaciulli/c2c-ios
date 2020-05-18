@@ -92,3 +92,10 @@ C2C/Podfile.lock
 # https://github.com/johnno1962/injectionforxcode
 
 C2C/iOSInjectionProject/
+
+C2C/html/
+
+*.xccovreport
+*.html
+C2C/fastlane/resources/
+C2C/fastlane/action_0.xccovarchive
