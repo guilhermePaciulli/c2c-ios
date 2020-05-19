@@ -18,6 +18,7 @@ class AccountCoordinator: AccountCoordinationProtocol {
     var state: AccountCoordinatorRoutingState
     var injector: AccountDependencyInjector
     var baseCoordinator: AppCoordinatable
+    var purchaseListingType: PurchaseListingType = .purchases
     
     init(baseCoordinator: AppCoordinatable) {
         state = .Account
@@ -41,6 +42,7 @@ class AccountCoordinator: AccountCoordinationProtocol {
                 injector.navigationController.pushViewController(injector.creditCardViewController, animated: true)
             case .Purchases(let type):
                 state = .Purchases(type: type)
+                purchaseListingType = type
                 injector.purchaseListViewModel.type = type
                 injector.purchaseListViewModel.coordinator = self
                 injector.navigationController.pushViewController(injector.purchaseViewController, animated: true)
@@ -54,7 +56,11 @@ class AccountCoordinator: AccountCoordinationProtocol {
             state = .Account
             injector.navigationController.popViewController(animated: true)
         case .Purchases(_):
-            // TODO:- Add purchase details here
+            state = .PurchaseDetail
+            injector.purchaseDetailViewModel.coordinator = self
+            injector.purchaseDetailViewModel.purchase = injector.purchaseListViewModel.selectedPurchase
+            injector.navigationController.pushViewController(injector.purchaseDetailViewController, animated: true)
+        case .PurchaseDetail:
             break
         }
     }
@@ -63,6 +69,9 @@ class AccountCoordinator: AccountCoordinationProtocol {
         switch state {
         case .Account:
             NSLog("Invalid action trying to return from root view controller")
+        case .PurchaseDetail:
+            state = .Purchases(type: purchaseListingType)
+            injector.navigationController.popViewController(animated: true)
         default:
             state = .Account
             injector.navigationController.popViewController(animated: true)
@@ -80,4 +89,5 @@ enum AccountCoordinatorRoutingState: Equatable {
     case Address
     case CreditCard
     case Purchases(type: PurchaseListingType)
+    case PurchaseDetail
 }

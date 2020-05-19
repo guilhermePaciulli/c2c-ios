@@ -85,16 +85,16 @@ class PurchaseDetailViewModelTests: QuickSpec {
         
     }
     
-    var purchase: Purchase? {
+    var purchase: PurchaseAttributes? {
         guard let data = FilesHelper.loadFileAsData("Purchases"),
             let purchase = try? JSONDecoder().decode(DataDecodable<[Purchase]>.self, from: data).data.first else { return nil }
-        return purchase
+        return purchase.attributes
     }
     
-    var sell: Purchase? {
+    var sell: PurchaseAttributes? {
         guard let data = FilesHelper.loadFileAsData("Sells"),
             let sell = try? JSONDecoder().decode(DataDecodable<[Purchase]>.self, from: data).data.first else { return nil }
-        return sell
+        return sell.attributes
     }
     
     class MockedView: PurchaseDetailPresentable {

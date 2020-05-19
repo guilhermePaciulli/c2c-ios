@@ -19,20 +19,20 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     // MARK:- Properties
     var view: PurchaseDetailPresentable?
-    var purchase: Purchase?
+    var purchase: PurchaseAttributes?
     var coordinator: BasicCoordinationProtocol?
     var interactor: PurchaseInteractorProtocol?
     
     // MARK:- Protocol methods
     func viewWillAppear() {
         guard let purchase = purchase,
-            let imgURL = URL(string: purchase.attributes.product.data.attributes.productImageURL) else { coordinator?.presentPreviousStep(); return; }
+            let imgURL = URL(string: purchase.product.data.attributes.productImageURL) else { coordinator?.presentPreviousStep(); return; }
         
-        view?.setZipCode(purchase.attributes.address.zipCode)
-        view?.setProductName(purchase.attributes.product.data.attributes.name)
-        view?.setProductDescription(purchase.attributes.product.data.attributes.attributesDescription)
+        view?.setZipCode(purchase.address.zipCode)
+        view?.setProductName(purchase.product.data.attributes.name)
+        view?.setProductDescription(purchase.product.data.attributes.attributesDescription)
         view?.setProductImage()?.kf.setImage(with: imgURL)
-        let status = purchase.attributes.purchaseStatus.getTextAndColor()
+        let status = purchase.purchaseStatus.getTextAndColor()
         view?.setPurchaseStatus(withTitle: status.0, andColor: status.1)
         
         view?.setPaymentMethodHidden(isSellerPurchase())
@@ -50,17 +50,17 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     // MARK:- Private methods
     private func isSellerPurchase() -> Bool {
-        return purchase?.attributes.creditCard == nil
+        return purchase?.creditCard == nil
     }
     
     private func shouldShowStatusButton() -> Bool {
         guard let purchase = purchase else { return false }
-        return purchase.attributes.purchaseStatus == .inTransit ||
-            (isSellerPurchase() && purchase.attributes.purchaseStatus != .inTransit)
+        return purchase.purchaseStatus == .inTransit ||
+            (isSellerPurchase() && purchase.purchaseStatus != .inTransit)
     }
     
     private func getPaymentMethodEnding() -> String {
-        guard let creditCard = purchase?.attributes.creditCard?.number else { return "" }
+        guard let creditCard = purchase?.creditCard?.number else { return "" }
         return String(creditCard.suffix(4))
     }
     

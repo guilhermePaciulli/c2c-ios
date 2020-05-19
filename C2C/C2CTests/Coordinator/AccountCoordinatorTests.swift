@@ -78,23 +78,45 @@ class AccountCoordinatorTests: QuickSpec {
         }
         
         describe("Purchases flow") {
-            it("should present purchase flow when requested") {
+            it("should present purchases when requested") {
                 self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .purchases)
                 self.subject.presentNextStep()
                 expect(self.subject.state).to(equal(.Purchases(type: .purchases)))
             }
-            it("should present sells flow when requested") {
+            it("should present sells when requested") {
                 self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .sells)
                 self.subject.presentNextStep()
                 expect(self.subject.state).to(equal(.Purchases(type: .sells)))
             }
-            it("should return to account at credit card when requested") {
+            it("should return to account at purchases when requested") {
                 self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .purchases)
                 self.subject.presentNextStep()
                 expect(self.subject.state).to(equal(.Purchases(type: .purchases)))
                 self.subject.presentPreviousStep()
                 expect(self.subject.state).to(equal(.Account))
             }
+            it("should present purchase details") {
+                self.subject.injector.accountViewModel.selectedFlow = .Purchases(type: .sells)
+                self.subject.presentNextStep()
+                self.subject.injector.purchaseListViewModel.selectedPurchase = self.selectedPurchase
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.PurchaseDetail))
+                expect(self.subject.injector.purchaseDetailViewModel.purchase?.product.data.id)
+                    .to(equal(self.selectedPurchase?.product.data.id))
+                self.subject.presentPreviousStep()
+                expect(self.subject.state).to(equal(.Purchases(type: .sells)))
+            }
         }
+    }
+    
+    var selectedPurchase: PurchaseAttributes? {
+        guard let data = FilesHelper
+            .loadFileAsData("Purchases"),
+            let purchase = try?
+                JSONDecoder().decode(DataDecodable<[Purchase]>.self,
+                                     from: data)
+                    .data.first else { return nil }
+        return purchase
+            .attributes
     }
 }
