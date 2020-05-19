@@ -13,6 +13,7 @@ protocol PurchaseDetailViewModelProtocol: class {
     func viewWillAppear()
     func didTapToChangePurchaseStatus()
     func didTapBackButton()
+    func getViewName() -> String
 }
 
 class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
@@ -24,6 +25,10 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     var interactor: PurchaseInteractorProtocol?
     
     // MARK:- Protocol methods
+    func getViewName() -> String {
+        return isSellerPurchase() ? "You sold" : "You bought"
+    }
+    
     func viewWillAppear() {
         guard let purchase = purchase,
             let imgURL = URL(string: purchase.product.data.attributes.productImageURL) else { coordinator?.presentPreviousStep(); return; }
@@ -38,6 +43,7 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
         view?.setPaymentMethodHidden(isSellerPurchase())
         view?.setStatusButtonHidden(!shouldShowStatusButton())
         view?.setPaymentMethodEnding(getPaymentMethodEnding())
+        view?.setStatusButtonText(purchase.purchaseStatus.getNextStatus())
     }
     
     func didTapToChangePurchaseStatus() {
@@ -80,7 +86,19 @@ extension PurchaseStatus {
         case .received:
             return ("Received", .secondarySystemBackground)
         }
-        
+    }
+    
+    func getNextStatus() -> String {
+        switch self {
+        case .waiting:
+            return "Confirm request"
+        case .confirmed:
+            return "Confirm item dispatched"
+        case .inTransit:
+            return "Confirm you received the item"
+        case .received:
+            return ""
+        }
     }
     
 }

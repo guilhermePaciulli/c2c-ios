@@ -45,6 +45,17 @@ class PurchaseDetailViewModelTests: QuickSpec {
                 expect(status.getTextAndColor().0).to(equal("Received"))
                 expect(status.getTextAndColor().1).to(equal(.secondarySystemBackground))
             }
+            
+            it("should give the right next purchase status") {
+                var status: PurchaseStatus = .waiting
+                expect(status.getNextStatus()).to(equal("Confirm request"))
+                status = .confirmed
+                expect(status.getNextStatus()).to(equal("Confirm item dispatched"))
+                status = .inTransit
+                expect(status.getNextStatus()).to(equal("Confirm you received the item"))
+                status = .received
+                expect(status.getNextStatus()).to(equal(""))
+            }
         }
         
         describe("View actions") {
@@ -65,6 +76,7 @@ class PurchaseDetailViewModelTests: QuickSpec {
                 expect(self.view.paymentMethodEnding).to(equal("6231"))
                 expect(self.view.statusTitle).to(equal("Waiting"))
                 expect(self.view.statusColor).to(equal(.systemYellow))
+                expect(self.view.statusButtonText).to(equal("Confirm request"))
             }
             
             it("should populate view data as a buyer") {
@@ -72,6 +84,7 @@ class PurchaseDetailViewModelTests: QuickSpec {
                 self.subject.viewWillAppear()
                 expect(self.view.statusButtonHidden).to(beTrue())
                 expect(self.view.paymentMethodHidden).to(beFalse())
+                expect(self.subject.getViewName()).to(equal("You bought"))
             }
             
             it("should populate view data as a seller") {
@@ -79,6 +92,7 @@ class PurchaseDetailViewModelTests: QuickSpec {
                 self.subject.viewWillAppear()
                 expect(self.view.statusButtonHidden).to(beFalse())
                 expect(self.view.paymentMethodHidden).to(beTrue())
+                expect(self.subject.getViewName()).to(equal("You sold"))
             }
             
         }
@@ -138,6 +152,11 @@ class PurchaseDetailViewModelTests: QuickSpec {
         var paymentMethodHidden: Bool?
         func setPaymentMethodHidden(_ hidden: Bool) {
             paymentMethodHidden = hidden
+        }
+        
+        var statusButtonText = ""
+        func setStatusButtonText(_ text: String) {
+            statusButtonText = text
         }
     }
     

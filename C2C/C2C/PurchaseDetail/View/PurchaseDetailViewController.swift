@@ -33,6 +33,7 @@ class PurchaseDetailViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.viewWillAppear()
+        title = viewModel?.getViewName()
     }
     
     // MARK:- Private methods

@@ -17,6 +17,7 @@ protocol PurchaseDetailPresentable {
     func setPurchaseStatus(withTitle title: String, andColor color: UIColor)
     func setStatusButtonHidden(_ hidden: Bool)
     func setPaymentMethodHidden(_ hidden: Bool)
+    func setStatusButtonText(_ text: String)
 }
 
 extension PurchaseDetailViewController: PurchaseDetailPresentable {
@@ -52,6 +53,10 @@ extension PurchaseDetailViewController: PurchaseDetailPresentable {
     
     func setPaymentMethodHidden(_ hidden: Bool) {
         paymentMethodCell?.isHidden = hidden
+    }
+    
+    func setStatusButtonText(_ text: String) {
+        changeStatusButton?.setTitle(text, for: .normal)
     }
     
 }
