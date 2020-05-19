@@ -51,6 +51,7 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
         view?.showDecisionAlert(withTitle: title, message: "").done({ [weak self] (_) in
             self?.changePurchaseStatus()
         }).catch({ [weak self] (_) in
+            self?.view?.stopLoading()
             self?.coordinator?.presentPreviousStep()
         })
     }
@@ -80,7 +81,6 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
         view?.startLoading()
         interactor?.updatePurchase(purchase: purchase).done({ [weak self] (_) in
             self?.view?.stopLoading()
-            self?.coordinator?.presentPreviousStep()
         }).catch({ [weak self] (error) in
             self?.view?.stopLoading()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)

@@ -75,7 +75,9 @@ class AccountDependencyInjector {
     }()
     
     lazy var purchaseDetailViewModel: PurchaseDetailViewModel = {
-        return .init()
+        let viewModel = PurchaseDetailViewModel()
+        viewModel.interactor = purchasesInteractor
+        return viewModel
     }()
     
     // MARK:- Interactors
