@@ -9,6 +9,7 @@
 @testable import C2C
 import Quick
 import Nimble
+import PromiseKit
 
 class PurchaseDetailViewModelTests: QuickSpec {
     
@@ -63,6 +64,12 @@ class PurchaseDetailViewModelTests: QuickSpec {
                 self.subject.didTapBackButton()
                 expect(self.coordinator.didCallPresentPreviousStep).to(beTrue())
             }
+            it("should change status when requested") {
+                self.subject.purchase = self.sell
+                self.subject.viewWillAppear()
+                self.subject.didTapToChangePurchaseStatus()
+                expect(self.view.didShowDecisionAlert).toEventually(beTrue())
+            }
         }
         
         describe("View setup") {
@@ -99,16 +106,16 @@ class PurchaseDetailViewModelTests: QuickSpec {
         
     }
     
-    var purchase: PurchaseAttributes? {
+    var purchase: Purchase? {
         guard let data = FilesHelper.loadFileAsData("Purchases"),
             let purchase = try? JSONDecoder().decode(DataDecodable<[Purchase]>.self, from: data).data.first else { return nil }
-        return purchase.attributes
+        return purchase
     }
     
-    var sell: PurchaseAttributes? {
+    var sell: Purchase? {
         guard let data = FilesHelper.loadFileAsData("Sells"),
             let sell = try? JSONDecoder().decode(DataDecodable<[Purchase]>.self, from: data).data.first else { return nil }
-        return sell.attributes
+        return sell
     }
     
     class MockedView: PurchaseDetailPresentable {
@@ -158,6 +165,28 @@ class PurchaseDetailViewModelTests: QuickSpec {
         func setStatusButtonText(_ text: String) {
             statusButtonText = text
         }
+        
+        var didCallStartLoading = false
+        func startLoading() {
+            didCallStartLoading = true
+        }
+        
+        var didCallStopLoading = false
+        func stopLoading() {
+            didCallStopLoading = true
+        }
+        
+        var didShowDecisionAlert = false
+        func showDecisionAlert(withTitle title: String, message: String) -> Promise<Void> {
+            didShowDecisionAlert = true
+            return Promise<Void> { seal in seal.fulfill(()) }
+        }
+        
+        var didShowAlert = false
+        func showAlert(withTitle title: String, message: String) {
+            didShowAlert = true
+        }
+        
     }
     
     

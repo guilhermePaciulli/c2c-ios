@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol PurchaseDetailPresentable {
+    func showDecisionAlert(withTitle title: String, message: String) -> Promise<Void>
+    func showAlert(withTitle title: String, message: String)
     func setPaymentMethodEnding(_ ending: String)
     func setZipCode(_ zipCode: String)
     func setProductName(_ name: String)
@@ -18,6 +21,8 @@ protocol PurchaseDetailPresentable {
     func setStatusButtonHidden(_ hidden: Bool)
     func setPaymentMethodHidden(_ hidden: Bool)
     func setStatusButtonText(_ text: String)
+    func startLoading()
+    func stopLoading()
 }
 
 extension PurchaseDetailViewController: PurchaseDetailPresentable {

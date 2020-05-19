@@ -20,7 +20,7 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     // MARK:- Properties
     var view: PurchaseDetailPresentable?
-    var purchase: PurchaseAttributes?
+    var purchase: Purchase?
     var coordinator: BasicCoordinationProtocol?
     var interactor: PurchaseInteractorProtocol?
     
@@ -31,23 +31,28 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     func viewWillAppear() {
         guard let purchase = purchase,
-            let imgURL = URL(string: purchase.product.data.attributes.productImageURL) else { coordinator?.presentPreviousStep(); return; }
+            let imgURL = URL(string: purchase.attributes.product.data.attributes.productImageURL) else { coordinator?.presentPreviousStep(); return; }
         
-        view?.setZipCode(purchase.address.zipCode)
-        view?.setProductName(purchase.product.data.attributes.name)
-        view?.setProductDescription(purchase.product.data.attributes.attributesDescription)
+        view?.setZipCode(purchase.attributes.address.zipCode)
+        view?.setProductName(purchase.attributes.product.data.attributes.name)
+        view?.setProductDescription(purchase.attributes.product.data.attributes.attributesDescription)
         view?.setProductImage()?.kf.setImage(with: imgURL)
-        let status = purchase.purchaseStatus.getTextAndColor()
+        let status = purchase.attributes.purchaseStatus.getTextAndColor()
         view?.setPurchaseStatus(withTitle: status.0, andColor: status.1)
         
         view?.setPaymentMethodHidden(isSellerPurchase())
         view?.setStatusButtonHidden(!shouldShowStatusButton())
         view?.setPaymentMethodEnding(getPaymentMethodEnding())
-        view?.setStatusButtonText(purchase.purchaseStatus.getNextStatus())
+        view?.setStatusButtonText(purchase.attributes.purchaseStatus.getNextStatus())
     }
     
     func didTapToChangePurchaseStatus() {
-        fatalError()
+        let title = "Are you sure you want to change this purchase status?"
+        view?.showDecisionAlert(withTitle: title, message: "").done({ [weak self] (_) in
+            self?.changePurchaseStatus()
+        }).catch({ [weak self] (_) in
+            self?.coordinator?.presentPreviousStep()
+        })
     }
     
     func didTapBackButton() {
@@ -56,18 +61,30 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     // MARK:- Private methods
     private func isSellerPurchase() -> Bool {
-        return purchase?.creditCard == nil
+        return purchase?.attributes.creditCard == nil
     }
     
     private func shouldShowStatusButton() -> Bool {
         guard let purchase = purchase else { return false }
-        return purchase.purchaseStatus == .inTransit ||
-            (isSellerPurchase() && purchase.purchaseStatus != .inTransit)
+        return purchase.attributes.purchaseStatus == .inTransit ||
+            (isSellerPurchase() && purchase.attributes.purchaseStatus != .inTransit)
     }
     
     private func getPaymentMethodEnding() -> String {
-        guard let creditCard = purchase?.creditCard?.number else { return "" }
+        guard let creditCard = purchase?.attributes.creditCard?.number else { return "" }
         return String(creditCard.suffix(4))
+    }
+    
+    private func changePurchaseStatus() {
+        guard let purchase = purchase else { return }
+        view?.startLoading()
+        interactor?.updatePurchase(purchase: purchase).done({ [weak self] (_) in
+            self?.view?.stopLoading()
+            self?.coordinator?.presentPreviousStep()
+        }).catch({ [weak self] (error) in
+            self?.view?.stopLoading()
+            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+        })
     }
     
 }

@@ -101,15 +101,15 @@ class AccountCoordinatorTests: QuickSpec {
                 self.subject.injector.purchaseListViewModel.selectedPurchase = self.selectedPurchase
                 self.subject.presentNextStep()
                 expect(self.subject.state).to(equal(.PurchaseDetail))
-                expect(self.subject.injector.purchaseDetailViewModel.purchase?.product.data.id)
-                    .to(equal(self.selectedPurchase?.product.data.id))
+                expect(self.subject.injector.purchaseDetailViewModel.purchase?.id)
+                    .to(equal(self.selectedPurchase?.id))
                 self.subject.presentPreviousStep()
                 expect(self.subject.state).to(equal(.Purchases(type: .sells)))
             }
         }
     }
     
-    var selectedPurchase: PurchaseAttributes? {
+    var selectedPurchase: Purchase? {
         guard let data = FilesHelper
             .loadFileAsData("Purchases"),
             let purchase = try?
@@ -117,6 +117,5 @@ class AccountCoordinatorTests: QuickSpec {
                                      from: data)
                     .data.first else { return nil }
         return purchase
-            .attributes
     }
 }

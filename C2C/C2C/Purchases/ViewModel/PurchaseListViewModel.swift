@@ -27,7 +27,7 @@ class PurchaseListViewModel: PurchaseListViewModelProtocol {
     var interactor: PurchaseInteractorProtocol
     var view: PurchaseListPresentable?
     var purchaseList: [Purchase] = []
-    var selectedPurchase: PurchaseAttributes?
+    var selectedPurchase: Purchase?
     var title: String {
         switch type {
         case .purchases:
@@ -81,7 +81,7 @@ class PurchaseListViewModel: PurchaseListViewModelProtocol {
     }
     
     func tableView(didSelectRowAt indexPath: IndexPath) {
-        selectedPurchase = purchaseList[indexPath.row].attributes
+        selectedPurchase = purchaseList[indexPath.row]
         coordinator?.presentNextStep()
     }
     

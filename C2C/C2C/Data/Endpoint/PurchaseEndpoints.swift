@@ -12,6 +12,7 @@ enum PurchaseEndpoints: Endpoint {
     case purchase(product: Int)
     case purchases
     case sells
+    case updatePurchase(id: Int)
     
     var path: String {
         switch self {
@@ -21,6 +22,8 @@ enum PurchaseEndpoints: Endpoint {
             return "/purchases"
         case .sells:
             return "/sells"
+        case .updatePurchase(let id):
+            return "/sells/\(id)"
         }
     }
     
@@ -43,6 +46,8 @@ enum PurchaseEndpoints: Endpoint {
             return .get
         case .sells:
             return .get
+        case .updatePurchase(_):
+            return .patch
         }
     }
         
