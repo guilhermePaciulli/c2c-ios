@@ -26,6 +26,6 @@ class PurchaseRepositoryMock: PurchaseRepositoryProtocol {
     }
     
     func updatePurchase(purchase: Int) -> Promise<Void> {
-        fatalError()
+        return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: EmptyResponse.self).map({ _ in })
     }
 }
