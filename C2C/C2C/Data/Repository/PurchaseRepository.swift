@@ -11,7 +11,7 @@ import PromiseKit
 protocol PurchaseRepositoryProtocol {
     func purchase(product: Int) -> Promise<Void>
     func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]>
-    func updatePurchase(purchase: Int) -> Promise<Void>
+    func updatePurchase(purchase: Int) -> Promise<UpdatedPurchaseStatus>
 }
 
 
@@ -28,8 +28,8 @@ class PurchaseRepository: APIClient, PurchaseRepositoryProtocol {
         return dispatchRequest(with: PurchaseEndpoints.purchases.request, decodingType: [Purchase].self)
     }
     
-    func updatePurchase(purchase: Int) -> Promise<Void> {
-        return dispatchRequest(with: PurchaseEndpoints.updatePurchase(id: purchase).request, decodingType: EmptyResponse.self).map({ _ in return })
+    func updatePurchase(purchase: Int) -> Promise<UpdatedPurchaseStatus> {
+        return dispatchRequest(with: PurchaseEndpoints.updatePurchase(id: purchase).request, decodingType: UpdatedPurchaseStatus.self)
     }
     
 }

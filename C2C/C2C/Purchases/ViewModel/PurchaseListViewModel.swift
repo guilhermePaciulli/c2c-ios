@@ -17,6 +17,7 @@ protocol PurchaseListViewModelProtocol {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func tableView(didSelectRowAt indexPath: IndexPath)
     func didTapBackButton()
+    func clearData()
 }
 
 
@@ -87,6 +88,13 @@ class PurchaseListViewModel: PurchaseListViewModelProtocol {
     
     func didTapBackButton() {
         coordinator?.presentPreviousStep()
+    }
+    
+    func clearData() {
+        isLoading = false
+        purchaseList = []
+        view?.reloadData()
+        view?.stopLoadingInTable()
     }
     
     private func getString(_ status: PurchaseStatus) -> String {

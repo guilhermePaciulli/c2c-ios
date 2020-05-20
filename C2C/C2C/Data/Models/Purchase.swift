@@ -10,11 +10,11 @@ import Foundation
 
 struct Purchase: Decodable {
     let id, type: String
-    let attributes: PurchaseAttributes
+    var attributes: PurchaseAttributes
 }
 
 struct PurchaseAttributes: Decodable {
-    let purchaseStatus: PurchaseStatus
+    var purchaseStatus: PurchaseStatus
     let product: DataDecodable<Product>
     let address: AddressAttributes
     let creditCard: CreditCardAttributes?
@@ -31,4 +31,12 @@ enum PurchaseStatus: String, Codable {
     case confirmed
     case inTransit = "in_transit"
     case received
+}
+
+struct UpdatedPurchaseStatus: Decodable {
+    let purchaseStatus: PurchaseStatus
+    
+    enum CodingKeys: String, CodingKey {
+        case purchaseStatus = "purchase_status"
+    }
 }

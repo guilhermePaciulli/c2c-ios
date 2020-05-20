@@ -67,7 +67,7 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     
     private func shouldShowStatusButton() -> Bool {
         guard let purchase = purchase else { return false }
-        return purchase.attributes.purchaseStatus == .inTransit ||
+        return (purchase.attributes.purchaseStatus == .inTransit && !isSellerPurchase()) ||
             (isSellerPurchase() && purchase.attributes.purchaseStatus != .inTransit)
     }
     
@@ -79,9 +79,11 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     private func changePurchaseStatus() {
         guard let purchase = purchase else { return }
         view?.startLoading()
-        interactor?.updatePurchase(purchase: purchase).done({ [weak self] (_) in
+        interactor?.updatePurchase(purchase: purchase).done(on: .main) { [weak self]  in
+            self?.purchase?.attributes.purchaseStatus = $0.purchaseStatus
+            self?.viewWillAppear()
             self?.view?.stopLoading()
-        }).catch({ [weak self] (error) in
+        }.catch({ [weak self] (error) in
             self?.view?.stopLoading()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
         })
