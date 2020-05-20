@@ -27,14 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A33254DD24154EAC002CADF6"
-            BuildableName = "C2C.app"
-            BlueprintName = "C2C"
-            ReferencedContainer = "container:C2C.xcodeproj">
+            BlueprintIdentifier = "E8022D22FAA6690B5E1C379C1BCE1491"
+            BuildableName = "Kingfisher.framework"
+            BlueprintName = "Kingfisher"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
