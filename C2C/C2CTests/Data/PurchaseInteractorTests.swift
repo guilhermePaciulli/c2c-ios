@@ -82,8 +82,41 @@ class PurchaseInteractorTests: QuickSpec {
                         })
                 }
             }
+            it("should be successfull whe patching a purchase") {
+                waitUntil { (done) in
+                    self.subject.updatePurchase(purchase: purchaseToBePatched!)
+                        .done({ _ in
+                            done()
+                        })
+                        .catch({ error in
+                            XCTFail("Why the request failed? Here's the error: \(error)")
+                            done()
+                        })
+                }
+            }
+            it("can fail, like human beings can fail") {
+                let msg = "fatal error is happening"
+                self.repository.responseError = .init(message: msg)
+                waitUntil { (done) in
+                    self.subject
+                        .updatePurchase(purchase: purchaseToBePatched!)
+                        .done({ result in
+                            XCTFail("The fetching should have failed")
+                            done()
+                        })
+                        .catch({ error in
+                            expect(error.localizedDescription).to(equal(msg))
+                            done()
+                        })
+                }
+            }
+            var purchaseToBePatched: Purchase? {
+                guard let data = FilesHelper.loadFileAsData("Purchases"),
+                    let patchedPurchase = try? JSONDecoder()
+                        .decode(DataDecodable<[Purchase]>.self, from: data)
+                        .data.first else { return nil }
+                return patchedPurchase
+            }
         }
-        
     }
-    
 }

@@ -25,6 +25,11 @@ class PurchaseListViewController: UITableViewController {
         viewModel?.fetchPurchases()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel?.clearData()
+    }
+    
     // MARK:- Actions
     @objc func didTapBackButton() {
         viewModel?.didTapBackButton()

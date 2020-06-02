@@ -83,5 +83,4 @@ class AccountViewModel: AccountViewModelProtocol {
         view?.setProfilePicture()?.kf.setImage(with: url)
         view?.setProfilePicture()?.backgroundColor = .clear
     }
-    
 }

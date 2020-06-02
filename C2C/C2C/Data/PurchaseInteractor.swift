@@ -11,6 +11,7 @@ import PromiseKit
 protocol PurchaseInteractorProtocol {
     func purchase(product: ProductAttributes) -> Promise<Void>
     func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]>
+    func updatePurchase(purchase: Purchase) -> Promise<UpdatedPurchaseStatus>
 }
 
 
@@ -28,6 +29,10 @@ class PurchaseInteractor: APIClient, PurchaseInteractorProtocol {
     
     func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]> {
         return repository.getPurchases(ofType: type)
+    }
+    
+    func updatePurchase(purchase: Purchase) -> Promise<UpdatedPurchaseStatus> {
+        return repository.updatePurchase(purchase: Int(purchase.id) ?? -1)
     }
     
 }
