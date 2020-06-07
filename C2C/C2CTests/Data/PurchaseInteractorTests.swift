@@ -82,7 +82,7 @@ class PurchaseInteractorTests: QuickSpec {
                         })
                 }
             }
-            it("should be successfull whe patching a purchase") {
+            it("should be successfull when patching a purchase") {
                 waitUntil { (done) in
                     self.subject.updatePurchase(purchase: purchaseToBePatched!)
                         .done({ _ in
@@ -90,6 +90,27 @@ class PurchaseInteractorTests: QuickSpec {
                         })
                         .catch({ error in
                             XCTFail("Why the request failed? Here's the error: \(error)")
+                            done()
+                        })
+                }
+            }
+            it("should be successfull when deleting a purchase") {
+                waitUntil { (done) in
+                    self.subject.cancel(purchase: purchaseToBePatched!).done(on: .main) { (_) in
+                        done()
+                    }.catch { (error) in
+                        XCTFail("\(error)")
+                    }
+                }
+            }
+            it("must fail sometimes") {
+                self.repository.responseError = .init(message: "fatal error")
+                waitUntil { (done) in
+                    self.subject.cancel(purchase: purchaseToBePatched!).done({ result in
+                            XCTFail("The fetching should have failed")
+                            done()
+                        }).catch({ error in
+                            expect(error.localizedDescription).to(equal("fatal error"))
                             done()
                         })
                 }

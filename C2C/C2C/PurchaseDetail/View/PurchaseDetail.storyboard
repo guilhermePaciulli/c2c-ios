@@ -181,6 +181,36 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="XFc-Z6-f1n">
+                                        <rect key="frame" x="0.0" y="772.5" width="375" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XFc-Z6-f1n" id="R71-yf-Uyl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80W-Jt-CPU">
+                                                    <rect key="frame" x="20" y="22.5" width="335" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="ESg-hF-g3y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <state key="normal" title="Cancel purchase">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cancelPurchase:" destination="5pZ-Cr-IAZ" eventType="touchUpInside" id="Sah-bp-Ma8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="80W-Jt-CPU" firstAttribute="leading" secondItem="R71-yf-Uyl" secondAttribute="leading" constant="20" id="8bu-db-6vH"/>
+                                                <constraint firstItem="80W-Jt-CPU" firstAttribute="centerY" secondItem="R71-yf-Uyl" secondAttribute="centerY" id="Ond-CM-Qgy"/>
+                                                <constraint firstAttribute="trailing" secondItem="80W-Jt-CPU" secondAttribute="trailing" constant="20" id="QAv-qi-KQC"/>
+                                                <constraint firstItem="80W-Jt-CPU" firstAttribute="centerX" secondItem="R71-yf-Uyl" secondAttribute="centerX" id="WgD-X6-cjn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -191,6 +221,7 @@
                     </tableView>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="cancelPurchaseButton" destination="80W-Jt-CPU" id="Ztt-q0-dRW"/>
                         <outlet property="changeStatusButton" destination="4g7-n9-eMy" id="owM-4J-aQD"/>
                         <outlet property="paymentMethodCell" destination="J7b-rL-KHu" id="wfD-sj-4pq"/>
                         <outlet property="paymentMethodEnding" destination="zY5-mE-utx" id="eJf-iz-2rK"/>

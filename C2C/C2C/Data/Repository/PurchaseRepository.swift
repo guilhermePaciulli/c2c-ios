@@ -12,6 +12,7 @@ protocol PurchaseRepositoryProtocol {
     func purchase(product: Int) -> Promise<Void>
     func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]>
     func updatePurchase(purchase: Int) -> Promise<UpdatedPurchaseStatus>
+    func cancelPurchase(withId id: String) -> Promise<Void>
 }
 
 
@@ -30,6 +31,10 @@ class PurchaseRepository: APIClient, PurchaseRepositoryProtocol {
     
     func updatePurchase(purchase: Int) -> Promise<UpdatedPurchaseStatus> {
         return dispatchRequest(with: PurchaseEndpoints.updatePurchase(id: purchase).request, decodingType: UpdatedPurchaseStatus.self)
+    }
+    
+    func cancelPurchase(withId id: String) -> Promise<Void> {
+        return dispatchRequest(with: PurchaseEndpoints.cancel(id: id).request, decodingType: EmptyResponse.self).map({ _ in return })
     }
     
 }

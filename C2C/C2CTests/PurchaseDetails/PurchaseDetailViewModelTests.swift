@@ -70,6 +70,11 @@ class PurchaseDetailViewModelTests: QuickSpec {
                 self.subject.didTapToChangePurchaseStatus()
                 expect(self.view.didShowDecisionAlert).toEventually(beTrue())
             }
+            it("should cancel purchase when requested") {
+                self.subject.viewWillAppear()
+                self.subject.didTapToCancelPurchase()
+                expect(self.view.didShowDecisionAlert).toEventually(beTrue())
+            }
         }
         
         describe("View setup") {

@@ -28,4 +28,8 @@ class PurchaseRepositoryMock: PurchaseRepositoryProtocol {
     func updatePurchase(purchase: Int) -> Promise<UpdatedPurchaseStatus> {
         return APIClientHelper(withFetchError: responseError).mockedPromiseFor(object: UpdatedPurchaseStatus.self)
     }
+    
+    func cancelPurchase(withId id: String) -> Promise<Void> {
+        return APIClientHelper.init(withFetchError: responseError).mockedPromiseFor(object: EmptyResponse.self).map({ _ in })
+    }
 }
