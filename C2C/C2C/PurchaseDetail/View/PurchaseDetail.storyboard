@@ -151,38 +151,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="fzM-ID-Gc6">
-                                        <rect key="frame" x="0.0" y="683.5" width="375" height="89"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fzM-ID-Gc6" id="IbW-P0-41i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g7-n9-eMy">
-                                                    <rect key="frame" x="20" y="22.5" width="335" height="44"/>
-                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="sla-2d-Vkq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                    <state key="normal" title="Change status to shipping">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="didTapToChangePurchaseStatus:" destination="5pZ-Cr-IAZ" eventType="touchUpInside" id="Syn-HT-vdb"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="4g7-n9-eMy" firstAttribute="centerX" secondItem="IbW-P0-41i" secondAttribute="centerX" id="Xny-2o-6bj"/>
-                                                <constraint firstItem="4g7-n9-eMy" firstAttribute="leading" secondItem="IbW-P0-41i" secondAttribute="leading" constant="20" id="g8q-b8-wEo"/>
-                                                <constraint firstItem="4g7-n9-eMy" firstAttribute="centerY" secondItem="IbW-P0-41i" secondAttribute="centerY" id="qxq-FA-gec"/>
-                                                <constraint firstAttribute="trailing" secondItem="4g7-n9-eMy" secondAttribute="trailing" constant="20" id="xU6-Sy-zJ3"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="XFc-Z6-f1n">
-                                        <rect key="frame" x="0.0" y="772.5" width="375" height="89"/>
+                                        <rect key="frame" x="0.0" y="683.5" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XFc-Z6-f1n" id="R71-yf-Uyl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -208,6 +178,36 @@
                                                 <constraint firstItem="80W-Jt-CPU" firstAttribute="centerY" secondItem="R71-yf-Uyl" secondAttribute="centerY" id="Ond-CM-Qgy"/>
                                                 <constraint firstAttribute="trailing" secondItem="80W-Jt-CPU" secondAttribute="trailing" constant="20" id="QAv-qi-KQC"/>
                                                 <constraint firstItem="80W-Jt-CPU" firstAttribute="centerX" secondItem="R71-yf-Uyl" secondAttribute="centerX" id="WgD-X6-cjn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="fzM-ID-Gc6">
+                                        <rect key="frame" x="0.0" y="772.5" width="375" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fzM-ID-Gc6" id="IbW-P0-41i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g7-n9-eMy">
+                                                    <rect key="frame" x="20" y="22.5" width="335" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="sla-2d-Vkq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <state key="normal" title="Change status to shipping">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapToChangePurchaseStatus:" destination="5pZ-Cr-IAZ" eventType="touchUpInside" id="Syn-HT-vdb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4g7-n9-eMy" firstAttribute="centerX" secondItem="IbW-P0-41i" secondAttribute="centerX" id="Xny-2o-6bj"/>
+                                                <constraint firstItem="4g7-n9-eMy" firstAttribute="leading" secondItem="IbW-P0-41i" secondAttribute="leading" constant="20" id="g8q-b8-wEo"/>
+                                                <constraint firstItem="4g7-n9-eMy" firstAttribute="centerY" secondItem="IbW-P0-41i" secondAttribute="centerY" id="qxq-FA-gec"/>
+                                                <constraint firstAttribute="trailing" secondItem="4g7-n9-eMy" secondAttribute="trailing" constant="20" id="xU6-Sy-zJ3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

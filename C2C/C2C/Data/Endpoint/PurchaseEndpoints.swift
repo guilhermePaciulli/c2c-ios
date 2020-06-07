@@ -26,7 +26,7 @@ enum PurchaseEndpoints: Endpoint {
         case .updatePurchase(let id):
             return "/sells/\(id)"
         case .cancel(let id):
-            return "purchases/\(id)"
+            return "/purchases/\(id)"
         }
     }
     
