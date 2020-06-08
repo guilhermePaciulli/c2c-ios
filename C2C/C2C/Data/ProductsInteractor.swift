@@ -12,6 +12,8 @@ protocol ProductsInteractorProtocol: class {
     func getAll() -> Promise<[Product]>
     func getProduct(withId id: Int) -> Promise<Product>
     func createProduct(product: CreateProduct) -> Promise<Void>
+    func getPersonalAds() -> Promise<[Product]>
+    func activation(_ product: Product) -> Promise<Void>
 }
 
 class ProductsInteractor: ProductsInteractorProtocol {
@@ -32,6 +34,14 @@ class ProductsInteractor: ProductsInteractorProtocol {
     
     func createProduct(product: CreateProduct) -> Promise<Void> {
         return repository.createProduct(product: product)
+    }
+    
+    func getPersonalAds() -> Promise<[Product]> {
+        return repository.getUsersAds()
+    }
+    
+    func activation(_ product: Product) -> Promise<Void> {
+        return repository.activation(withId: Int(product.id) ?? -1)
     }
     
 }

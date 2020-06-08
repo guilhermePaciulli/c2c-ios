@@ -10,6 +10,8 @@ import Foundation
 
 enum ProductsEndpoint: Endpoint {    
     case indexProducts
+    case indexPersonalAds
+    case productActivation(id: Int)
     case getProduct(id: Int)
     case createProduct(product: CreateProduct)
     
@@ -17,6 +19,10 @@ enum ProductsEndpoint: Endpoint {
         switch self {
         case .indexProducts:
             return "/products"
+        case .indexPersonalAds:
+            return "/user/products"
+        case .productActivation(let id):
+            return "/user/products/\(id)"
         case .getProduct(let id):
             return "/products/\(id)"
         case .createProduct(_):
@@ -54,6 +60,10 @@ enum ProductsEndpoint: Endpoint {
         switch self {
         case .indexProducts:
             return .get
+        case .indexPersonalAds:
+            return .get
+        case .productActivation(_):
+            return .put
         case .getProduct(_):
             return .get
         case .createProduct(_):
