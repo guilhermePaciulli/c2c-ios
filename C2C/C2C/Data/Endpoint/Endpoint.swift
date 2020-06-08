@@ -61,7 +61,7 @@ extension Endpoint {
 }
 
 enum RequestMethod {
-    case post, patch, get, put
+    case post, patch, get, put, delete
     var value: String {
         switch self {
         case .post:
@@ -72,6 +72,8 @@ enum RequestMethod {
             return "GET"
         case .put:
             return "PUT"
+        case .delete:
+            return "DELETE"
         }
     }
 }

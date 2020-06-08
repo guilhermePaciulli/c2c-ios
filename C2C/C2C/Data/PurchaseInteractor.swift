@@ -12,6 +12,7 @@ protocol PurchaseInteractorProtocol {
     func purchase(product: ProductAttributes) -> Promise<Void>
     func getPurchases(ofType type: PurchaseListingType) -> Promise<[Purchase]>
     func updatePurchase(purchase: Purchase) -> Promise<UpdatedPurchaseStatus>
+    func cancel(purchase: Purchase) -> Promise<Void>
 }
 
 
@@ -33,6 +34,10 @@ class PurchaseInteractor: APIClient, PurchaseInteractorProtocol {
     
     func updatePurchase(purchase: Purchase) -> Promise<UpdatedPurchaseStatus> {
         return repository.updatePurchase(purchase: Int(purchase.id) ?? -1)
+    }
+    
+    func cancel(purchase: Purchase) -> Promise<Void> {
+        return repository.cancelPurchase(withId: purchase.id)
     }
     
 }

@@ -13,6 +13,7 @@ enum PurchaseEndpoints: Endpoint {
     case purchases
     case sells
     case updatePurchase(id: Int)
+    case cancel(id: String)
     
     var path: String {
         switch self {
@@ -24,6 +25,8 @@ enum PurchaseEndpoints: Endpoint {
             return "/sells"
         case .updatePurchase(let id):
             return "/sells/\(id)"
+        case .cancel(let id):
+            return "/purchases/\(id)"
         }
     }
     
@@ -48,6 +51,8 @@ enum PurchaseEndpoints: Endpoint {
             return .get
         case .updatePurchase(_):
             return .patch
+        case .cancel(_):
+            return .delete
         }
     }
         

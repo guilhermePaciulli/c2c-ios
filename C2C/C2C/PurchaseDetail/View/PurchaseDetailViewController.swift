@@ -23,6 +23,7 @@ class PurchaseDetailViewController: UITableViewController {
     @IBOutlet weak var changeStatusButton: UIButton?
     @IBOutlet weak var purchaseStatusButtonCell: UITableViewCell?
     @IBOutlet weak var paymentMethodCell: UITableViewCell?
+    @IBOutlet weak var cancelPurchaseButton: UIButton?
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
@@ -40,12 +41,18 @@ class PurchaseDetailViewController: UITableViewController {
     private func setupView() {
         changeStatusButton?.layer.cornerRadius = 10
         changeStatusButton?.clipsToBounds = true
+        cancelPurchaseButton?.layer.cornerRadius = 10
+        cancelPurchaseButton?.clipsToBounds = true
         setBackButton(#selector(didTapBackButton))
     }
     
     // MARK:- Actions
     @IBAction func didTapToChangePurchaseStatus(_ sender: UIButton) {
         viewModel?.didTapToChangePurchaseStatus()
+    }
+    
+    @IBAction func cancelPurchase(_ sender: UIButton) {
+        viewModel?.didTapToCancelPurchase()
     }
     
     @objc func didTapBackButton() {

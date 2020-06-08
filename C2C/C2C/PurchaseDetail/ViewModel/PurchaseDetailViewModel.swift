@@ -14,6 +14,7 @@ protocol PurchaseDetailViewModelProtocol: class {
     func didTapToChangePurchaseStatus()
     func didTapBackButton()
     func getViewName() -> String
+    func didTapToCancelPurchase()
 }
 
 class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
@@ -56,6 +57,13 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
         })
     }
     
+    func didTapToCancelPurchase() {
+        let alertTitle = "Are you sure you want to cancel this purchase?"
+        view?.showDecisionAlert(withTitle: alertTitle, message: "").done({ [weak self] (_) in
+            self?.cancelPurchase()
+        }).cauterize()
+    }
+    
     func didTapBackButton() {
         coordinator?.presentPreviousStep()
     }
@@ -79,11 +87,25 @@ class PurchaseDetailViewModel: PurchaseDetailViewModelProtocol {
     private func changePurchaseStatus() {
         guard let purchase = purchase else { return }
         view?.startLoading()
-        interactor?.updatePurchase(purchase: purchase).done(on: .main) { [weak self]  in
+        interactor?.updatePurchase(purchase: purchase).done(on: .main) { [weak self] in
             self?.purchase?.attributes.purchaseStatus = $0.purchaseStatus
             self?.viewWillAppear()
             self?.view?.stopLoading()
         }.catch({ [weak self] (error) in
+            self?.view?.stopLoading()
+            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+        })
+    }
+    
+    private func cancelPurchase() {
+        guard let purchase = purchase else { return }
+        view?.startLoading()
+        interactor?.cancel(purchase: purchase).done(on: .main, { [weak self] in
+            self?.view?.stopLoading()
+            DispatchQueue.main.async {
+                self?.coordinator?.presentPreviousStep()
+            }
+        }).catch({ [weak self] (error) in
             self?.view?.stopLoading()
             self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
         })
