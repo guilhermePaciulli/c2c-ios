@@ -34,6 +34,8 @@ class PersonalProductCell: UITableViewCell {
         personalCardView?.clipsToBounds = true
         personalCardView?.backgroundColor = .quaternarySystemFill
         personalProductImage?.contentMode = .scaleAspectFill
+        personalProductImage?.layer.cornerRadius = 20
+        personalProductImage?.clipsToBounds = true
     }
     
     func setCellWith(forIndex index: IndexPath, title: String, withImage image: String, activated: Bool) {
