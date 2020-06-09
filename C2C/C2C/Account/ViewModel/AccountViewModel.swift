@@ -64,6 +64,9 @@ class AccountViewModel: AccountViewModelProtocol {
             case 1:
                 selectedFlow = .Purchases(type: .sells)
                 coordinator?.presentNextStep()
+            case 2:
+                selectedFlow = .PersonalAds
+                coordinator?.presentNextStep()
             default:
                 break
             }

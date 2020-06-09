@@ -43,6 +43,10 @@ class ProductsViewController: UIViewController {
         viewModel?.didTapAddButton()
     }
     
+    @objc func didTapBackButton() {
+        viewModel?.didTapBackButton()
+    }
+    
     // MARK:- Private methods
     private func setupView() {
         title = "Products"
@@ -54,6 +58,7 @@ class ProductsViewController: UIViewController {
         if viewModel?.shouldDisplayAddButton() ?? false {
             setupAddButton()
         }
+        setBackButton(#selector(didTapBackButton))
     }
     
     private func setupAddButton() {

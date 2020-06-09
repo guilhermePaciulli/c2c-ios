@@ -12,50 +12,60 @@ class PersonalProductsViewModel: ProductsViewModelDelegate, ActivationDelegate {
     
     // MARK:- Properties
     weak var productsInteractor: ProductsInteractorProtocol?
-    weak var userInteractor: UserInteractorProtocol?
-    weak var delegate: ProductsViewControllerPresentable?
+    weak var view: ProductsViewControllerPresentable?
     weak var coordinator: BasicCoordinationProtocol?
-    var productsList: [Product] = []
+    var personalProductsList: [Product] = []
     var isLoading = false
     
     // MARK:- Delegate methods
     func getObject() {
         guard !isLoading else { return }
         isLoading = true
-        if productsList.isEmpty { delegate?.startRefreshing() }
-        productsInteractor?.getAll().done(on: .main, { [weak self] (productsList) in
-            self?.productsList = productsList
-            self?.delegate?.reloadData()
-            self?.delegate?.stopLoadingInTable()
+        if personalProductsList.isEmpty { view?.startRefreshing() }
+        productsInteractor?.getPersonalAds().done(on: .main, { [weak self] (productsList) in
+            self?.personalProductsList = productsList
+            self?.view?.reloadData()
+            self?.view?.stopLoadingInTable()
             self?.isLoading = false
         }).catch({ [weak self] (error) in
-            self?.delegate?.stopLoadingInTable()
-            self?.delegate?.reloadData()
-            self?.delegate?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+            self?.view?.stopLoadingInTable()
+            self?.view?.reloadData()
+            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
             self?.isLoading = false
         })
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        return productsList.count
+        return personalProductsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PersonalProductCell = tableView.dequeueReusableCell(for: indexPath)
-        let product = productsList[indexPath.row].attributes
-        let productPrice = "R$"+String(product.price)
-        cell.setCellWith(forIndex: indexPath,
-                         title: product.name,
-                         withDescription: product.attributesDescription,
-                         withImage: product.productImageURL,
-                         andWithPrice: productPrice,
-                         activated: product.activated)
-        cell.delegate = self
-        return cell
+        let personalProductCell: PersonalProductCell = tableView.dequeueReusableCell(for: indexPath)
+        let product = personalProductsList[indexPath.row].attributes
+        personalProductCell.setCellWith(forIndex: indexPath,
+                                        title: product.name,
+                                        withImage: product.productImageURL,
+                                        activated: product.activated)
+        personalProductCell.delegate = self
+        return personalProductCell
     }
     
     func didTapAt(indexPath: IndexPath?) {
-        fatalError()
+        guard let index = indexPath else { return }
+        view?.startRefreshing()
+        productsInteractor?.activation(personalProductsList[index.row]).done({ [weak self] (_) in
+            self?.view?.stopLoadingInTable()
+            DispatchQueue.main.async {
+                self?.coordinator?.presentPreviousStep()
+            }
+        }).catch({ [weak self] (error) in
+            self?.view?.stopLoadingInTable()
+            self?.view?.showAlert(withTitle: error.localizedTitle, message: error.localizedDescription)
+        })
+    }
+    
+    func didTapBackButton() {
+        coordinator?.presentPreviousStep()
     }
     
     func shouldDisplayAddButton() -> Bool { return false }

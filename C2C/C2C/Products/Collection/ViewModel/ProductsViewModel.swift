@@ -15,6 +15,7 @@ protocol ProductsViewModelDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func didSelectAt(indexPath: IndexPath)
     func didTapAddButton()
+    func didTapBackButton()
 }
 
 class ProductsViewModel: ProductsViewModelDelegate {
@@ -74,5 +75,6 @@ class ProductsViewModel: ProductsViewModelDelegate {
         coordinator?.goToAddProductFlow()
     }
     
+    func didTapBackButton() { }
     
 }

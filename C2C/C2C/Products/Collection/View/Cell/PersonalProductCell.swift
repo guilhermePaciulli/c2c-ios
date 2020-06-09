@@ -22,8 +22,6 @@ class PersonalProductCell: UITableViewCell {
     // MARK:- IBOutlets
     @IBOutlet weak var personalProductImage: UIImageView?
     @IBOutlet weak var personalProductTitle: UILabel?
-    @IBOutlet weak var personalProductDescription: UILabel?
-    @IBOutlet weak var personalProductValue: UILabel?
     @IBOutlet weak var activationButton: UIButton?
     @IBOutlet weak var personalCardView: UIView?
     
@@ -35,25 +33,19 @@ class PersonalProductCell: UITableViewCell {
         personalCardView?.layer.cornerRadius = 20
         personalCardView?.clipsToBounds = true
         personalCardView?.backgroundColor = .quaternarySystemFill
-        personalProductImage?.contentMode = .scaleAspectFit
-        personalProductValue?.textColor = .systemYellow
+        personalProductImage?.contentMode = .scaleAspectFill
     }
     
-    func setCellWith(forIndex index: IndexPath,
-                     title: String, withDescription description: String,
-                     withImage image: String, andWithPrice price: String,
-                     activated: Bool) {
+    func setCellWith(forIndex index: IndexPath, title: String, withImage image: String, activated: Bool) {
         indexPath = index
         personalProductTitle?.text = title
-        personalProductDescription?.text = description
-        personalProductValue?.text = price
-        
+       
         if activated {
             activationButton?.backgroundColor = .red
-            activationButton?.setTitle("Deactivate ad", for: .normal)
+            activationButton?.setTitle("Deactivate", for: .normal)
         } else {
             activationButton?.backgroundColor = .yellow
-            activationButton?.setTitle("Activate ad", for: .normal)
+            activationButton?.setTitle("Activate", for: .normal)
         }
         
         guard let url = URL(string: image) else { return }

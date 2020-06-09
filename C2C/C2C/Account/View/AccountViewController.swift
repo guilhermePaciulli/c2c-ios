@@ -35,5 +35,15 @@ class AccountViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.didSelectRowAt(indexPath: indexPath)
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 24
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view: UIView = .init()
+        view.backgroundColor = .systemBackground
+        return view
+    }
 
 }
