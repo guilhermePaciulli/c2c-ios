@@ -74,4 +74,12 @@ class PersonalProductsViewModel: ProductsViewModelDelegate, ActivationDelegate {
     
     func didTapAddButton() { }
     
+    func getTitle() -> String {
+        return "Announced Products"
+    }
+    
+    func shouldDisplayBackButton() -> Bool {
+        return true
+    }
+    
 }

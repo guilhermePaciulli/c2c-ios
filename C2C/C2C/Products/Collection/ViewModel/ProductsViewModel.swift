@@ -9,6 +9,8 @@
 import UIKit
 
 protocol ProductsViewModelDelegate {
+    func getTitle() -> String
+    func shouldDisplayBackButton() -> Bool
     func shouldDisplayAddButton() -> Bool
     func getObject()
     func numberOfRowsInSection(section: Int) -> Int
@@ -76,5 +78,13 @@ class ProductsViewModel: ProductsViewModelDelegate {
     }
     
     func didTapBackButton() { }
+    
+    func getTitle() -> String {
+        return "Products"
+    }
+    
+    func shouldDisplayBackButton() -> Bool {
+        return false
+    }
     
 }
