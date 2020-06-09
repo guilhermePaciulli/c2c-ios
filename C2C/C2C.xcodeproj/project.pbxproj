@@ -17,6 +17,7 @@
 		A301E62124423D1100A0607F /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62024423D1100A0607F /* AddressViewModel.swift */; };
 		A301E62424423D2900A0607F /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A301E62324423D2900A0607F /* Address.storyboard */; };
 		A301E62624423D3500A0607F /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62524423D3500A0607F /* AddressViewController.swift */; };
+		A305281C2490486700ADDB38 /* PersonalProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A305281B2490486700ADDB38 /* PersonalProductsViewModelTests.swift */; };
 		A309430F24510C350033F8D6 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309430E24510C350033F8D6 /* Purchase.swift */; };
 		A309431124510F4C0033F8D6 /* Purchases.json in Resources */ = {isa = PBXBuildFile; fileRef = A309431024510F4C0033F8D6 /* Purchases.json */; };
 		A3094315245112530033F8D6 /* Sells.json in Resources */ = {isa = PBXBuildFile; fileRef = A3094314245112530033F8D6 /* Sells.json */; };
@@ -194,6 +195,7 @@
 		A301E62024423D1100A0607F /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		A301E62324423D2900A0607F /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
 		A301E62524423D3500A0607F /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		A305281B2490486700ADDB38 /* PersonalProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProductsViewModelTests.swift; sourceTree = "<group>"; };
 		A309430E24510C350033F8D6 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		A309431024510F4C0033F8D6 /* Purchases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Purchases.json; sourceTree = "<group>"; };
 		A3094314245112530033F8D6 /* Sells.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sells.json; sourceTree = "<group>"; };
@@ -962,6 +964,7 @@
 				A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */,
 				A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */,
 				A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */,
+				A305281B2490486700ADDB38 /* PersonalProductsViewModelTests.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -1484,6 +1487,7 @@
 				A3017043243A656800D08CE6 /* AuthenticationCoordinatorTests.swift in Sources */,
 				A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */,
 				A337994B244F67BC00EE1565 /* KeychainRepositoryMock.swift in Sources */,
+				A305281C2490486700ADDB38 /* PersonalProductsViewModelTests.swift in Sources */,
 				A3CE3E1524453FE700FBCF9C /* CreditCardFieldsTests.swift in Sources */,
 				A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */,
 				A32E6143244F2380004461F1 /* PurchaseRepositoryMock.swift in Sources */,

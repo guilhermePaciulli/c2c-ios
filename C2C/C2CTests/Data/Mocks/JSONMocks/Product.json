@@ -7,7 +7,8 @@
             "name": "Boeing 737",
             "description": "Esse boeing é muito mais top que muita gente por aí",
             "price": 1000000.0,
-            "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/na3lrolucxzk8t3pin7nbrd3tqj0?response-content-disposition=inline%3B%20filename%3D%22256x256bb.jpg%22%3B%20filename%2A%3DUTF-8%27%27256x256bb.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200322%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200322T195952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=19a926e33efbd5c6ce78c6e838de31f95104d8e18608039c0d2ddf79cacd88b1"
+            "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/na3lrolucxzk8t3pin7nbrd3tqj0?response-content-disposition=inline%3B%20filename%3D%22256x256bb.jpg%22%3B%20filename%2A%3DUTF-8%27%27256x256bb.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200322%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200322T195952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=19a926e33efbd5c6ce78c6e838de31f95104d8e18608039c0d2ddf79cacd88b1",
+            "is_active": true
         }
     }
 }

@@ -15,7 +15,8 @@
                             "description": "Esse boeing é muito mais top que muita gente por aí",
                             "price": 1000000.0,
                             "owner": 1,
-                            "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/vf1ktksuw2ap5kcl6l6rz3knezsb?response-content-disposition=inline%3B%20filename%3D%2261n0eqTyj3L._AA256_.jpg%22%3B%20filename%2A%3DUTF-8%27%2761n0eqTyj3L._AA256_.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200422%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200422T232017Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=373c37661f846ee509b79f7472b7c60cd00e4ca9de4ac520cabf6686cfd51200"
+                            "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/vf1ktksuw2ap5kcl6l6rz3knezsb?response-content-disposition=inline%3B%20filename%3D%2261n0eqTyj3L._AA256_.jpg%22%3B%20filename%2A%3DUTF-8%27%2761n0eqTyj3L._AA256_.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200422%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200422T232017Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=373c37661f846ee509b79f7472b7c60cd00e4ca9de4ac520cabf6686cfd51200",
+                            "is_active": true
                         }
                     }
                 },

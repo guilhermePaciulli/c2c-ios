@@ -8,7 +8,8 @@
                 "name": "Boeing 737",
                 "description": "Esse boeing é muito mais top que muita gente por aí",
                 "price": 1000000.0,
-                "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/na3lrolucxzk8t3pin7nbrd3tqj0?response-content-disposition=inline%3B%20filename%3D%22256x256bb.jpg%22%3B%20filename%2A%3DUTF-8%27%27256x256bb.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200322%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200322T195930Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f67d632596df42f9bbd2ef19a518262dbccc0cd6530941f7c2f4578fcfe743e2"
+                "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/na3lrolucxzk8t3pin7nbrd3tqj0?response-content-disposition=inline%3B%20filename%3D%22256x256bb.jpg%22%3B%20filename%2A%3DUTF-8%27%27256x256bb.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200322%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200322T195930Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f67d632596df42f9bbd2ef19a518262dbccc0cd6530941f7c2f4578fcfe743e2",
+                "is_active": true
             }
         },
         {
@@ -19,7 +20,8 @@
                 "name": "Boeing 737",
                 "description": "Esse boeing é muito mais top que muita gente por aí",
                 "price": 1000000.0,
-                "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/zx9qb6rodumsc99hpeglthkgvi9s?response-content-disposition=inline%3B%20filename%3D%2261n0eqTyj3L._AA256_.jpg%22%3B%20filename%2A%3DUTF-8%27%2761n0eqTyj3L._AA256_.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200322%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200322T195930Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e8570e2954a3949bcc02645c2713394cd2d0c44d39034aefe068e4eb7e56e60e"
+                "product_image_url": "https://customer2customer-images.s3.us-east-2.amazonaws.com/zx9qb6rodumsc99hpeglthkgvi9s?response-content-disposition=inline%3B%20filename%3D%2261n0eqTyj3L._AA256_.jpg%22%3B%20filename%2A%3DUTF-8%27%2761n0eqTyj3L._AA256_.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4WEQPPK4B5FBEKU6%2F20200322%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200322T195930Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e8570e2954a3949bcc02645c2713394cd2d0c44d39034aefe068e4eb7e56e60e",
+                "is_active": false
             }
         }
     ]
