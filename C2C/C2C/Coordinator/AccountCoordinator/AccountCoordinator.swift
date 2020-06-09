@@ -46,13 +46,14 @@ class AccountCoordinator: AccountCoordinationProtocol {
                 injector.purchaseListViewModel.type = type
                 injector.purchaseListViewModel.coordinator = self
                 injector.navigationController.pushViewController(injector.purchaseViewController, animated: true)
+            case .PersonalAds:
+                state = .PersonalAds
+                injector.personalProductsViewModel.coordinator = self
+                injector.navigationController.pushViewController(injector.personalProductsViewController, animated: true)
             default:
                 break
             }
-        case .Address:
-            state = .Account
-            injector.navigationController.popViewController(animated: true)
-        case .CreditCard:
+        case .Address, .CreditCard, .PersonalAds:
             state = .Account
             injector.navigationController.popViewController(animated: true)
         case .Purchases(_):
@@ -90,4 +91,5 @@ enum AccountCoordinatorRoutingState: Equatable {
     case CreditCard
     case Purchases(type: PurchaseListingType)
     case PurchaseDetail
+    case PersonalAds
 }

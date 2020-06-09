@@ -18,12 +18,14 @@ struct ProductAttributes: Codable {
     let name, attributesDescription: String
     let price: Double
     let productImageURL: String
+    let activated: Bool
     
     enum CodingKeys: String, CodingKey {
         case id, name
         case attributesDescription = "description"
         case price
         case productImageURL = "product_image_url"
+        case activated = "is_active"
     }
 }
 

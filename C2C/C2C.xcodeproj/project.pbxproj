@@ -17,6 +17,7 @@
 		A301E62124423D1100A0607F /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62024423D1100A0607F /* AddressViewModel.swift */; };
 		A301E62424423D2900A0607F /* Address.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A301E62324423D2900A0607F /* Address.storyboard */; };
 		A301E62624423D3500A0607F /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E62524423D3500A0607F /* AddressViewController.swift */; };
+		A305281C2490486700ADDB38 /* PersonalProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A305281B2490486700ADDB38 /* PersonalProductsViewModelTests.swift */; };
 		A309430F24510C350033F8D6 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309430E24510C350033F8D6 /* Purchase.swift */; };
 		A309431124510F4C0033F8D6 /* Purchases.json in Resources */ = {isa = PBXBuildFile; fileRef = A309431024510F4C0033F8D6 /* Purchases.json */; };
 		A3094315245112530033F8D6 /* Sells.json in Resources */ = {isa = PBXBuildFile; fileRef = A3094314245112530033F8D6 /* Sells.json */; };
@@ -129,6 +130,8 @@
 		A3E6B1962436C1F700B55441 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E6B1952436C1F700B55441 /* Authentication.storyboard */; };
 		A3E6B1992436C21500B55441 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B1982436C21500B55441 /* AuthenticationViewModel.swift */; };
 		A3E6B19C2436C25800B55441 /* AuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E6B19B2436C25800B55441 /* AuthenticationViewModelTests.swift */; };
+		A3ECC757248EEF9F004AAFC2 /* PersonalProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECC756248EEF9F004AAFC2 /* PersonalProductCell.swift */; };
+		A3ECC759248EF19C004AAFC2 /* PersonalProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECC758248EF19C004AAFC2 /* PersonalProductsViewModel.swift */; };
 		A3F1AA2C2442562A001E741F /* AddressInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA2B2442562A001E741F /* AddressInteractorTests.swift */; };
 		A3F1AA2E24425657001E741F /* AddressRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1AA2D24425657001E741F /* AddressRepositoryMock.swift */; };
 		A3F1AA34244257DA001E741F /* Address.json in Resources */ = {isa = PBXBuildFile; fileRef = A3F1AA33244257DA001E741F /* Address.json */; };
@@ -192,6 +195,7 @@
 		A301E62024423D1100A0607F /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		A301E62324423D2900A0607F /* Address.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Address.storyboard; sourceTree = "<group>"; };
 		A301E62524423D3500A0607F /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		A305281B2490486700ADDB38 /* PersonalProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProductsViewModelTests.swift; sourceTree = "<group>"; };
 		A309430E24510C350033F8D6 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		A309431024510F4C0033F8D6 /* Purchases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Purchases.json; sourceTree = "<group>"; };
 		A3094314245112530033F8D6 /* Sells.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sells.json; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 		A3E6B1952436C1F700B55441 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		A3E6B1982436C21500B55441 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		A3E6B19B2436C25800B55441 /* AuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelTests.swift; sourceTree = "<group>"; };
+		A3ECC756248EEF9F004AAFC2 /* PersonalProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProductCell.swift; sourceTree = "<group>"; };
+		A3ECC758248EF19C004AAFC2 /* PersonalProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProductsViewModel.swift; sourceTree = "<group>"; };
 		A3F1AA2B2442562A001E741F /* AddressInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInteractorTests.swift; sourceTree = "<group>"; };
 		A3F1AA2D24425657001E741F /* AddressRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRepositoryMock.swift; sourceTree = "<group>"; };
 		A3F1AA33244257DA001E741F /* Address.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Address.json; sourceTree = "<group>"; };
@@ -543,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				A332551724155F6A002CADF6 /* ProductCell.swift */,
+				A3ECC756248EEF9F004AAFC2 /* PersonalProductCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -882,6 +889,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C496C624156AF40019E0E1 /* ProductsViewModel.swift */,
+				A3ECC758248EF19C004AAFC2 /* PersonalProductsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -956,6 +964,7 @@
 				A3E6B18C2436B5EC00B55441 /* ProductsViewModelTests.swift */,
 				A3E6B18F2436BD4700B55441 /* ProductsDetailsViewModelTests.swift */,
 				A3D86992243EB96F000963F8 /* CreateProductViewModelTests.swift */,
+				A305281B2490486700ADDB38 /* PersonalProductsViewModelTests.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -1393,6 +1402,7 @@
 				A3C60E402436947200426F40 /* UserEndpoints.swift in Sources */,
 				A3E6B1922436C1E000B55441 /* AuthenticationViewController.swift in Sources */,
 				A3B47CD224396D590009A6AF /* UIViewController+Backbutton.swift in Sources */,
+				A3ECC759248EF19C004AAFC2 /* PersonalProductsViewModel.swift in Sources */,
 				A3D86991243EA079000963F8 /* ProductFields.swift in Sources */,
 				A332551224155927002CADF6 /* ProductsViewController.swift in Sources */,
 				A3C60E44243697AF00426F40 /* UserInteractor.swift in Sources */,
@@ -1439,6 +1449,7 @@
 				A363FCBC24398707002081BF /* Endpoint+FormData.swift in Sources */,
 				A353252824423F7600FECBF6 /* AddressFields.swift in Sources */,
 				A328F67B2444062A0026576E /* ExpirationDateComponents.swift in Sources */,
+				A3ECC757248EEF9F004AAFC2 /* PersonalProductCell.swift in Sources */,
 				A3DB829D2438DBDA0086FECF /* AccountCoordinator.swift in Sources */,
 				A353252C2442427400FECBF6 /* Address.swift in Sources */,
 				C17D87F324202EE200E90BF4 /* ProductDetailViewController.swift in Sources */,
@@ -1476,6 +1487,7 @@
 				A3017043243A656800D08CE6 /* AuthenticationCoordinatorTests.swift in Sources */,
 				A3E6B1902436BD4700B55441 /* ProductsDetailsViewModelTests.swift in Sources */,
 				A337994B244F67BC00EE1565 /* KeychainRepositoryMock.swift in Sources */,
+				A305281C2490486700ADDB38 /* PersonalProductsViewModelTests.swift in Sources */,
 				A3CE3E1524453FE700FBCF9C /* CreditCardFieldsTests.swift in Sources */,
 				A3017045243A670D00D08CE6 /* AuthenticationCoordinationMock.swift in Sources */,
 				A32E6143244F2380004461F1 /* PurchaseRepositoryMock.swift in Sources */,

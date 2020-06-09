@@ -106,6 +106,11 @@ class AccountCoordinatorTests: QuickSpec {
                 self.subject.presentPreviousStep()
                 expect(self.subject.state).to(equal(.Purchases(type: .sells)))
             }
+            it("should present personal ads") {
+                self.subject.injector.accountViewModel.selectedFlow = .PersonalAds
+                self.subject.presentNextStep()
+                expect(self.subject.state).to(equal(.PersonalAds))
+            }
         }
     }
     

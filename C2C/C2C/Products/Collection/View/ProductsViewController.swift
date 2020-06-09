@@ -43,9 +43,13 @@ class ProductsViewController: UIViewController {
         viewModel?.didTapAddButton()
     }
     
+    @objc func didTapBackButton() {
+        viewModel?.didTapBackButton()
+    }
+    
     // MARK:- Private methods
     private func setupView() {
-        title = "Products"
+        title = viewModel?.getTitle()
         tabBarController?.navigationController?.title = title
         let refresh: UIRefreshControl = .init()
         refresh.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
@@ -53,6 +57,9 @@ class ProductsViewController: UIViewController {
         refreshControl = refresh
         if viewModel?.shouldDisplayAddButton() ?? false {
             setupAddButton()
+        }
+        if viewModel?.shouldDisplayBackButton() ?? false {
+            setBackButton(#selector(didTapBackButton))
         }
     }
     

@@ -19,7 +19,7 @@ class ProductsViewModelTests: QuickSpec {
     var mockedInteractor = ProductsInteractor(repository: MockedProductsRespository())
     var mockedKeychain = KeychainRepositoryMock()
     var userInteractor = UserInteractor.init(user: UserRepository(), keychain: KeychainRepositoryMock(), userDefaults: UserDefaultsRepositoryMock())
-    var mockedView = MockedView()
+    var mockedView = MockedProductsView()
     
     override func spec() {
         
@@ -75,35 +75,36 @@ class ProductsViewModelTests: QuickSpec {
                 _ = self.mockedKeychain.delete(key: "jwt")
                 expect(self.subject.shouldDisplayAddButton()).to(beFalse())
             }
+            it("should return the right title") {
+                expect(self.subject.getTitle()).to(equal("Products"))
+            }
         }
-        
+    }
+}
+
+class MockedProductsView: ProductsViewControllerPresentable {
+    
+    var alertTitle: String?
+    var alertMessage: String?
+    var stopLoadingInTableCalled = false
+    var reloadDataCalled = false
+    var startRefreshingCalled = false
+    
+    func startRefreshing() {
+        startRefreshingCalled = true
     }
     
-    class MockedView: ProductsViewControllerPresentable {
-        
-        var alertTitle: String?
-        var alertMessage: String?
-        var stopLoadingInTableCalled = false
-        var reloadDataCalled = false
-        var startRefreshingCalled = false
-        
-        func startRefreshing() {
-            startRefreshingCalled = true
-        }
-        
-        func stopLoadingInTable() {
-            stopLoadingInTableCalled = true
-        }
-        
-        func showAlert(withTitle title: String, message: String) {
-            alertTitle  = title
-            alertMessage = message
-        }
-        
-        func reloadData() {
-            reloadDataCalled = true
-        }
-        
+    func stopLoadingInTable() {
+        stopLoadingInTableCalled = true
+    }
+    
+    func showAlert(withTitle title: String, message: String) {
+        alertTitle  = title
+        alertMessage = message
+    }
+    
+    func reloadData() {
+        reloadDataCalled = true
     }
     
 }

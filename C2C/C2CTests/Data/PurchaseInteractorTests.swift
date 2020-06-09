@@ -14,7 +14,7 @@ class PurchaseInteractorTests: QuickSpec {
     
     var repository = PurchaseRepositoryMock()
     var subject = PurchaseInteractor()
-    var productAttr: ProductAttributes = .init(id: 0, name: "", attributesDescription: "", price: 0, productImageURL: "")
+    var productAttr: ProductAttributes = .init(id: 0, name: "", attributesDescription: "", price: 0, productImageURL: "", activated: true)
     
     override func spec() {
         

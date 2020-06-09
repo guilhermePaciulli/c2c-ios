@@ -9,12 +9,15 @@
 import UIKit
 
 protocol ProductsViewModelDelegate {
+    func getTitle() -> String
+    func shouldDisplayBackButton() -> Bool
     func shouldDisplayAddButton() -> Bool
     func getObject()
     func numberOfRowsInSection(section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func didSelectAt(indexPath: IndexPath)
     func didTapAddButton()
+    func didTapBackButton()
 }
 
 class ProductsViewModel: ProductsViewModelDelegate {
@@ -74,5 +77,14 @@ class ProductsViewModel: ProductsViewModelDelegate {
         coordinator?.goToAddProductFlow()
     }
     
+    func didTapBackButton() { }
+    
+    func getTitle() -> String {
+        return "Products"
+    }
+    
+    func shouldDisplayBackButton() -> Bool {
+        return false
+    }
     
 }
